@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	<!-- 浮动解决方案 -->
 	<section class="layout float">
 		<style>
 			.layout.float .left {
@@ -47,6 +48,7 @@
 		</article>
 	</section>
 
+	<!-- 绝对定位解决方案 -->
 	<section class="layout absolute">
 		<style>
 			.layout.absolute .left-center-right div {
@@ -78,6 +80,7 @@
 		</article>
 	</section>
 
+	<!-- flexbox解决方案 -->
 	<section class="layout flexbox">
 			<style>
 				.layout.flexbox {
@@ -108,6 +111,41 @@
 				<div class="right">right</div>
 			</article>
 		</section>
+
+		<!-- 表格解决方案 -->
+		<section class="layout table">
+			<style>
+				.layout.table .left-center-right {
+					display: table;
+					width: 100%;
+					height: 100px;
+				}
+				.layout.table .left-center-right>div {
+					display: table-cell;
+				}
+				.layout.table .left {
+					width: 300px;
+					background-color: blue;
+				}
+				.layout.table .center {
+					background-color: yellow;
+				}
+				.layout.table .right {
+					width: 300px;
+					background-color: red;
+				}
+			</style>
+			<article class="left-center-right">
+				<div class="left">left</div>
+				<div class="center">
+					<h2>表格解决方案</h2>
+					中间内容中间内容中间内容中间内容中间内容
+				</div>
+				<div class="right">right</div>
+			</article>
+		</section>
+
+
 </body>
 
 </html>
