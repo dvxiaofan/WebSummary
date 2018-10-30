@@ -78,7 +78,36 @@
 		</article>
 	</section>
 
-	
+	<section class="layout flexbox">
+			<style>
+				.layout.flexbox {
+					margin-top: 140px;
+				}
+				.layout.flexbox .left-right-center {
+					display: flex;
+				}
+				.layout.flexbox .left {
+					width: 300px;
+					background-color: blue;
+				}
+				.layout.flexbox .center {
+					flex: 1;
+					background-color: yellow;
+				}
+				.layout.flexbox .right {
+					width: 300px;
+					background-color: red;
+				}
+			</style>
+			<article class="left-right-center">
+				<div class="left">left</div>
+				<div class="center">
+					<h2>flexbox解决方案</h2>
+					中间内容中间内容中间内容中间内容中间内容
+				</div>
+				<div class="right">right</div>
+			</article>
+		</section>
 </body>
 
 </html>
