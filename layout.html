@@ -11,9 +11,11 @@
 			padding: 0;
 			margin: 0;
 		}
-
+		.layout {
+			margin-top: 20px;
+		}
 		.layout article div {
-			min-height: 200px;
+			min-height: 100px;
 		}
 	</style>
 </head>
@@ -21,30 +23,62 @@
 <body>
 	<section class="layout float">
 		<style>
-			.left {
+			.layout.float .left {
 				float: left;
 				width: 300px;
 				background-color: blue;
 			}
-
-			.right {
+			.layout.float .center {
+				background-color: yellow;
+			}
+			.layout.float .right {
 				float: right;
 				width: 300px;
 				background-color: red;
 			}
-
-			.center {
-				background-color: yellow;
-			}
 		</style>
-		<article class="left-right-cenrer">
-			<div class="left"></div>
-			<div class="right"></div>
+		<article class="left-right-center">
+			<div class="left">left</div>
+			<div class="right">right</div>
 			<div class="center">
-				中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+				<h2>浮动解决方案</h2> 
+				中间内容中间内容中间内容中间内容中间内容
 			</div>
 		</article>
 	</section>
+
+	<section class="layout absolute">
+		<style>
+			.layout.absolute .left-right-center div {
+				position: absolute;
+			}
+			.layout.absolute .left {
+				left: 0;
+				width: 300px;
+				background-color: blue;
+			}
+			.layout.absolute .center {
+				left: 300px;
+				right: 300px;
+				background-color: yellow;
+			}
+			.layout.absolute .right {
+				right: 0;
+				width: 300px;
+				background-color: red;
+			}
+		</style>
+		<article class="left-right-center">
+			<div class="left">left</div>
+			<div class="center">
+				<h2>绝对定位解决方案</h2>
+				中间内容中间内容中间内容中间内容中间内容
+			</div>
+			<div class="right">right</div>
+		</article>
+	</section>
+
+	
 </body>
 
 </html>
