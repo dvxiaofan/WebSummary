@@ -16,173 +16,107 @@
 
 <body>
 
-	<section class="layout position">
+	<!-- <section class="layout position">
 		<style>
-			html,
-			body,
-			.layout.position,
-			.left-right {
-				height: 100px;
-			}
-
-			.layout.position .left-right>div {
+			.layout.position .top-bottom>div {
 				position: absolute;
+				width: 100%;
+			}
+
+			.layout.position .top-bottom .top {
+				background: #0f0;
 				height: 100px;
+				top: 0;
 			}
 
-			.layout.position .left-right .left {
-				width: 220px;
+			.layout.position .top-bottom .bottom {
 				background: #00f;
-				left: 0;
-			}
-
-			.layout.position .left-right .right {
-				left: 220px;
-				right: 0;
-				background: #ff0;
+				top: 100px;
+				bottom: 0;
 			}
 		</style>
-		<article class="left-right">
-			<div class="left">left</div>
-			<div class="right">right</div>
+		<article class="top-bottom">
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
 		</article>
-	</section>
+	</section> -->
 
-	<section class="layout flex-box">
+	<!-- <section class="layout flex-box">
 		<style>
-			html,
-			body,
-			.layout.flex-box,
-			.left-right {
+			html, body, .layout.flex-box, .top-bottom {
+				height: 100%;
+			}
+			.layout.flex-box .top-bottom {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.layout.flex-box .top-bottom .top {
+				background: #0f0;
 				height: 100px;
 			}
 
-			.layout.flex-box {
-				margin-top: 30px;
-			}
-
-			.layout.flex-box .left-right {
-				display: flex;
-				flex-direction: row;
-			}
-
-			.layout.flex-box .left-right .left {
-				width: 220px;
+			.layout.flex-box .top-bottom .bottom {
 				background: #00f;
-			}
-
-			.layout.flex-box .left-right .right {
-				background: #ff0;
 				flex: 1;
 			}
 		</style>
-		<article class="left-right">
-			<div class="left">left</div>
-			<div class="right">right</div>
+		<article class="top-bottom">
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
 		</article>
-	</section>
+	</section> -->
 
-	<section class="layout float">
+	<!-- <section class="layout table">
 		<style>
-			html,
-			body,
-			.layout.float,
-			.left-right {
-				height: 100px;
+			html, body, .layout.table, .top-bottom {
+				height: 100%;
 			}
-
-			.layout.float {
-				margin-top: 30px;
-			}
-
-			.layout.float .left-right>div {
-				height: 100px;
-			}
-
-			.layout.float .left-right .left {
-				width: 220px;
-				float: left;
-				background: #00f;
-			}
-
-			.layout.float .left-right .right {
-				background: #ff0;
-			}
-		</style>
-		<article class="left-right">
-			<div class="left">left</div>
-			<div class="right">right</div>
-		</article>
-	</section>
-
-	<section class="layout table">
-		<style>
-			html,
-			body,
-			.layout.table,
-			.left-right {
-				height: 100px;
-			}
-
-			.layout.table {
-				margin-top: 30px;
-			}
-
-			.layout.table .left-right {
+			.layout.table .top-bottom {
 				display: table;
 				width: 100%;
+			}
+			.layout.table .top-bottom>div {
+				display: table-row;
+			}
+			
+			.layout.table .top-bottom .top {
+				background: #0f0;
 				height: 100px;
 			}
 
-			.layout.table .left-right>div {
-				display: table-cell;
-			}
-
-			.layout.table .left-right .left {
-				width: 220px;
+			.layout.table .top-bottom .bottom {
 				background: #00f;
 			}
-
-			.layout.table .left-right .right {
-				background: #ff0;
-			}
 		</style>
-		<article class="left-right">
-			<div class="left">left</div>
-			<div class="right">right</div>
+		<article class="top-bottom">
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
 		</article>
-	</section>
+	</section> -->
 
 	<section class="layout grid">
 		<style>
-			html,
-			body,
-			.layout.grid,
-			.left-right {
-				height: 100px;
+			html, body, .layout.grid, .top-bottom {
+				height: 100%;
 			}
-
-			.layout.grid {
-				margin-top: 30px;
-			}
-
-			.layout.grid .left-right {
+			.layout.grid .top-bottom {
 				display: grid;
-				grid-template-columns: 220px auto;
-				grid-template-rows: 100px;
+				grid-template-columns: 100%;
+				grid-template-rows: 100px auto;
+			}
+			
+			.layout.grid .top-bottom .top {
+				background: #0f0;
 			}
 
-			.layout.grid .left-right .left {
+			.layout.grid .top-bottom .bottom {
 				background: #00f;
 			}
-
-			.layout.grid .left-right .right {
-				background: #ff0;
-			}
 		</style>
-		<article class="left-right">
-			<div class="left">left</div>
-			<div class="right">right</div>
+		<article class="top-bottom">
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
 		</article>
 	</section>
 
