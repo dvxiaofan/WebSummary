@@ -16,23 +16,26 @@
 
 <body>
 
-	<section class="layout grid">
+	<section class="layout table">
 		<style>
 			html,
 			body,
-			.layout.grid,
+			.layout.table,
 			.top-center-bottom {
 				width: 100%;
 				height: 100%;
 			}
 
 			.top-center-bottom {
-				display: grid;
-				grid-template-columns: 100%;
-				grid-template-rows: 80px auto 80px;
+				display: table;
+			}
+
+			.top-center-bottom>div {
+				display: table-row;
 			}
 
 			.top-center-bottom .top {
+				height: 80px;
 				background: #ff0;
 			}
 
@@ -41,6 +44,7 @@
 			}
 
 			.top-center-bottom .bottom {
+				height: 80px;
 				background: #f00;
 			}
 		</style>
