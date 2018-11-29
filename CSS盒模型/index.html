@@ -14,36 +14,47 @@
 </head>
 <body>
 
-	<section class="content">
+	<!-- BFC 不与float重叠 -->
+	<!-- <section class="layout">
 		<style>
-			.content {
-				background: #f00;
+			.layout {
+				background: #ff0;
 			}
-			.child {
-				height: 100px;
-				margin-top: 10px;
-				background: #00f;
-			}
-		</style>
-			<article class="child"></article>
-	</section>
 
-	<section class="margin">
-		<style>
-			.margin {
-				background: #0ff;
-				overflow: hidden;
-			}
-			.margin>p, .margin>div>p {
-				margin: 5px auto 25px;
+			.layout .left {
+				float: left;
+				width: 100px;
+				height: 100px;
 				background: #00f;
 			}
+
+			.layout .right {
+				height: 120px;
+				background: #ccc;
+				overflow: auto;
+			}
+
 		</style>
-		<p>11</p>
-		<div style="overflow: hidden;">
-				<p style="background: blue;">22</p>
-		</div>
-		<p>33</p>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</section> -->
+
+	<!-- BFC子元素即使是float也会参与高度计算 -->
+	<section class="float">
+		<style>
+			.float {
+				background: #ff0;
+				overflow: auto;
+				/* float: left; */
+			}
+
+			.float-item {
+				float: left;
+				font-size: 22px;
+				line-height: 50px;
+			}
+		</style>
+		<div class="float-item">浮动元素</div>
 	</section>
 
 </body>
