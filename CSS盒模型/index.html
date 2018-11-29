@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS盒模型</title>
+	<style>
+		html, * {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<section class="content">
+		<style>
+			.content {
+				background: #f00;
+			}
+			.child {
+				height: 100px;
+				margin-top: 10px;
+				background: #00f;
+			}
+		</style>
+			<article class="child"></article>
+	</section>
+
+	<section class="margin">
+		<style>
+			.margin {
+				background: #0ff;
+				overflow: hidden;
+			}
+			.margin>p, .margin>div>p {
+				margin: 5px auto 25px;
+				background: #00f;
+			}
+		</style>
+		<p>11</p>
+		<div style="overflow: hidden;">
+				<p style="background: blue;">22</p>
+		</div>
+		<p>33</p>
+	</section>
+
+</body>
+</html>
