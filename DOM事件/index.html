@@ -44,7 +44,7 @@
 		}, false);
 		
 		document.documentElement.addEventListener('click', (e) => {
-			e.stopPropagation(); // 阻止冒泡
+			// e.stopPropagation(); // 阻止冒泡
 			console.log('html capture');
 		}, false);
 
@@ -55,6 +55,20 @@
 		eve.addEventListener('click', (e) => {
 			console.log('eve capture');
 		}, false);
+
+		// 自定义事件
+		var event = new Event('test');
+		eve.addEventListener('test', (e) => {
+			console.log('test dispatch');
+		});
+		// setInterval(() => {
+		// 	eve.dispatchEvent(event);
+		// }, 3000);
+		setTimeout(() => {
+			eve.dispatchEvent(event);
+		}, 3000);
+
+
 	</script>
 
 </body>
