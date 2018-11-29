@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM事件</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		html,
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#eve {
+			width: 300px;
+			height: 100px;
+			line-height: 100px;
+			background: #00f;
+			color: #fff;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="eve">目标元素</div>
+
+
+	<script>
+		var eve = document.getElementById('eve');
+		// true  表示捕获阶段触发 false 表示冒泡阶段触发
+		// 事件捕获的具体流程 window --> document --> HTML --> body --> ...(按HTML结构传递)  --> 目标元素
+		// DOM事件冒泡的具体流程与捕获的流程相反
+
+		window.addEventListener('click', (e) => {
+			console.log('window capture');
+		}, false);
+
+		document.addEventListener('click', (e) => {
+			console.log('document capture');
+		}, false);
+		
+		document.documentElement.addEventListener('click', (e) => {
+			e.stopPropagation(); // 阻止冒泡
+			console.log('html capture');
+		}, false);
+
+		document.body.addEventListener('click', (e) => {
+			console.log('body capture');
+		}, false);
+
+		eve.addEventListener('click', (e) => {
+			console.log('eve capture');
+		}, false);
+	</script>
+
+</body>
+
+</html>
