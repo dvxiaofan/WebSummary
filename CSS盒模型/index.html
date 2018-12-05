@@ -40,7 +40,7 @@
 	</section> -->
 
 	<!-- BFC子元素即使是float也会参与高度计算 -->
-	<section class="float">
+	<!-- <section class="float">
 		<style>
 			.float {
 				background: #ff0;
@@ -55,6 +55,23 @@
 			}
 		</style>
 		<div class="float-item">浮动元素</div>
+	</section> -->
+
+	<section class="layout">
+		<style>
+			.item {
+				position: absolute;
+				background: #00f;
+				width: 300px;
+				height: 300px;
+				margin: auto;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+		</style>
+		<article class="item"></article>
 	</section>
 
 </body>
