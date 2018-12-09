@@ -10,6 +10,10 @@
 			padding: 0;
 			margin: 0;
 		}
+		/* body {
+			width: 100%;
+			height: 100%;
+		} */
 	</style>
 </head>
 <body>
@@ -59,16 +63,16 @@
 
 	<section class="layout">
 		<style>
-			.item {
-				position: absolute;
+			.layout {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.layout .item {
 				background: #00f;
 				width: 300px;
 				height: 300px;
-				margin: auto;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
+				align-items: center;
 			}
 		</style>
 		<article class="item"></article>
