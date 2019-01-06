@@ -75,8 +75,8 @@ console.log(p2) 	// -> ?
 `typeof` 对于原始类型来说，除了 `null` 都可以显示正确的类型
 
 ```
-typeof 1 					// 'number'
-typeof '1' 					// 'string'
+typeof 1 				// 'number'
+typeof '1' 				// 'string'
 typeof undefined 			// 'undefined'
 typeof true 				// 'boolean'
 typeof Symbol() 			// 'symbol'
@@ -163,7 +163,7 @@ let a = {
 * 如果一方不是字符串或者数字，那么会将它转换为数字或者字符串
 
 ```
-1 + '1' 			// '11'
+1 + '1' 		// '11'
 true + true 	// 2
 4 + [1,2,3] 	// "41,2,3"
 ```
