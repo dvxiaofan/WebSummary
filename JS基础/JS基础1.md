@@ -64,7 +64,7 @@ console.log(p2) 	// -> ?
 * 到函数内部修改参数的属性这步，我相信大家都知道，当前 `p1` 的值也被修改了
 * 但是当我们重新为了 `person` 分配了一个对象时就出现了分歧，请看下图
 
-![](media/15467573688503.jpg)
+![](http://imgs.webxiaofan.com/15467573688503.jpg)
 
 
 所以最后 `person` 拥有了一个新的地址（指针），也就和 `p1` 没有任何关系了，导致了最终两个变量的值是不相同的。
@@ -124,7 +124,7 @@ console.log('hello world' instanceof PrimitiveString) 	// true
 
 我们先来看一个类型转换表格，然后再进入正题
 
-![](media/15467576662698.jpg)
+![](http://imgs.webxiaofan.com/15467576662698.jpg)
 
 
 ### 转Boolean
@@ -284,6 +284,6 @@ foo.bind(a)() 	// => 'yck'
 
 为更好理解,我们来看以下的这张流程图，图中的流程只针对于单个规则。
 
-![](media/15467584630250.jpg)
+![](http://imgs.webxiaofan.com/15467584630250.jpg)
 
 
