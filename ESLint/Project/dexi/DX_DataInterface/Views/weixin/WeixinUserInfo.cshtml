@@ -1,0 +1,228 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微信绑定用户信息</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../../helsinki-blue/user/Light7/css/light7.css" rel="stylesheet" />
+
+    
+    <style type="text/css">
+    .list-block {
+        margin: 1px;
+        margin-top: 5px;
+        margin-right: 1px;
+        margin-bottom: 1px;
+        margin-left: 1px;
+    }
+
+    .row {
+    margin-left: 0;
+}
+
+ </style>
+
+</head>
+<body>
+
+
+    <div class="content">
+      <div class="list-block">
+        <ul id="ul_id">
+          <!-- Text inputs -->
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="label">当前没有绑定用户，请在数据查询中进行绑定</div>
+                <div class="label"></div>
+              </div>
+            </div>
+          </li>
+            <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="label">登录[数据查询]后将会自动进行绑定</div>
+                <div class="label"></div>
+              </div>
+            </div>
+          </li>
+         
+        </ul>
+      </div>
+      <div class="content-block">
+        <div class="row">
+          <a href="#" id="unbind_button_id" class="button button-big button-fill button-danger" onclick="Unbind_OnClick()" style="display:none;">解除绑定</a>
+        </div>
+      </div>
+    </div>
+
+
+     <!-- 注意SUI与jquery冲突 -->
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../helsinki-blue/user/Light7/light7.js"></script>
+
+
+
+
+    <script>
+
+        //初始化加载执行
+        window.onload = function ()
+        {
+            //要执行的js代码段  
+            GetUserInfo();
+
+            //影藏微信的分享功能
+            if (typeof WeixinJSBridge == "undefined") {
+                if (document.addEventListener) {
+                    document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                    document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                }
+            } else {
+                onBridgeReady();
+            }
+
+
+        }
+
+     
+
+
+        //显示一条li数据（返回html字符串）
+        function ShowOneLi(title,text)
+        {
+            var li = "<li>\
+                <div class=\"item-content\">\
+                  <div class=\"item-inner\">\
+                    <div class=\"item-title label\">"+ title + "</div>\
+                    <div class=\"label\">"+ text + "</div>\
+                  </div>\
+                </div>\
+              </li>";
+
+            return li;
+        }
+
+        //显示信息
+        function ShowUserInfo(ul_id, UserInfoObj)
+        {
+            try
+            {
+                var html = "";
+
+                html += ShowOneLi("用户昵称", UserInfoObj.NICK_NAME);
+                html += ShowOneLi("用户名", UserInfoObj.USER);
+                html += ShowOneLi("邮箱", UserInfoObj.EMAIL);
+                html += ShowOneLi("电话", UserInfoObj.TEL);
+                html += ShowOneLi("地址", UserInfoObj.COMPANY);
+
+                document.getElementById(ul_id).innerHTML = html;
+
+            }
+            catch (e)
+            {
+                layer.msg(e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+        //点击了解除绑定按钮
+        function Unbind_OnClick()
+        {
+            //等待用户点击了确定再解除绑定
+            layer.confirm('确定要解除绑定吗？', {
+                btn: ['确定'], //按钮
+                icon: 6
+            }, function () {
+                //请求服务器进行登录
+                var jsonData = {
+                    GetFun: 'WeixinUnbind',
+                };
+
+                $.ajax({
+                    url: '/Home/Index',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: jsonData,
+                })
+                .done(function (response) {
+                    if (response.rel == 1) { //获取成功
+                        window.location.reload();   //刷新网页
+                    }
+                    else if (response.rel <= 0) //需要登录
+                    {
+                        layer.msg("未绑定用户", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                        window.location.reload();   //刷新网页
+                    }
+                })
+                .fail(function () {
+                    layer.msg("网络异常，检查网络后退出并重试！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                    return;
+                })
+
+            });
+
+
+            
+        }
+
+        //获取用户信息
+        function GetUserInfo() {
+            //请求服务器进行登录
+            var jsonData = {
+                GetFun: 'GetLoginStatus',
+            };
+
+            $.ajax({
+                url: '/Home/Login',
+                type: 'POST',
+                dataType: 'json',
+                data: jsonData,
+            })
+            .done(function (response) {
+                if (response.rel == 1) { //获取成功
+                    var obj = JSON.parse(response.obj);      //全局缓存用户信息
+                    //layer.alert(JSON.stringify(response.obj, 4));       //调试显示信息
+                    //更新主界面用户信息
+                    var info = obj[0];
+                    //显示用户信息             
+                    ShowUserInfo('ul_id', info);
+                    
+                    document.getElementById('unbind_button_id').style.display = 'block'; //显示解除绑定按钮
+                }
+                else if (response.rel == -1) //需要登录
+                {
+                    document.getElementById('unbind_button_id').style.display = 'none'; //影藏解除绑定按钮
+                    layer.msg("未绑定用户", { icon: 5, scrollbar: false }); //5：失败；6：成功
+
+                }
+                else {
+                    document.getElementById('unbind_button_id').style.display = 'none'; //影藏解除绑定按钮
+                    layer.msg("获取信息错误，请退出后重试！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+
+            })
+            .fail(function () {
+                document.getElementById('unbind_button_id').style.display = 'none'; //影藏解除绑定按钮
+                layer.msg("网络异常，检查网络后退出并重试！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                return;
+            })
+        }
+
+
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        
+    </script>
+</body>
+</html>

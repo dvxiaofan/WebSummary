@@ -1,0 +1,308 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>动态数据展示</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/css/MyTreeStyle.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /*INFO 按钮蓝色*/
+        .btn-info {
+            background-color: #3E79BB;
+            border-color: #3E79BB;
+        }
+        /*INFO 按钮禁用淡蓝色*/
+        .btn-info.disabled, .btn-info[disabled] {
+            background-color: #88bffc;
+            border-color: #88bffc;
+        }
+
+        /* 右侧信息容器 */
+        .info-content {
+            width: 100%;
+            height: 91vh;
+            display: flex;
+        }
+        /* 左半部分 */
+        .info-left {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* 左侧三个实时数据大容器 */
+        .info-left-up {
+            height: 35vh;
+            margin-bottom: 8px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /*三个实时数据小容器*/
+        .left-small-block {
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 32%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /*三个小容器中的状态样式*/
+        .left-small-block .device-info-status {
+            padding-left: 10px;
+        }
+
+        /*时间字体*/
+        .device-info-time {
+            font-size: 14px;
+        }
+
+        /* 左侧视频信息容器 */
+        .info-left-middle {
+            /*background: url('../../Images/Login_logo_b.png') no-repeat center #ddd9d9;*/
+            background: #ddd9d9;
+            height: 100vh;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        /*视频显示容器 和 提示信息*/
+        .info-left-middle .myVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        /* 提示内容 */
+        .info-left-middle .no-videoData {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* 左侧底部信息容器 */
+        .info-left-bottom {
+            height: 60vh;
+            /* background: #88bffc; */
+        }
+        /* 覆盖原表格的鼠标悬浮背景颜色 */
+        .info-left-bottom .layui-table-hover {
+            background-color: #fff !important;
+        }
+        /* 覆盖原表格的标题部分，不需要显示标题 */
+        .info-left-bottom .layui-table-header {
+            display: none;
+        }
+
+        /* 右侧折线图容器 */
+        .info-right {
+            padding: 0;
+        }
+        /* 折线图 */
+        .echarts {
+            height: 100%;
+        }
+
+
+
+    </style>
+
+
+</head>
+
+
+
+<body class="row" style="overflow:-Scroll;overflow-y:hidden;margin-left:0px;">
+    <!--左侧列表栏-->
+    <div style="float: left;padding:5px;background-color:#EAEDF1;width:253px;height:100%;border:1px solid #808080;" id="left_panle_id">
+        <div class="row">
+            <div>
+                <div>
+                    <form class="form-inline" id="search_form_id_01">
+                        <div class="form-group" style="font-size:12px;">
+                            <input class="form-control" style="height:28px;width:167px;margin-left:10px;" type="text" id="search_user_name_id" placeholder="编号/名称">
+                            <button class="btn btn-info fa fa-search" onclick="search_name_onclick()" type="button"></button>
+                            <button class="btn btn-info fa fa-remove" onclick="search_cancel_onclick()" type="button" id="cancel_search_button_id"></button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="panel" style="width:250px;height:100%;overflow:auto;margin-top:3px;font-size: 12px;margin-left:10px;" id="panel_id_1">
+
+                    <!--此处是一个列表 -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--右侧正文-->
+    <div style="margin-left:253px;" id="right_panle_id">
+
+        <div class="user_content" , id="user_content_id_1" style="overflow:hidden;height:100%;">
+            <div class="row">
+
+                <!--一个用于影藏左边栏的标签-->
+                <div id="div_scroll_id" style="float:left;vertical-align:middle;z-index:3;position:absolute;left:-1px;height:100%;" data-user-flag="1">
+                    <button id="scroll_ico_id" type="button" class="fa fa-chevron-left" onclick="scroll_btn_onclick()" style="position:fixed;font-size:18px;float:left;vertical-align:middle;width:20px;height:100px;margin-left:0px;margin-top:200px;z-index:10000;"></button>
+                </div>
+
+
+                <div class="panel" style="height:100%;width:100%;min-width:875px; display: none;" id="info_panel_id">
+                    <div class="panel-content">
+
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <h4 class="section-subtitle"><b>动态数据</b>&nbsp;&nbsp;<a>&nbsp;&nbsp;&nbsp;&nbsp;</a><a id="lable_st_id">编号：0</a><a>&nbsp;&nbsp;&nbsp;&nbsp;</a><a id="lable_name_id">名称：0</a></h4>
+                            </div>
+                            <div class="form-group" style="float:right">
+                                <button class="btn btn-info fa fa-refresh" onclick="RefreshPage_onClick()" type="button">&nbsp;&nbsp;刷新</button>
+                            </div>
+                        </form>
+                        <hr style="margin-top:-17px;background-color:#3E79BB;height:2px;">
+
+                        <!--右侧数据显示容器页面-->
+                        <div class="info-content">
+                            <!-- 左侧信息容器 -->
+                            <div class="info-left col-md-6">
+                                <!-- 三个实时数据容器 -->
+                                <div class="info-left-up">
+                                    <div class="left-small-block" id="info_level_id" style="background: #6495ED">
+                                        <div class="info-line">
+                                            <span class="device-info-title">水位: </span>
+                                            <span class="device-info-status" id="info_level_status_id">未知</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-num" id="info_level_num_id" style="color: #fff;">N/A</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-time" id="info_level_time_id">N/A</span>
+                                        </div>
+                                    </div>
+                                    <div class="left-small-block" id="info_dec_id" style="background: #6495ED;">
+                                        <div class="info-line">
+                                            <span class="device-info-title">流量: </span>
+                                            <span class="device-info-status" id="info_dec_status_id">未知</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-num" id="info_dec_num_id">N/A</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-time" id="info_dec_time_id">N/A</span>
+                                        </div>
+                                    </div>
+                                    <div class="left-small-block" id="info_v_id" style="background: #6495ED">
+                                        <div class="info-line">
+                                            <span class="device-info-title">电压: </span>
+                                            <span class="device-info-status" id="info_v_status_id">未知</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-num" id="info_v_num_id">N/A</span>
+                                        </div>
+                                        <div class="info-line">
+                                            <span class="device-info-time" id="info_v_time_id">N/A</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- 左侧视频容器 -->
+                                <div class="info-left-middle video-content" id="info_content_id">
+
+                                    <!--提示无数据-->
+                                    <div id="no_videoData_id" class="no-videoData">
+                                        暂无视频数据，请联系管理员添加
+                                    </div>
+
+                                    <!-- 视频播放容器 -->
+                                    <video class="myVideo" id="myVideo" controls autoplay></video>
+
+                                </div>
+
+                                <!--左侧底部信息容器-->
+                                <div class="info-left-bottom"style="display: none" >
+                                    <table class="layui-hide" id="demo"></table>
+                                </div>
+
+                            </div>
+
+                            <!-- 折线图数据 -->
+                            <div class="info-right col-md-6">
+                                <div class="echarts" id="echart_item_id">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/hls.js/8.0.0-beta.3/hls.min.js"></script>
+    <script src="../../helsinki-blue/user/js/MyTree.js"></script>
+    <script src="../../helsinki-blue/user/js/DeviceGroupList.js"></script>
+    <script src="../../helsinki-blue/user/js/InfoOver_PicPage.js"></script>
+    <script src="../../helsinki-blue/user/js/UserAjax.js"></script>
+    <script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_Tools.js"></script>
+
+
+</body>
+
+
+</html>

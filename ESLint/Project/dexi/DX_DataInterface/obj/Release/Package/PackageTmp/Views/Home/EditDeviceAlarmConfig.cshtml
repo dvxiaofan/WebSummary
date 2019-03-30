@@ -1,0 +1,909 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>修改设备预警配置</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        /*重新定义宽度*/
+       .layui-form-label {
+    padding: 3px 15px;
+    width: 120px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+}
+
+       .layui-form-item .layui-inline {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    height: 24px;
+    margin-top: 5px;
+}
+
+       
+.layui-form-mid {
+
+    padding: 1px 0 !important;
+}
+
+.layui-form-switch {
+    margin-top: 1px;
+}
+
+.layui-unselect .layui-input {
+    width:128px;
+    height:24px;
+}
+
+    </style>
+
+</head>
+
+
+
+<body style="overflow:auto;">
+    <!--影藏外部的滑动条-->
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                <div class="panel-content" style="height:470px">
+
+                    <form class="layui-form" action="">
+
+
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <label class="layui-form-label">总预警开关:</label>
+                            <div class="layui-input-block">
+                                <input id="checkbox_id_all_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">报警间隔:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_interval" type="number" name="price_min" placeholder="报警间隔" autocomplete="off" class="layui-input" style="width: 100px;height:24px;" value="10">
+                                </div>
+                                <div class="layui-form-mid">分钟 (2次报警的最小间隔5-1440分钟)</div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">水位1:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_z_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_z_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_z_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">水位2:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_zb_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_zb_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id ="checkbox_id_zb_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+</div>
+                            </div>
+                        </div>
+
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">瞬时流量1:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_q1_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_q1_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m3/s</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_q1_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">瞬时流量2:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_q2_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_q2_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m3/s</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_q2_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">小时水量1:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_sbl1_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_sbl1_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m3/h</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_sbl1_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">小时水量2:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_sbl2_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_sbl2_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">m3/h</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_sbl2_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" style="height:28px;">
+                            <div class="layui-inline" style="width:100%;">
+                                <label class="layui-form-label">电源电压:</label>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_vt_al" type="number" step="0.001" name="price_min" placeholder="报警下限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 100px;height:24px;">
+                                    <input id="input_id_vt_ah" type="number" step="0.001" name="price_max" placeholder="报警上限" autocomplete="off" class="layui-input" style="width: 100px;height:24px;">
+                                </div>
+
+                                <label class="layui-form-label" style="width:40px;margin-left:-15px;">V</label>
+                                <label class="layui-form-label">预警开关:</label>
+                                <div class="layui-input-block" style="margin-left:400px;">
+                                    <input id="checkbox_id_vt_sw" type="checkbox" name="close" lay-skin="switch" lay-text="开|关">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div style="float:left">
+            <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                <a>&nbsp;&nbsp;</a>
+                <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../Scripts/md5/md5.js"></script>
+
+
+    <!-- 界面js代码 -->
+    <script type="text/javascript">
+        var g_ThisDeviceConfig;
+        var g_ReadConfigObj;
+        var g_WriteConfigObj = {
+            Z: { ALARM: 0, AH: 0, AL: 0 },      //水位1报警配置
+            ZB: { ALARM: 0, AH: 0, AL: 0 },     //水位2报警配置
+            Q1: { ALARM: 0, AH: 0, AL: 0 },     //瞬时流量1报警配置
+            Q2: { ALARM: 0, AH: 0, AL: 0 },     //瞬时流量2报警配置
+            SBL1: { ALARM: 0, AH: 0, AL: 0 },   //小时水量1报警配置
+            SBL2: { ALARM: 0, AH: 0, AL: 0 },   //小时水量2报警配置
+            VT: { ALARM: 0, AH: 0, AL: 0 },     //电池电压1报警配置
+        };
+        var g_WriteConfigInterval;              //需要写入的报警间隔时间
+        var g_WriteConfigEnable;                //需要写入的报警总开关
+
+        var DefaultConfig = {
+            Z: { ALARM: 0, AH: 0, AL: 0 },      //水位1报警配置
+            ZB: { ALARM: 0, AH: 0, AL: 0 },     //水位2报警配置
+            Q1: { ALARM: 0, AH: 0, AL: 0 },     //瞬时流量1报警配置
+            Q2: { ALARM: 0, AH: 0, AL: 0 },     //瞬时流量2报警配置
+            SBL1: { ALARM: 0, AH: 0, AL: 0 },   //小时水量1报警配置
+            SBL2: { ALARM: 0, AH: 0, AL: 0 },   //小时水量2报警配置
+            VT: { ALARM: 0, AH: 0, AL: 0 },     //电池电压1报警配置
+        };
+
+        var g_form = null;
+        
+        //初始化layui ，调用后才能初始化g_form，才能渲染UI
+        layui.use(['form', 'layedit', 'laydate'], function () {
+            var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+            g_form = form;
+
+            //监听指定开关
+            form.on('switch(switchTest)', function (data) {
+                /*layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                    offset: '6px'
+                });
+                layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是开|关', data.othis)*/
+            });
+
+            //监听提交
+            form.on('submit(demo1)', function (data) {
+              /*  layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                })
+                return false;*/
+            });
+        });
+
+        //初始化加载执行
+        window.onload = function () {   //要执行的js代码段
+
+            try
+            {
+                
+                g_ThisDeviceConfig = parent.GetEditDeviceConfig();               //从父界面获取当前编辑的设备信息
+                //alert(JSON.stringify(g_ThisDeviceConfig, 4));         //调试显示信息
+                if(g_ThisDeviceConfig.ST == null) 
+                {
+                    layer.alert("错误：无效的参数", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                    parent.CloseLayer();
+                }
+                ConfigInit();                           //初始化显示配置
+                if (g_form != null)
+                {
+                    layui_form_render();
+                }
+                else {
+                    setTimeout("layui_form_render()", 500);//延时渲染
+                }
+                
+            }
+            catch (e) {
+               // close_message();    //关闭提示
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                //parent.CloseLayer();
+            }
+        }
+
+        //渲染from
+        function layui_form_render()
+        {
+            
+            try {
+                g_form.render('checkbox');  //重新渲染checkbox
+
+            }
+            catch (e) {
+                
+            }
+            
+        }
+        //初始化显示配置，需要先渲染layui
+        function ConfigInit()
+        {
+            //解析json obj
+            try {
+                g_ReadConfigObj = JSON.parse(g_ThisDeviceConfig.A_CONFIG);  //转换为对象
+
+            }
+            catch (e) {
+                g_ReadConfigObj = DefaultConfig; //没有配置过，使用默认配置
+            }
+
+            ShowConfig(g_ThisDeviceConfig.A_ENABLE, g_ThisDeviceConfig.A_INTERVAL, g_ReadConfigObj);        //初始化显示配置
+
+           // close_message();                    //关闭提示窗口
+        }
+
+
+        //浏览器窗口大小变化事件
+        $(window).resize(function () {          //当浏览器大小变化时
+            //自动高度
+            //var oDiv = document.getElementById('user_panel_id_1');
+            //oDiv.style.height = ($(window).height() - 40) + 'px';
+        });
+
+        //显示配置-不会渲染,需要后面自己调用渲染，否则不会更新到界面
+        function ShowConfig(A_ENABLE, A_INTERVAL, ConfigObj)
+        {           
+            try
+            {
+                //alert(JSON.stringify(ConfigObj, 4));         //调试显示信息
+                if (ConfigObj == null) return;//没有配置过
+                //显示总开关
+                if(A_ENABLE != null && A_ENABLE==1)
+                {
+                    document.getElementById("checkbox_id_all_sw").checked = true;
+                }
+                else
+                {
+                    document.getElementById("checkbox_id_all_sw").checked = false;
+                }
+                //显示报警间隔
+                if (A_INTERVAL != null && A_INTERVAL >= 5) {
+                    document.getElementById("input_id_interval").value = A_INTERVAL;
+                }
+                else {
+                    document.getElementById("input_id_interval").checked = 10;
+                }
+
+                //显示水位1-总开关
+                if (ConfigObj.Z != undefined && ConfigObj.Z.ALARM != undefined && ConfigObj.Z.ALARM == 1)
+                {
+                    document.getElementById("checkbox_id_z_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_z_sw").checked = false;
+                }
+                //显示水位2-总开关
+                if (ConfigObj.ZB != undefined && ConfigObj.ZB.ALARM != undefined && ConfigObj.ZB.ALARM == 1) {
+                    document.getElementById("checkbox_id_zb_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_zb_sw").checked = false;
+                }
+                //显示瞬时流量1-总开关
+                if (ConfigObj.Q1 != undefined && ConfigObj.Q1.ALARM != undefined && ConfigObj.Q1.ALARM == 1) {
+                    document.getElementById("checkbox_id_q1_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_q1_sw").checked = false;
+                }
+
+                //显示瞬时流量2-总开关
+                if (ConfigObj.Q2 != undefined && ConfigObj.Q2.ALARM != undefined && ConfigObj.Q2.ALARM == 1) {
+                    document.getElementById("checkbox_id_q2_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_q2_sw").checked = false;
+                }
+
+                //显示小时水量1-总开关
+                if (ConfigObj.SBL1 != undefined && ConfigObj.SBL1.ALARM != undefined && ConfigObj.SBL1.ALARM == 1) {
+                    document.getElementById("checkbox_id_sbl1_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_sbl1_sw").checked = false;
+                }
+
+                //显示小时水量2-总开关
+                if (ConfigObj.SBL2 != undefined && ConfigObj.SBL2.ALARM != undefined && ConfigObj.SBL2.ALARM == 1) {
+                    document.getElementById("checkbox_id_sbl2_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_sbl2_sw").checked = false;
+                }
+
+                //显示电源电压预警-总开关
+                if (ConfigObj.VT != undefined && ConfigObj.VT.ALARM != undefined && ConfigObj.VT.ALARM == 1) {
+                    document.getElementById("checkbox_id_vt_sw").checked = true;
+                }
+                else {
+                    document.getElementById("checkbox_id_vt_sw").checked = false;
+                }
+
+
+                //显示水位1-低报警预置
+                if (ConfigObj.Z != undefined && ConfigObj.Z.AL != undefined && ConfigObj.Z.AL > 0) {
+                    document.getElementById("input_id_z_al").value = ConfigObj.Z.AL;
+                }
+                else {
+                    document.getElementById("input_id_z_al").value = '';
+                }
+                //显示水位1-高报警预置
+                if (ConfigObj.Z != undefined && ConfigObj.Z.AH != undefined && ConfigObj.Z.AH > 0) {
+                    document.getElementById("input_id_z_ah").value = ConfigObj.Z.AH;
+                }
+                else {
+                    document.getElementById("input_id_z_ah").value = '';
+                }
+
+                //显示水位2-低报警预置
+                if (ConfigObj.ZB != undefined && ConfigObj.ZB.AL != undefined && ConfigObj.ZB.AL > 0) {
+                    document.getElementById("input_id_zb_al").value = ConfigObj.ZB.AL;
+                }
+                else {
+                    document.getElementById("input_id_zb_al").value = '';
+                }
+                //显示水位2-高报警预置
+                if (ConfigObj.ZB != undefined && ConfigObj.ZB.AH != undefined && ConfigObj.ZB.AH > 0) {
+                    document.getElementById("input_id_zb_ah").value = ConfigObj.ZB.AH;
+                }
+                else {
+                    document.getElementById("input_id_zb_ah").value = '';
+                }
+
+                //显示瞬时流量1-低报警预置
+                if (ConfigObj.Q1 != undefined && ConfigObj.Q1.AL != undefined && ConfigObj.Q1.AL > 0) {
+                    document.getElementById("input_id_q1_al").value = ConfigObj.Q1.AL;
+                }
+                else {
+                    document.getElementById("input_id_q1_al").value = '';
+                }
+                //显示瞬时流量1-高报警预置
+                if (ConfigObj.Q1 != undefined && ConfigObj.Q1.AH != undefined && ConfigObj.Q1.AH > 0) {
+                    document.getElementById("input_id_q1_ah").value = ConfigObj.Q1.AH;
+                }
+                else {
+                    document.getElementById("input_id_q1_ah").value = '';
+                }
+
+                //显示瞬时流量2-低报警预置
+                if (ConfigObj.Q2 != undefined && ConfigObj.Q2.AL != undefined && ConfigObj.Q2.AL > 0) {
+                    document.getElementById("input_id_q2_al").value = ConfigObj.Q2.AL;
+                }
+                else {
+                    document.getElementById("input_id_q2_al").value = '';
+                }
+                //显示瞬时流量2-高报警预置
+                if (ConfigObj.Q2 != undefined && ConfigObj.Q2.AH != undefined && ConfigObj.Q2.AH > 0) {
+                    document.getElementById("input_id_q2_ah").value = ConfigObj.Q2.AH;
+                }
+                else {
+                    document.getElementById("input_id_q2_ah").value = '';
+                }
+
+                //显示小时水量1-低报警预置
+                if (ConfigObj.SBL1 != undefined && ConfigObj.SBL1.AL != undefined && ConfigObj.SBL1.AL > 0) {
+                    document.getElementById("input_id_sbl1_al").value = ConfigObj.SBL1.AL;
+                }
+                else {
+                    document.getElementById("input_id_sbl1_al").value = '';
+                }
+                //显示小时水量1-高报警预置
+                if (ConfigObj.SBL1 != undefined && ConfigObj.SBL1.AH != undefined && ConfigObj.SBL1.AH > 0) {
+                    document.getElementById("input_id_sbl1_ah").value = ConfigObj.SBL1.AH;
+                }
+                else {
+                    document.getElementById("input_id_sbl1_ah").value = '';
+                }
+
+                //显示小时水量2-低报警预置
+                if (ConfigObj.SBL2 != undefined && ConfigObj.SBL2.AL != undefined && ConfigObj.SBL2.AL > 0) {
+                    document.getElementById("input_id_sbl2_al").value = ConfigObj.SBL2.AL;
+                }
+                else {
+                    document.getElementById("input_id_sbl2_al").value = '';
+                }
+                //显示小时水量2-高报警预置
+                if (ConfigObj.SBL2 != undefined && ConfigObj.SBL2.AH != undefined && ConfigObj.SBL2.AH > 0) {
+                    document.getElementById("input_id_sbl2_ah").value = ConfigObj.SBL2.AH;
+                }
+                else {
+                    document.getElementById("input_id_sbl2_ah").value = '';
+                }
+
+                //显示电池电压-低报警预置
+                if (ConfigObj.VT != undefined && ConfigObj.VT.AL != undefined && ConfigObj.VT.AL > 0) {
+                    document.getElementById("input_id_vt_al").value = ConfigObj.VT.AL;
+                }
+                else {
+                    document.getElementById("input_id_vt_al").value = '';
+                }
+                //显示电池电压-高报警预置
+                if (ConfigObj.VT != undefined && ConfigObj.VT.AH != undefined && ConfigObj.VT.AH > 0) {
+                    document.getElementById("input_id_vt_ah").value = ConfigObj.VT.AH;
+                }
+                else {
+                    document.getElementById("input_id_vt_ah").value = '';
+                }
+            }
+            catch(e)
+            {
+                layer.alert("显示配置错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+
+        //从界面获取配置，获取的配置写入到g_WriteConfigObj，g_WriteConfigInterval，g_WriteConfigEnable 中
+        //返回false：配置有误；true:配置没问题，可以写入配置
+        function GetConfig()
+        {
+            try
+            {
+                //报警总开关
+                if(document.getElementById("checkbox_id_all_sw").checked == true)
+                {
+                    g_WriteConfigEnable = 1;            //报警开启
+                }
+                else
+                {
+                    g_WriteConfigEnable = 0;            //报警关闭
+                }
+                //报警间隔
+                g_WriteConfigInterval = parseInt(document.getElementById("input_id_interval").value);
+                if (isNaN(g_WriteConfigInterval))
+                {
+                    g_WriteConfigInterval = 0;
+                }
+                if(g_WriteConfigInterval < 5 || g_WriteConfigInterval > 1440)
+                {
+                    layer.msg("报警间隔设置有误，必须在5-1440分钟之间！");
+                    return false;
+                }
+                //水位1报警总开关
+                if (document.getElementById("checkbox_id_z_sw").checked == true)
+                {
+                    g_WriteConfigObj.Z.ALARM = 1;            //报警开启
+                }
+                else
+                {
+                    g_WriteConfigObj.Z.ALARM = 0;            //报警关闭
+                }
+                //水位2报警总开关
+                if (document.getElementById("checkbox_id_zb_sw").checked == true) {
+                    g_WriteConfigObj.ZB.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.ZB.ALARM = 0;            //报警关闭
+                }
+
+                //瞬时流量1报警总开关
+                if (document.getElementById("checkbox_id_q1_sw").checked == true) {
+                    g_WriteConfigObj.Q1.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.Q1.ALARM = 0;            //报警关闭
+                }
+                //瞬时流量2报警总开关
+                if (document.getElementById("checkbox_id_q2_sw").checked == true) {
+                    g_WriteConfigObj.Q2.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.Q2.ALARM = 0;            //报警关闭
+                }
+
+                //小时水量1报警总开关
+                if (document.getElementById("checkbox_id_sbl1_sw").checked == true) {
+                    g_WriteConfigObj.SBL1.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.SBL1.ALARM = 0;            //报警关闭
+                }
+                //小时水量2报警总开关
+                if (document.getElementById("checkbox_id_sbl2_sw").checked == true) {
+                    g_WriteConfigObj.SBL2.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.SBL2.ALARM = 0;            //报警关闭
+                }
+
+                //电池电压报警总开关
+                if (document.getElementById("checkbox_id_vt_sw").checked == true) {
+                    g_WriteConfigObj.VT.ALARM = 1;            //报警开启
+                }
+                else {
+                    g_WriteConfigObj.VT.ALARM = 0;            //报警关闭
+                }
+
+                //获取水位1-低报警预置
+                g_WriteConfigObj.Z.AL = parseFloat(document.getElementById("input_id_z_al").value);
+                if (isNaN(g_WriteConfigObj.Z.AL)) g_WriteConfigObj.Z.AL = 0;
+                if(g_WriteConfigObj.Z.AL < 0)
+                {
+                    layer.msg("水位1报警预置不能小于0！");
+                    return false;
+                }
+                //获取水位1-高报警预置
+                g_WriteConfigObj.Z.AH = parseFloat(document.getElementById("input_id_z_ah").value);
+                if (isNaN(g_WriteConfigObj.Z.AH)) g_WriteConfigObj.Z.AH = 0;
+                if (g_WriteConfigObj.Z.AH < 0) {
+                    layer.msg("水位1报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.Z.AL > g_WriteConfigObj.Z.AH && g_WriteConfigObj.Z.AH!=0)
+                {
+                    layer.msg("水位1低报警预置不能大于高报警预置！");
+                    return false;
+                }
+
+                //获取水位2-低报警预置
+                g_WriteConfigObj.ZB.AL = parseFloat(document.getElementById("input_id_zb_al").value);
+                if (isNaN(g_WriteConfigObj.ZB.AL)) g_WriteConfigObj.ZB.AL = 0;
+                if (g_WriteConfigObj.ZB.AL < 0) {
+                    layer.msg("水位2报警预置不能小于0！");
+                    return false;
+                }
+                //获取水位2-高报警预置
+                g_WriteConfigObj.ZB.AH = parseFloat(document.getElementById("input_id_zb_ah").value);
+                if (isNaN(g_WriteConfigObj.ZB.AH)) g_WriteConfigObj.ZB.AH = 0;
+                if (g_WriteConfigObj.ZB.AH < 0) {
+                    layer.msg("水位2报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.ZB.AL > g_WriteConfigObj.ZB.AH && g_WriteConfigObj.ZB.AH != 0) {
+                    layer.msg("水位2低报警预置不能大于高报警预置！");
+                    return false;
+                }
+
+                //获取瞬时流量1-低报警预置
+                g_WriteConfigObj.Q1.AL = parseFloat(document.getElementById("input_id_q1_al").value);
+                if (isNaN(g_WriteConfigObj.Q1.AL)) g_WriteConfigObj.Q1.AL = 0;
+                if (g_WriteConfigObj.Q1.AL < 0) {
+                    layer.msg("瞬时流量1报警预置不能小于0！");
+                    return false;
+                }
+                //获取瞬时流量1-高报警预置
+                g_WriteConfigObj.Q1.AH = parseFloat(document.getElementById("input_id_q1_ah").value);
+                if (isNaN(g_WriteConfigObj.Q1.AH)) g_WriteConfigObj.Q1.AH = 0;
+                if (g_WriteConfigObj.Q1.AH < 0) {
+                    layer.msg("瞬时流量1报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.Q1.AL > g_WriteConfigObj.Q1.AH && g_WriteConfigObj.Q1.AH != 0) {
+                    layer.msg("瞬时流量1低报警预置不能大于高报警预置！");
+                    return false;
+                }
+
+                //获取瞬时流量2-低报警预置
+                g_WriteConfigObj.Q2.AL = parseFloat(document.getElementById("input_id_q2_al").value);
+                if (isNaN(g_WriteConfigObj.Q2.AL)) g_WriteConfigObj.Q2.AL = 0;
+                if (g_WriteConfigObj.Q2.AL < 0) {
+                    layer.msg("瞬时流量2报警预置不能小于0！");
+                    return false;
+                }
+                //获取瞬时流量2-高报警预置
+                g_WriteConfigObj.Q2.AH = parseFloat(document.getElementById("input_id_q2_ah").value);
+                if (isNaN(g_WriteConfigObj.Q2.AH)) g_WriteConfigObj.Q2.AH = 0;
+                if (g_WriteConfigObj.Q2.AH < 0) {
+                    layer.msg("瞬时流量2报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.Q2.AL > g_WriteConfigObj.Q2.AH && g_WriteConfigObj.Q2.AH != 0) {
+                    layer.msg("瞬时流量2低报警预置不能大于高报警预置！");
+                    return false;
+                }
+
+                //获取小时水量1-低报警预置
+                g_WriteConfigObj.SBL1.AL = parseFloat(document.getElementById("input_id_sbl1_al").value);
+                if (isNaN(g_WriteConfigObj.SBL1.AL)) g_WriteConfigObj.SBL1.AL = 0;
+                if (g_WriteConfigObj.SBL1.AL < 0) {
+                    layer.msg("小时水量1报警预置不能小于0！");
+                    return false;
+                }
+                //获取小时水量1-高报警预置
+                g_WriteConfigObj.SBL1.AH = parseFloat(document.getElementById("input_id_sbl1_ah").value);
+                if (isNaN(g_WriteConfigObj.SBL1.AH)) g_WriteConfigObj.SBL1.AH = 0;
+                if (g_WriteConfigObj.SBL1.AH < 0) {
+                    layer.msg("小时水量1报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.SBL1.AL > g_WriteConfigObj.SBL1.AH && g_WriteConfigObj.SBL1.AH != 0) {
+                    layer.msg("小时水量1低报警预置不能大于高报警预置！" + g_WriteConfigObj.SBL1.AL);
+                    return false;
+                }
+
+                //获取小时水量2-低报警预置
+                g_WriteConfigObj.SBL2.AL = parseFloat(document.getElementById("input_id_sbl2_al").value);
+                if (isNaN(g_WriteConfigObj.SBL2.AL)) g_WriteConfigObj.SBL2.AL = 0;
+                if (g_WriteConfigObj.SBL2.AL < 0) {
+                    layer.msg("小时水量2报警预置不能小于0！");
+                    return false;
+                }
+                //获取小时水量2-高报警预置
+                g_WriteConfigObj.SBL2.AH = parseFloat(document.getElementById("input_id_sbl2_ah").value);
+                if (isNaN(g_WriteConfigObj.SBL2.AH)) g_WriteConfigObj.SBL2.AH = 0;
+                if (g_WriteConfigObj.SBL2.AH < 0) {
+                    layer.msg("小时水量2报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.SBL2.AL > g_WriteConfigObj.SBL2.AH && g_WriteConfigObj.SBL2.AH != 0) {
+                    layer.msg("小时水量2低报警预置不能大于高报警预置！");
+                    return false;
+                }
+
+                //获取电池预警-低报警预置
+                g_WriteConfigObj.VT.AL = parseFloat(document.getElementById("input_id_vt_al").value);
+                if (isNaN(g_WriteConfigObj.VT.AL)) g_WriteConfigObj.VT.AL = 0;
+                if (g_WriteConfigObj.VT.AL < 0) {
+                    layer.msg("电源电压报警预置不能小于0！");
+                    return false;
+                }
+                //获取电池预警-高报警预置
+                g_WriteConfigObj.VT.AH = parseFloat(document.getElementById("input_id_vt_ah").value);
+                if (isNaN(g_WriteConfigObj.VT.AH)) g_WriteConfigObj.VT.AH = 0;
+                if (g_WriteConfigObj.VT.AH < 0) {
+                    layer.msg("电源电压报警预置不能小于0！");
+                    return false;
+                }
+                if (g_WriteConfigObj.VT.AL > g_WriteConfigObj.VT.AH && g_WriteConfigObj.VT.AH != 0) {
+                    layer.msg("电源电压低报警预置不能大于高报警预置！");
+                    return false;
+                }
+            }
+            catch (e) {
+                layer.alert("获取配置错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                return false;
+            }
+
+            return true;
+        }
+
+  
+        //设置一个设备的报警配置（ajax同步模式）
+        function ajax_sync_set_device_alarm_config(Enable, Interval, ConfigJson) {
+            var obj = JSON.parse('[]');
+            //请求服务器
+            var jsonData = {
+                GetFun: 'UpdateDeviceAlarmConfigForST',
+                ST: g_ThisDeviceConfig.ST,
+                A_ENABLE: Enable,
+                A_INTERVAL: Interval,
+                A_CONFIG: ConfigJson,
+            };
+            var status = 0;
+
+            try {
+                $.ajax({
+                    url: '/Home/Index',
+                    type: 'POST',
+                    dataType: 'json',
+                    async: false,                                       //同步执行
+                    data: jsonData,
+                })
+               .done(function (response) {
+                   status = response.rel;
+                   if (response.rel == 1) { //获取成功
+                       
+                   }
+                   else if (response.rel == -1) //需要登录
+                   {
+                       layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                       parent.JumpLogon();
+                   }
+                   else {
+
+                       layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                   }
+               })
+               .fail(function () {
+                   layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+               })
+            }
+            catch (e) {
+                layer.alert("发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+
+            if (status == 1) return true;
+            return false;
+        }
+
+        //弹出加载框
+        function loading_message(str) {
+            g_layer_msg_index = layer.msg('加载中',
+            {
+                icon: 16
+              , shade: 0.5 //越大界面越黑
+                , time: 60000,//时间
+                anim: 0, //平滑放大
+                scrollbar: false//锁定浏览器滑动
+            });
+        }
+
+        //关闭所有弹出
+        function close_message() {
+            layer.close(g_layer_msg_index);         //关闭提示框
+        }
+
+
+        
+       
+
+        //确定提交
+        function button_ok_onclick()
+        {
+            try
+            {
+                if(GetConfig() == true) //从界面获取配置
+                {
+                    //alert(JSON.stringify(g_WriteConfigObj, 4));         //调试显示信息
+                    if (ajax_sync_set_device_alarm_config(g_WriteConfigEnable, g_WriteConfigInterval, JSON.stringify(g_WriteConfigObj, 4)) == true)//成功了
+                    {
+                        //更新父窗体数据
+                        parent.RefreshAlarmData();  //刷新父窗体数据列表
+                        //询问框
+                        layer.confirm('修改预警配置成功！', {
+                            btn: ['确定'], //按钮
+                            icon: 6
+                        }, function () {
+                            parent.CloseLayer();        //关闭页面
+                        });
+                    }
+                }
+            }
+            catch (e) {
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+        //取消按钮处理
+        function button_cancel_onclick() {
+            parent.CloseLayer();
+        }
+    </script>
+
+</body>
+
+
+</html>

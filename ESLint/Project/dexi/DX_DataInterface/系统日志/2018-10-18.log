@@ -1,0 +1,66 @@
+
+2018-10-18 11:46:17 	加载配置成功
+
+2018-10-18 19:45:32 	加载配置成功
+
+2018-10-18 19:45:32 	
+身份验证错误
+2018-10-18 19:47:35 	
+身份验证错误
+2018-10-18 20:07:51 	加载配置成功
+
+2018-10-18 20:07:51 	
+身份验证错误
+2018-10-18 20:25:49 	加载配置成功
+
+2018-10-18 20:25:49 	
+身份验证错误
+2018-10-18 20:26:07 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5619
+2018-10-18 20:26:19 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5619
+2018-10-18 20:26:19 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5619
+2018-10-18 20:30:42 	加载配置成功
+
+2018-10-18 20:30:43 	
+身份验证错误
+2018-10-18 20:34:31 	加载配置成功
+
+2018-10-18 20:34:31 	
+身份验证错误
+2018-10-18 20:35:19 	加载配置成功
+
+2018-10-18 20:35:19 	
+身份验证错误
+2018-10-18 20:40:59 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 20:41:01 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 20:41:02 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 20:41:03 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 20:41:04 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 20:41:06 	AddWeixinUser，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.AddWeixinUser(WeixinUserInfo UserInfo) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5538
+2018-10-18 21:26:53 	加载配置成功
+
+2018-10-18 21:26:53 	
+身份验证错误
+2018-10-18 21:33:59 	加载配置成功
+
+2018-10-18 21:33:59 	
+身份验证错误
+2018-10-18 21:40:57 	加载配置成功
+
+2018-10-18 21:40:57 	
+身份验证错误
+2018-10-18 21:42:26 	加载配置成功
+
+2018-10-18 21:42:38 	加载配置成功
+
+2018-10-18 21:42:38 	
+身份验证错误
+2018-10-18 21:49:00 	加载配置成功
+
+2018-10-18 21:49:01 	
+身份验证错误
+2018-10-18 21:51:32 	加载配置成功
+
+2018-10-18 21:51:32 	
+身份验证错误
+2018-10-18 21:54:07 	
+身份验证错误

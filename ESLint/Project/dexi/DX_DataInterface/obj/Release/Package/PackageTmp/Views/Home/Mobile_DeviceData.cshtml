@@ -1,0 +1,270 @@
+﻿<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link href="../../helsinki-blue/user/Light7/css/light7.css" rel="stylesheet" />
+  <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+
+
+  <style type="text/css">
+    /*列表文字颜色*/
+    .content-block {
+      color: #0000A0;
+
+    }
+
+    .list-block {
+
+      font-size: .75rem;
+
+    }
+
+    /*实时数据左右边框距离*/
+    .list-block .item-content {
+      padding-left: .3rem;
+    }
+
+    .list-block .item-inner {
+      padding-right: .3rem;
+    }
+
+    /*card边距*/
+    .card-content-inner {
+      padding: .2rem;
+    }
+
+    .card {
+      margin: .2rem;
+    }
+  </style>
+  <div class="page-group">
+
+    <div class="page">
+
+      <header class="bar bar-nav">
+        <button style="font-size:14px;" onclick="back_onclick()" class="button button-link button-nav pull-left">
+          <span class="icon icon-left"></span>
+          返回
+        </button>
+        <button style="font-size:14px;" onclick="RefreshRealData()" class="button button-link button-nav pull-right">
+          刷新
+          <span class="icon icon-refresh"></span>
+        </button>
+
+        <!-- <a  class="icon icon-left button button-link button-nav pull-left" style="height:32px; font-size:18px;z-index:100;background-color:#f7f7f7;">返回</a>
+                -->
+        <h1 class="title" style="margin-left:0px;" id="title_st_id">站点编号</h1>
+      </header>
+      <div class="content" style="overflow:visible;">
+
+        <!-- 这里是页面内容区 -->
+        <div class="content-block">
+          <div class="tabs" id="tab_content_id">
+            <div id="tab1" class="tab active">
+              <div class="content" style="top:-30px;" id="real_data_list_id">
+
+                <!-- 实时数据的表格 -->
+                <!-- <div class="content-block-title"><a href="#">实时数据</a></div>-->
+                <div class="list-block" style="padding-bottom:20px;" id="real_list_id">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-media"><i class="icon icon-f7"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">编号</div>
+                        <div class="item-after">123456</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div id="tab2" class="tab">
+              <div class="content" style="top:-30px;">
+                <!-- 历史图形 -->
+                <!-- <div class="content-block-title"><a href="#">历史图形</a></div>-->
+                <div class="list-block" style="padding-bottom:20px;" id="hist_list_id">
+                  <ul class="user_ul">
+                    <!-- Text inputs -->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">开始时间</div>
+                          <div class="item-input">
+                            <input placeholder="开始时间" id="start_time_id" readonly="" type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">结束时间</div>
+                          <div class="item-input">
+                            <input placeholder="结束时间" id="end_time_id" readonly="" type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+
+                      <div class="row">
+                        <div class="col-50" style="padding-left:10px;padding-top:10px;padding-right:10px;">
+                          <a href="#" onclick="search_onclick()" class="button">搜索数据</a>
+                        </div>
+                        <div class="col-50" style="padding-left:10px;padding-top:10px;padding-right:10px;">
+                          <a href="#" onclick="quick_search_onclick()" class="button">快速搜索</a>
+                        </div>
+
+                      </div>
+                      <div style="height:20px;"></div>
+                      <!--提示无数据-->
+                      <div id="no_data_info_id" class="panel-content" style="text-align:center;display:none;">
+                        无数据，请重新搜索
+                      </div>
+
+
+                      <div id="echart_div_id" style="width:auto;height:auto;margin-top:5px;">
+
+                      </div>
+
+
+
+                    </li>
+
+                  </ul>
+                </div>
+
+
+              </div>
+            </div>
+            <div id="tab3" class="tab">
+              <div class="content" style="top:-30px;">
+                <!-- 历史图片 -->
+                <div class="list-block" style="padding-bottom:20px;" id="pic_list_id">
+                  <ul class="user_ul">
+                    <!-- Text inputs -->
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">开始时间</div>
+                          <div class="item-input">
+                            <input placeholder="开始时间" id="pic_start_time_id" readonly="" type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">结束时间</div>
+                          <div class="item-input">
+                            <input placeholder="结束时间" id="pic_end_time_id" readonly="" type="text">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+
+                      <div class="row">
+                        <div class="col-50" style="padding-left:10px;padding-top:10px;padding-right:10px;">
+                          <a href="#" onclick="pic_search_onclick()" class="button">搜索图片</a>
+                        </div>
+                        <div class="col-50" style="padding-left:10px;padding-top:10px;padding-right:10px;">
+                          <a href="#" onclick="pic_quick_search_onclick()" class="button">快速搜索</a>
+                        </div>
+
+                      </div>
+                      <div style="height:20px;"></div>
+                      <!--提示无数据-->
+                      <div id="no_pic_data_info_id" class="panel-content" style="text-align:center;display:none;">
+                        无图片数据，请重新搜索
+                      </div>
+
+                      <!--显示图片列表-->
+
+                      <div class="flow-default" data-distance="200" id="pic_list_div_id" style="width:auto;height:auto;margin-top:5px;">
+
+
+
+
+                      </div>
+
+
+                    </li>
+
+                  </ul>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 工具栏 -->
+        <nav class="bar bar-tab" id="tool_bar_id">
+          <a class="tab-item external active" href="#" id="tab-item-1" name="tab1">
+            <span class="icon icon-message"></span>
+            <span class="tab-label">实时数据</span>
+          </a>
+          <a class="tab-item external" href="#" id="tab-item-2" name="tab2">
+            <span class="icon icon-clock"></span>
+            <span class="tab-label">历史数据</span>
+          </a>
+          <a class="tab-item external" href="#" id="tab-item-3" name="tab3">
+            <span class="icon icon-picture"></span>
+            <span class="tab-label">图片列表</span>
+          </a>
+        </nav>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 注意SUI与jquery冲突 -->
+  <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+  <script src="../../helsinki-blue/user/layer/layer.js"></script>
+  <script src="../../helsinki-blue/user/layui/layui.js"></script>
+  <script src="../../helsinki-blue/user/Light7/light7.js"></script>
+  <script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script><!-- 引入 echarts.js -->
+  <script src="../../helsinki-blue/user/js/Mobile_DeviceData.js"></script>
+  <script src="../../helsinki-blue/user/js/UserLayui.js"></script>
+  <script src="../../helsinki-blue/user/js/UserAjax.js"></script>
+  <script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+  <script src="../../helsinki-blue/user/js/Public_Tools.js"></script>
+  <script src="../../helsinki-blue/user/js/Public_Text.js"></script>
+
+  <script>
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

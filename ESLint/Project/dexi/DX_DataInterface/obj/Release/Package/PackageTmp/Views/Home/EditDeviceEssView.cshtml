@@ -1,0 +1,531 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑设备要素信息</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                        <div class="panel-content">
+
+                                         <div class="table-responsive" id="table_and_page_div_id" >
+                                        <!--此处放一个表格-->
+                                        <table id="ess_list_table_id" lay-filter="tabl_lay_filter"></table>
+                                        <div class="btn-group" style="margin-left: auto;margin-right: auto;" id="limt_butt_id">
+                                        </div>
+
+                                        </div>
+                                   
+                    
+                  
+                        </div>
+                    </div>
+                </div>
+
+                <div style="float:left">
+                        <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                            <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                            <a>&nbsp;&nbsp;</a>
+                            <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/layui/layui.js"></script>
+<script src="../../Scripts/md5/md5.js"></script>
+
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+    var g_AllEssObj;                    //最终要显示的数据
+    var g_layer_msg_index;
+    var g_SelectDeviceEssListString;    //存储从父页面传递的当前选择的设备要素列表-原始字符串
+    var g_SelectDeviceEssListArr;       //存储从父页面传递的当前选择的设备要素列表-分割后的数组
+    var g_DeviceEssSelectStatusArr = JSON.parse('[]');;     //当前设备选择的要素有效状态，选中的为1，未选择的为0
+    //用于记录编辑之前的信息，用于对比查看是否修改了信息
+    var g_LastEssString='';                //记录修改前的ESS要素数据
+
+    //table表格配置
+    var g_table_config = {
+        elem: '#ess_list_table_id'
+        , data: g_AllEssObj
+        , limit: 100   //每页显示100条
+        , text: { none: '暂无相关数据' }
+        , height: 500
+      , page: false //开启分页
+      , cols: [[ //表头
+        {type:'checkbox'}
+        ,{ field: '序号', title: '序号', width: 60} //80
+        , { field: '标识符引导符', title: '标识符引导符', width: 120 }//160
+        , { field: '标识符ASCII码', title: '标识符ASCII码', width: 120 }//240
+        , { field: '编码要素', title: '编码要素', width: 160 }//210
+        , { field: '量和单位', title: '量和单位', width: 100 }//140
+        , { field: '数据定义', title: '数据定义', width: 100 }//80
+        , { field: '最小值', title: '最小值', width: 80 }//80
+        , { field: '最大值', title: '最大值', width: 120 }//170
+        , { field: '备注', title: '备注', width: 120 }//170
+      ]]
+         , even: true //开启隔行背景
+        , size: 'sm' //小尺寸的表格
+    };
+
+
+    //初始化加载执行
+    window.onload = function () {   //要执行的js代码段  
+        $.ajaxSettings.async = false;              //由于有ajax，强制js为同步执行
+        loading_message('加载数据中...');            //弹出提示框
+
+        //从父页面获取数据     
+        try {
+            g_SelectDeviceEssList = parent.GetSelectDeviceEssList();            //存储从父页面传递的当前选择的设备要素列表
+            g_SelectDeviceEssListArr = g_SelectDeviceEssList.split(',');        //分割字符串
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+        g_LastEssString = g_SelectDeviceEssList;                                //记录修改前的要素数据
+          
+        var obj = null;
+        try {
+            obj = parent.Read_AllEssDataCache();    //读取父页面缓存的数据
+        }
+        catch (e) {
+  
+        }
+        if (obj == null || obj.length == 0) //缓存无效才从服务器获取
+        {
+            //alert("ajax获取要素表");
+            obj = GetAllEssData();  //获取所有要素数据
+            parent.Write_AllEssDataCache(obj);    //写入缓存到父页面
+        }
+
+        //初始化当前要素选中状态表  
+        for (var i = 0; i < obj.length; i++) 
+        {
+            if(check_ess(g_SelectDeviceEssListArr, i+'') == true)
+            {
+                g_DeviceEssSelectStatusArr[i] = 1;  //当前要素选中有效
+            }
+            else
+            {
+                g_DeviceEssSelectStatusArr[i] = 0;  //当前要素选中无效
+            }
+        }
+
+        g_AllEssObj = conversion_data_layui_table(obj, g_SelectDeviceEssListArr); //转换为可以显示的数据
+        data_table_init(g_AllEssObj);   //初始化表格
+
+        close_message();                                    //关闭提示框 
+    }
+
+
+    //浏览器窗口大小变化事件
+    $(window).resize(function () {          //当浏览器大小变化时
+        //自动高度
+        //var oDiv = document.getElementById('user_panel_id_1');
+        //oDiv.style.height = ($(window).height() - 40) + 'px';
+
+        //表格高度自适应
+        data_table_auto_height();                           //自动调节表格高度
+
+    });
+
+
+    //选中或清除某个索引-使用全局g_DeviceEssSelectStatusArr
+    function SelectEssIndex(EssIndex, isSelect)
+    {
+        if (EssIndex >= 0 && EssIndex < g_DeviceEssSelectStatusArr.length) {
+            if (isSelect == true) //选中
+            {
+               // alert('选中' + EssIndex);
+                g_DeviceEssSelectStatusArr[EssIndex] = 1;
+            }
+            else  //取消
+            {
+                //alert('取消选中' + EssIndex);
+                g_DeviceEssSelectStatusArr[EssIndex] = 0;
+            }
+        }
+    }
+
+
+    //选中或清除全部索引-使用全局g_DeviceEssSelectStatusArr
+    function SelectAllEssIndex(isSelect) {
+        if (isSelect == true) //全部选中
+        {
+            //alert('全部选中');
+            for (var i = 0; i < g_DeviceEssSelectStatusArr.length; i++) {
+                g_DeviceEssSelectStatusArr[i] = 1;
+            }
+        }
+        else  //全部取消
+        {
+            //alert('全部取消');
+            for (var i = 0; i < g_DeviceEssSelectStatusArr.length; i++) {
+                g_DeviceEssSelectStatusArr[i] = 0;
+            }
+        }
+    }
+
+    //获取当前选择的要素数据，返回数组，每个代表一个选中的要素序列号,从g_DeviceEssSelectStatusArr中获取，返回带逗号分隔的字符串
+    function GetSelectEssList()
+    {
+        var ObjArr = JSON.parse('[]');
+        var count = 0;
+
+        for(var i = 0;i < g_DeviceEssSelectStatusArr.length;i ++)
+        {
+            if(g_DeviceEssSelectStatusArr[i] == 1) //选择了当前要素
+            {
+                ObjArr[count++] = i;                //记录当前选择的索引
+            }
+        }
+
+        //调试输出
+        var str = '';
+        for(var i = 0;i < ObjArr.length;i ++)
+        {
+            if(i == (ObjArr.length-1))
+            {
+                str += ObjArr[i] + '';
+            }
+            else
+            {
+                str += ObjArr[i] + ',';
+            }
+        }
+        //alert('当前选择的要素：' + str);
+
+        return str;
+    }
+
+    //初始化表格(只能调用一次，并且会在调用后延时一段时间才能初始化完成)DataTableObj:当前要显示的数据；AllDataCount：总数据条数；OnePageCount：一页显示的数据条数；ThisPageIndex：当前页索引，从0开始
+    function data_table_init(DataTableObj) {
+        layui.use('table', function () {
+            var table1 = layui.table;
+            //第一个实例
+            g_table_config.data = DataTableObj;
+            g_tableIns = table1.render(g_table_config);
+            data_table_auto_height();
+            table1.on('checkbox(tabl_lay_filter)', function (obj) {
+                //console.log(obj.checked); //当前是否选中状态
+                //console.log(obj.data); //选中行的相关数据
+                //console.log(obj.type); //如果触发的是全选，则为：all，如果触发的是单选，则为：one
+                if (obj.type == 'all')
+                {
+                    SelectAllEssIndex(obj.checked) //全部选中
+                    
+                }
+                else //单个选中
+                {
+                    var n = obj.data.序号;
+
+                    SelectEssIndex(n, obj.checked); 
+                }
+            });
+
+        });
+        
+    }
+
+
+
+    //表格高度自动调节（要在表格初始化之后进行调用）
+    function data_table_auto_height() {
+        //表格高度自适应
+        if (g_tableIns != null) {
+            g_table_config.height = $(window).height() - 140;
+            g_tableIns.reload(g_table_config);              //表格重载
+        }
+    }
+
+
+    //查找当前要显示的要素是否被选中
+    function check_ess(SelectEssArr, EssIndexString)
+    {
+        if (SelectEssArr == null || EssIndexString == null) return false;
+        for(var i = 0; i < SelectEssArr.length;i ++)
+        {
+            if (SelectEssArr[i] == EssIndexString && EssIndexString!='') return true; //找到了
+        }
+    }
+
+
+    //转换要显示的数据-将原始数据转换为能被table显示的数据
+    function conversion_data_layui_table(EssDataObj, SelectEssArr)
+    {
+        var ObjArr = JSON.parse('[]');
+
+        if(EssDataObj == null) return ObjArr;
+        try
+        {
+            for(var i = 0;i < EssDataObj.length;i ++)
+            {
+                var obj = new Object;
+
+                obj.序号 = EssDataObj[i].序号;
+                obj.标识符引导符 = EssDataObj[i].标识符引导符;
+                obj.标识符ASCII码 = EssDataObj[i].标识符ASCII码;
+                obj.编码要素 = EssDataObj[i].编码要素;
+                obj.量和单位 = EssDataObj[i].量和单位;
+                obj.数据定义 = EssDataObj[i].数据定义;
+                obj.最小值 = EssDataObj[i].最小值;
+                obj.最大值 = EssDataObj[i].最大值;
+                obj.备注 = EssDataObj[i].备注;
+
+                if (check_ess(SelectEssArr, obj.序号+'')==true) //查找是否选中当前的要素索引
+                {
+                    obj.LAY_CHECKED = true;     //是否选中
+                }
+                
+
+                ObjArr[i] = obj;
+            }
+        }
+        catch (e)
+        {
+            layer.alert("错误："+e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+
+        return ObjArr;
+    }
+
+
+
+
+    // 验证是否含有特殊字符
+    function check_other_char(str) {
+        var arr = ["&", "\\", "/", "*", ">", "<", "-", "!", "\"", "\'", " "];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < str.length; j++) {
+                if (arr[i] == str.charAt(j)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //检查是否有非数字
+    function check_other_number(str)
+    {
+         for (var i = 0; i < str.length; i++) {
+            if(str[i] < '0' || str[i] > '9') 
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    //确定按钮
+    function button_ok_onclick() {              
+        
+        var EssStr = GetSelectEssList();    //获取当前选中的要素索引信息
+        if (g_LastEssString == EssStr)
+        {
+            //alert('没有修改，直接退出');
+            parent.CloseLayer();        //关闭页面
+            return;
+        }
+
+        var obj = parent.GetEditUserInfo();//从父页面获取当前设备基本信息
+        if (obj == null || obj.ST == null)
+        {
+            layer.alert("错误：获取当前选择的设备基本信息失败，请刷新父页面！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+            return;
+        }
+        //alert('ST:'+obj.ST);
+        
+
+
+        if (EditDeviceEssData(obj.ST, EssStr) == true)     //编辑成功
+        {
+            parent.update_ess_data(obj.ST, EssStr);         //更新父界面缓存，刷新父页面缓存信息
+            //用户添加成功了，请求父页面接口添加相应的数据到本地缓冲区
+            //询问框
+            layer.confirm('编辑要素数据成功！', {
+                btn: ['确定'], //按钮
+                icon: 6
+            }, function () {
+                parent.CloseLayer();        //关闭页面
+            });
+        }
+    }
+
+
+    //取消按钮处理
+    function button_cancel_onclick() {
+        parent.CloseLayer();
+    }
+
+
+    //获取所有编码要素表
+    function GetAllEssData() {
+        var obj = JSON.parse('[]');
+        var sta = 0;
+        //请求服务器
+        var jsonData = {
+            GetFun: 'GetAllEssData',
+        };
+
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                if (response.obj == null)
+                {
+                    layer.alert('要素数据总表为空！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+                else
+                {
+                    obj = JSON.parse(response.obj);
+                    //alert(JSON.stringify(obj, 4));     //调试显示信息
+                    sta = 1;
+                }
+               
+            }
+            else if (response.rel == 0) {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else if (response.rel == -1) //需要登录
+            {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.JumpLogon();
+            }
+            else {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+
+        return obj;
+    }
+
+
+
+    //请求编辑要素数据(需要自己检查输入的数据合法性)
+    function EditDeviceEssData(ST, REAL_ESS) {
+        var sta = 0;
+
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'EditeDeviceEss',
+            ST: ST,
+            REAL_ESS: REAL_ESS,
+        };
+
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                sta = 1;
+            }
+            else if (response.rel == 0) {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else if (response.rel == -1) //需要登录
+            {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.JumpLogon();
+            }
+            else {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+        if (sta == 1) return true;
+
+        return false;
+    }
+
+
+
+    //弹出加载框
+    function loading_message(str) {
+        g_layer_msg_index = layer.msg('加载中',
+        {
+            icon: 16
+          , shade: 0.5 //越大界面越黑
+            , time: 60000,//时间
+            anim: 0, //平滑放大
+            scrollbar: false//锁定浏览器滑动
+        });
+    }
+
+    //关闭所有弹出
+    function close_message() {
+        layer.close(g_layer_msg_index);         //关闭提示框   
+    }
+
+    //跳转到登录界面
+    function JumpLogon() {
+        parent.JumpLogon();
+    }
+
+</script>
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,514 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>德希科技云平台</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+</head>
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+<div class="wrap">
+    <div class="page-header">
+        <div class="leftside-header">
+            <div class="logo">
+                <a href="index" class="on-click">
+                    <img alt="logo" src="../../Images/Login_logo.png" />
+                </a>
+            </div>
+            <div id="menu-toggle" class="visible-xs toggle-left-sidebar" data-toggle-class="left-sidebar-open" data-target="html">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div class="rightside-header">
+            <div class="header-middle"></div>
+            <div class="header-section" id="search-headerbox">
+                <input type="text" name="search" id="search" placeholder="Search...">
+                <i class="fa fa-search search" id="search-icon" aria-hidden="true"></i>
+                <div class="header-separator"></div>
+            </div>
+            <div class="header-section hidden-xs" id="notice-headerbox">
+                <!-- 此处删除了to-do-list -->
+                <div class="notice" id="messages-notice">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+                    <div class="dropdown-box basic">
+                        <div class="drop-header ">
+                            <h3><i class="fa fa-comments-o" aria-hidden="true"></i> Messages</h3>
+                            <span class="number">120</span>
+                        </div>
+                        <div class="drop-content">
+                            <div class="widget-list list-left-element">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><img alt="John Doe" src="../../helsinki-blue/images/avatar_1.jpg" /></div>
+                                            <div class="text">
+                                                <span class="title">John Doe</span>
+                                                <span class="subtitle">Lorem ipsum dolor sit.</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><img alt="Alice Smith" src="../../helsinki-blue/images/avatar_2.jpg" /></div>
+                                            <div class="text">
+                                                <span class="title">Alice Smith</span>
+                                                <span class="subtitle">Deserunt, mollitia?</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><img alt="Klaus Wolf" src="../../helsinki-blue/images/avatar_3.jpg" /></div>
+                                            <div class="text">
+                                                <span class="title">Klaus Wolf</span>
+                                                <span class="subtitle">Consectetur adipisicing elit.</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><img alt="Sun Li" src="../../helsinki-blue/images/avatar_4.jpg" /></div>
+                                            <div class="text">
+                                                <span class="title">Sun Li</span>
+                                                <span class="subtitle">Tenetur tempora?</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><img alt="Sonia Valera" src="../../helsinki-blue/images/avatar_5.jpg" /></div>
+                                            <div class="text">
+                                                <span class="title">Sonia Valera</span>
+                                                <span class="subtitle">Similique ad maxime.</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drop-footer">
+                            <a>See all messages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice" id="alerts-notice">
+                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    <span>4</span>
+                    <div class="dropdown-box basic">
+                        <div class="drop-header">
+                            <h3><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</h3>
+                            <span class="number">4</span>
+                        </div>
+                        <div class="drop-content">
+                            <div class="widget-list list-left-element list-sm">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><i class="fa fa-warning color-warning"></i></div>
+                                            <div class="text">
+                                                <span class="title">8 Bugs</span>
+                                                <span class="subtitle">reported today</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><i class="fa fa-flag color-danger"></i></div>
+                                            <div class="text">
+                                                <span class="title">Error</span>
+                                                <span class="subtitle">sevidor C down</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><i class="fa fa-cog color-dark"></i></div>
+                                            <div class="text">
+                                                <span class="title">New Configuration</span>
+                                                <span class="subtitle"></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><i class="fa fa-tasks color-success"></i></div>
+                                            <div class="text">
+                                                <span class="title">14 Task</span>
+                                                <span class="subtitle">completed</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="left-element"><i class="fa fa-envelope color-primary"></i></div>
+                                            <div class="text">
+                                                <span class="title">21 Menssage</span>
+                                                <span class="subtitle"> (see more)</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drop-footer">
+                            <a>See all notifications</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-separator"></div>
+            </div>
+            <div class="header-section" id="user-headerbox">
+                <div class="user-header-wrap">
+                    <div class="user-photo">
+                        <img src="../../helsinki-blue/images/user-avatar.jpg" alt="用户图片" />
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="nickname_id">用户昵称</span>
+                        <span class="user-profile" id="user_type_id">普通用户</span>
+                    </div>
+                    <i class="fa fa-plus icon-open" aria-hidden="true"></i>
+                    <i class="fa fa-minus icon-close" aria-hidden="true"></i>
+                </div>
+                <div class="user-options dropdown-box">
+                    <div class="drop-content basic">
+                        <ul>
+                            <li> <a href="#" onclick="button_user_info_click()"><i class="fa fa-user" aria-hidden="true"></i> 用户信息</a></li>
+                            <li> <a href="#" onclick="button_exit_click()"><i class="fa fa-sign-out" aria-hidden="true"></i> 退出登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-separator"></div>
+            <div class="header-section">
+                <!-- 退出处理 -->
+                <a href="#" onclick="button_exit_click()"><i class="fa fa-sign-out log-out" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+
+        <!-- 左侧菜单 -->
+        <div class="left-sidebar" id="left_sidebar_id">
+            <div class="left-sidebar-header">
+                <div class="left-sidebar-title">菜 单</div>
+                <div class="left-sidebar-toggle c-hamburger c-hamburger--htla hidden-xs" data-toggle-class="left-sidebar-collapsed" data-target="html">
+                    <span></span>
+                </div>
+            </div>
+            <div id="left-nav" class="nano">
+                <div class="nano-content"  id="user_main_menu_id">
+                   <nav>
+ 	                    <ul class="nav" id="main-nav">
+                            <!-- 异步加载用户菜单 -->
+<!---------------------------------------------------------------------------------------->
+
+
+<!---------------------------------------------------------------------------------------->
+
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        
+
+         <!-- 左侧菜单占位，可以将界面向右边挤压 -->
+
+        <div class="content" id="main_content_id">
+            <div class="content-header">
+                <div class="leftside-content-header">
+                    <ul class="breadcrumbs"> <!-- 顶部当前选择的页面导航 -->
+                        <li><i class="fa" aria-hidden="true"></i><a href="#" id="Navigation_00_id"></a></li>
+                        <li><a  id="Navigation_01_id"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+  
+            <!--下面这个section可以嵌入其它网页在内部，这样框架不用更新了 -->
+            <section  style="width:100%;" >
+                    <div class="show_iframe">
+                        <div style="display:none" class="loading"></div>
+                        <iframe id="main_iframe_id" src=""></iframe>
+                    </div>          
+            </section>
+          
+
+
+        </div>
+
+    </div>
+
+        <div class="right-sidebar">
+            <div class="right-sidebar-toggle" data-toggle-class="right-sidebar-opened" data-target="html">
+                <i class="fa fa-cog fa-spin" aria-hidden="true"></i>
+            </div>
+            <div id="right-nav" class="nano">
+                <div class="nano-content">
+                    <div class="template-settings">
+                        <h4 class="text-center">界面设置</h4>
+                        <ul class="toggle-settings pv-xlg">
+                            <li>
+                                <h6 class="text">固定左边栏</h6>
+                                <label class="switch">
+                                    <input id="left-sidebar-fixed" type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <h6 class="text">折叠左边栏</h6>
+                                <label class="switch">
+                                    <input id="left-sidebar-collapsed" type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <h6 class="text">显示内容标题</h6>
+                                <label class="switch">
+                                    <input id="content-header-fixed" type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </li>
+                        </ul>
+                        <h4 class="text-center">风格颜色设置</h4>
+                        <ul class="toggle-colors">
+                            <li>
+                                <a href="index" class="on-click"> <img alt="Helsinki-green" src="../../helsinki-blue/images/helsinki-green.png" /></a>
+                            </li>
+                            <li>
+                                <a href="index" class="on-click"> <img alt="Helsinki-light" src="../../helsinki-blue/images/helsinki-light.png" /></a>
+                            </li>
+                            <li>
+                                <a href="index" class="on-click"> <img alt="Helsinki-blue" src="../../helsinki-blue/images/helsinki-blue.png" /></a>
+                            </li>
+                            <li>
+                                <a href="index" class="on-click"> <img alt="Helsinki-red" src="../../helsinki-blue/images/helsinki-red.png" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="scroll-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</div>
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/chart-js/chart.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/dashboard.js"></script>
+    
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/home.js?verson=4"></script>
+    <script src="../../helsinki-blue/user/js/UserControl.js?verson=4"></script>
+
+    <!-- 弹出message占位 -->
+    <div id="sign_out_message_id"></div>
+
+    
+   <!-- 界面js代码 -->
+<script type="text/javascript">
+    var g_UserInfoObj = null;
+
+    //初始化加载执行
+    window.onload = function () {//要执行的js代码段  
+        //自动高度
+        var oDiv = document.getElementById('main_content_id');
+        oDiv.style.height = ($(window).height() - 60 - 30) + 'px';
+
+        user_ShowNotice('登录成功', '管理员你好，欢迎登录！', 'success', 1500, false);
+        GetUserInfo();          //初始化获取用户信息
+        GetUserMenu();          //获取用户菜单
+    }
+
+    //获取用户信息
+    function GetUserInfo() {
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'GetLoginStatus',
+        };
+
+        $.ajax({
+            url: 'Login',
+            type: 'POST',
+            dataType: 'json',
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //获取成功
+                g_UserInfoObj = JSON.parse(response.obj);      //全局缓存用户信息
+                //alert(JSON.stringify(response.obj, 4));       //调试显示信息
+                //更新主界面用户信息
+                var info = g_UserInfoObj[0];
+                //显示用户信息             
+                var NickName = new String(info.NICK_NAME); //获取用户昵称
+                
+                if (NickName == null) NickName = "未命名的用户";
+                if (NickName.length > 20) //限制长度
+                {
+                    NickName = NickName.substr(0, 20);
+                    NickName += "...";
+
+                }
+                document.getElementById('nickname_id').innerHTML = NickName;//用户昵称
+                if (info.ROLE == 64) //普通用户
+                {
+                    document.getElementById('user_type_id').innerHTML = '普通用户';
+                }
+                else if (info.ROLE == 256) //管理员
+                {
+                    document.getElementById('user_type_id').innerHTML = '管理员';
+                }
+                else
+                {
+                    document.getElementById('user_type_id').innerHTML = '未知类型';
+                }
+            }
+            else if (response.msg != null) {
+                user_message('sign_out_message_id', '登录失败', response.msg, 'default', 'error', null, null);
+            }
+            else {
+                user_message('sign_out_message_id', '登录失败', '出现未知的错误，登录请求失败！', 'default', 'warning', null, null);
+            }
+
+        })
+        .fail(function () {
+            user_message('sign_out_message_id', '登录失败', '发送登录请求失败，请检查服务器连接状态！', 'default', 'warning', null, null);
+            return;
+        })
+    }
+
+    //获取用户菜单
+    function GetUserMenu() {
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'GetUserInfo',
+        };
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //获取成功
+
+                if (response.obj != null) {
+                    var html = response.obj;
+                    //html = html.replace(/\"/g, '\\\"');
+                    // alert(html, 4);   //调试显示信息
+                    //document.getElementById('user_main_menu_id').innerHTML = html;//显示菜单
+
+                    $("#main-nav").append(html);  // 用append 方式添加拼接的标签
+
+                    $("#main-nav").trigger("create");  //必须调用重新刷新样式
+                    button_on_click('li_home_1_id', 'li_home_id');  //打开第一个界面
+    
+                    return;
+                }
+            }
+
+            document.getElementById('user_main_menu_id').innerHTML = '菜单加载失败';//显示菜单
+        })
+        .fail(function () {
+            document.getElementById('user_main_menu_id').innerHTML = '菜单加载失败';//显示菜单
+        })
+    }
+    //获取缓存的用户信息
+    function GetUserInfoCache()
+    {
+        return g_UserInfoObj;
+    }
+    //查看用户信息-右上角图标
+    function button_user_info_click()
+    {
+        button_on_click('li_manage_1_id', 'li_manage_id');
+    }
+
+    //退出登录按钮处理
+    function button_exit_click()
+    {
+        user_message('sign_out_message_id', '警告', '确定退出吗?', 'default', 'warning', 'ExitLogin', null);
+    }
+
+    //请求退出
+    function ExitLogin()
+    {
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'LogoutLogin',
+        };
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //退出成功
+                window.location.href = "Login"
+            }
+            else {
+                user_message('sign_out_message_id', '退出登录失败', '出现未知的错误，登录请求失败！', 'default', 'warning', null, null);
+            }
+
+        })
+        .fail(function () {
+            user_message('sign_out_message_id', '退出登录失败', '发送登录请求失败，请检查服务器连接状态！', 'default', 'warning', null, null);
+            return;
+        })
+    }
+
+
+    $(window).resize(function () {          //当浏览器大小变化时
+        //alert($(window).height());          //浏览器时下窗口可视区域高度
+        //alert($(document).height());        //浏览器时下窗口文档的高度
+        //alert($(document.body).height());   //浏览器时下窗口文档body的高度
+        //alert($(document.body).outerHeight(true)); //浏览器时下窗口文档body的总高度 包括border padding margin
+
+        var oDiv = document.getElementById('main_content_id');
+        oDiv.style.height = ($(window).height()-60-30)+'px';
+    });
+
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+</html>
+

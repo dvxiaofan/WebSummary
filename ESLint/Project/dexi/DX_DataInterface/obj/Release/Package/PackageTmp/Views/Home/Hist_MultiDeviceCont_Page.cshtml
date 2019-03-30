@@ -1,0 +1,227 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>多站对比</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/css/MyTreeStyle.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /*INFO 按钮蓝色*/
+        .btn-info {
+            background-color: #3E79BB;
+            border-color: #3E79BB;
+        }
+
+        /*INFO 按钮禁用淡蓝色*/
+        .btn-info.disabled, .btn-info[disabled] {
+            background-color: #88bffc;
+            border-color: #88bffc;
+        }
+
+        /*表格字体颜色，黑色*/
+        .layui-table {
+            color: #232323;
+        }
+
+        /*下拉列表选择颜色-蓝色*/
+        .layui-form-select dl dd.layui-this {
+            background-color: #3E79BB;
+        }
+
+
+        .datesheet {
+            width: 100%;
+            height: 102px;
+            padding: 5px;
+            background: #f8f8f8;
+            border: 1px solid #CCC;
+        }
+
+        .layui-form-item {
+            margin-bottom: 5px;
+        }
+        
+        .layui-form-select dl {
+            max-height: 500px;
+        }
+        .layui-form-label {
+            width: 100px;
+        }
+        .layui-input-inline {
+            width: 250px;
+        }
+
+    </style>
+</head>
+
+<body class="row animated " style="overflow:-Scroll;overflow-y:hidden;margin-left:0px;height:100%;">
+
+    <!--右侧正文-->
+    <div id="right_panle_id">
+        <div class="user_content" , id="user_content_id_1" style="overflow: hidden; height: 100%;">
+            <div class="row animated ">
+                <div class="panel" style="height:100%;width:100%;min-width:875px;" id="user_panel_id_1">
+                    <div class="panel-content" style="height: 100%;">
+
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <h4 class="section-subtitle">
+                                    <b>多站对比</b>
+                                    <span style="display: inline-block; margin-left: 50px; width: 300px;"><span>站点1： </span><span id="device_one_name_id"></span></span>
+                                    <span style="margin-left: 30px;"><span>站点2： </span><span id="device_two_name_id"></span></span>
+                                </h4>
+                            </div>
+                            <div class="form-group" style="float:right">
+                                <button class="btn btn-info fa fa-refresh" onclick="RefreshPage_onClick()" type="button">&nbsp;&nbsp;刷新</button>
+                            </div>
+                        </form>
+                        <hr style="margin-top:-17px;background-color:#3E79BB;height:2px;">
+
+                        <div class="layui-form datesheet">
+
+                            <div class="layui-form-item">
+
+                                <label class="layui-form-label">站点1名称:</label>
+                                <div class="layui-input-inline">
+                                    <select name="deviceOneSelect" id="device_one_id" lay-filter="device_one_filter">
+                                        <option value="-1">设备信息</option>
+
+                                    </select>
+                                </div>
+
+
+                                <label class="layui-form-label" style="margin-left: 14px;">站点2名称:</label>
+                                <div class="layui-input-inline">
+                                    <select name="deviceTwoSelect" id="device_two_id" lay-filter="device_two_filter">
+                                        <option value="-1">设备信息</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开始时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input class="layui-input" id="test11" placeholder="yyyy年MM月dd日" type="text">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">结束时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input class="layui-input" id="test12" placeholder="yyyy年MM月dd日" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="layui-inline">
+                                    <button class="btn btn-info fa fa-search " style="height:36px; margin-bottom: 6px;" onclick="query_data_onclick()"
+                                            type="button">搜索
+                                    </button>
+                                    <div class="layui-inline">
+
+                                        <form class="layui-form">
+                                            <label class="layui-form-label">
+                                                <nobr>快速搜索:</nobr>
+                                            </label>
+                                            <div class="layui-input-inline" style="width:110px;">
+                                                <select name="quiz" lay-filter="select_filter">
+                                                    <option value="0">未选择</option>
+                                                    <option value="1">最近1天</option>
+                                                    <option value="3">最近3天</option>
+                                                    <option value="7">最近7天</option>
+                                                    <option value="15">最近15天</option>
+                                                    <option value="30">最近30天</option>
+                                                </select>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="layui-form-item" id="selected_form_id">
+
+                                <label class="layui-form-label">站点1要素:</label>
+                                <div class="layui-input-inline">
+                                    <select name="modules" lay-verify="required" lay-filter="device_one_ess_filter" id="device_one_ess_id">
+                                        <option value="-1">无数据</option>
+
+                                    </select>
+                                </div>
+
+                                <label class="layui-form-label" style="margin-left: 15px;">站点2要素:</label>
+                                <div class="layui-input-inline">
+                                    <select name="modules" lay-verify="required" lay-filter="device_two_ess_filter" id="device_two_ess_id">
+                                        <option value="-1">无数据</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                       
+
+
+                        <!-- 折线图 -->
+                        <div id="echart_div_id" style="width:100%; height: 69vh; margin-top:70px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../helsinki-blue/user/js/MyTree.js"></script>
+    <script src="../../helsinki-blue/user/js/DeviceGroupList.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <script src="../../helsinki-blue/user/js/Hist_MultiDeviceCont_Page.js"></script>
+    <script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_Tools.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>

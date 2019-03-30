@@ -1,0 +1,20 @@
+{
+  "name": "pl_redux",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run server",
+    "server": "node ./server/app.js",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "mocha": "^2.5.3"
+  }
+}

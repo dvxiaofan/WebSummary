@@ -1,0 +1,27 @@
+
+2019-01-18 09:01:16 	加载配置成功
+
+2019-01-18 09:31:12 	加载配置成功
+
+2019-01-18 10:25:48 	GetOneTelField未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 758
+2019-01-18 10:26:22 	GetRealData->QueryAndRreturnAdapter Error:Unable to connect to any of the specified MySQL hosts.
+2019-01-18 10:26:22 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-01-18 10:26:22 	192.168.1.138;;Port=3306
+2019-01-18 10:26:22 	water
+2019-01-18 10:26:22 	water
+2019-01-18 10:26:22 	123456
+2019-01-18 11:42:21 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:42:38 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:42:53 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:43:05 	加载配置成功
+
+2019-01-18 11:43:20 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:43:39 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:44:01 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-18 11:46:39 	身份验证有误：Unable to connect to any of the specified MySQL hosts.

@@ -1,0 +1,51 @@
+
+2018-12-02 11:07:13 	加载配置成功
+
+2018-12-02 11:07:13 	
+身份验证错误
+2018-12-02 11:20:44 	加载配置成功
+
+2018-12-02 11:20:54 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2867
+2018-12-02 11:21:27 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2867
+2018-12-02 11:30:01 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2867
+2018-12-02 11:30:29 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2867
+2018-12-02 11:33:08 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2867
+2018-12-02 11:35:33 	加载配置成功
+
+2018-12-02 13:53:33 	加载配置成功
+
+2018-12-02 14:03:25 	加载配置成功
+
+2018-12-02 14:08:30 	加载配置成功
+
+2018-12-02 14:16:56 	加载配置成功
+
+2018-12-02 14:37:15 	加载配置成功
+
+2018-12-02 14:58:32 	加载配置成功
+
+2018-12-02 15:08:33 	加载配置成功
+
+2018-12-02 15:25:51 	加载配置成功
+
+2018-12-02 15:28:25 	加载配置成功
+
+2018-12-02 17:30:32 	加载配置成功
+
+2018-12-02 18:37:43 	加载配置成功
+
+2018-12-02 18:58:58 	加载配置成功
+
+2018-12-02 20:33:31 	加载配置成功
+
+2018-12-02 20:33:37 	加载配置成功
+
+2018-12-02 20:37:01 	
+身份验证错误
+2018-12-02 20:37:07 	
+身份验证错误
+2018-12-02 20:37:15 	
+身份验证错误
+2018-12-02 20:51:30 	加载配置成功
+
+2018-12-02 21:22:41 	加载配置成功

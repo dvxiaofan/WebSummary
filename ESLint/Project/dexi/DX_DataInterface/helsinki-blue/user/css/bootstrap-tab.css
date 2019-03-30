@@ -1,0 +1,93 @@
+
+
+.rightClass span{
+    margin-top:10px;
+    margin-left:2px;
+    width:15px;
+    height:16px;
+    display:block;
+    background:url(Images/picture.png)  repeat-x;
+    background-position:0% 100%;/*此处为百分比图片定位，公式为(显示的图片的高度=（picture.png图片的高度-容器的高度）*百分比)*/
+}
+
+
+/*鼠标移动到tab关闭按钮上面红色*/
+.nav-tabs li a .glyphicon-remove-sign:hover{
+    color:red;
+    cursor: pointer;
+}
+
+
+
+/*标签页顶部*/
+.nav-tabs{
+    background: #fafafa;
+    /*border-bottom: 3px #3498db solid; 淡蓝色*/
+    /*border-bottom: 3px #004E90 solid; 深蓝色*/
+    border-bottom: 3px #3E79BB solid;
+}
+
+.nav-tabs li a{
+    line-height:1;/*设置标签行高*/
+    border:1px #ddd solid;
+    margin-right: -1px;
+    color: #999;
+    border-radius: 0;
+    max-width:200px;
+}
+.nav-tabs li a .glyphicon-remove-sign:hover{
+    color:red;
+    cursor: pointer;
+}
+.nav-tabs li a i:first-child{
+    margin-right: 3px;
+}
+.nav-tabs .active a{
+    border-top: solid 2px #3E79BB !important;
+    background: #3E79BB !important;
+    color:#fff !important;
+}
+
+
+.nav-my-tab .leftbackward{
+    float: left;
+    background: #fff;
+    padding-top: 7px;
+    border-top: 1px #ddd solid;
+    height:36px;
+    border-bottom: 3px #3E79BB solid;
+}
+.nav-my-tab .leftbackward a{
+    border-left-width: 0px;
+    color: #999;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    margin-right: -1px;
+}
+.nav-my-tab .leftbackward a:hover,.nav-my-tab .leftbackward a:focus{
+    text-decoration: none;
+    background: #ddd;
+}
+
+.nav-my-tab .rightforward{
+    float:right;
+    position: relative;
+    line-height: 2.6;
+    background: #fff;
+    border-top: 1px #ddd solid;
+    border-bottom: 3px #3E79BB solid;
+    
+}
+.nav-my-tab .rightforward a{
+    width: 35.5px;
+    line-height: 2;
+    color: #999;
+    height: 35px;
+    padding: 8px 10px;
+    padding-left: 13px;
+    border-left: 1px #ddd solid;
+}
+.nav-my-tab .rightforward a:hover,.nav-my-tab .rightforward a:focus{
+    text-decoration: none;
+    background: #ddd;
+}

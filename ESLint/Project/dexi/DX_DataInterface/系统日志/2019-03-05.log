@@ -1,0 +1,27 @@
+
+2019-03-05 08:39:45 	加载配置成功
+
+2019-03-05 08:56:26 	
+身份验证错误
+2019-03-05 09:08:58 	
+身份验证错误
+2019-03-05 10:02:05 	加载配置成功
+
+2019-03-05 14:10:45 	加载配置成功
+
+2019-03-05 14:40:08 	加载配置成功
+
+2019-03-05 14:40:34 	   在 DX_DataInterface.Controllers.HomeController.ManualSetData(String ST, String TT, String Ess_List, String Data_List, Int32 Rights) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\HomeController.cs:行号 2771未将对象引用设置到对象的实例。
+2019-03-05 14:40:40 	   在 DX_DataInterface.Controllers.HomeController.ManualSetData(String ST, String TT, String Ess_List, String Data_List, Int32 Rights) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\HomeController.cs:行号 2771未将对象引用设置到对象的实例。
+2019-03-05 14:40:46 	   在 DX_DataInterface.Controllers.HomeController.ManualSetData(String ST, String TT, String Ess_List, String Data_List, Int32 Rights) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\HomeController.cs:行号 2771未将对象引用设置到对象的实例。
+2019-03-05 14:41:40 	   在 DX_DataInterface.Controllers.HomeController.ManualSetData(String ST, String TT, String Ess_List, String Data_List, Int32 Rights) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\HomeController.cs:行号 2771未将对象引用设置到对象的实例。
+2019-03-05 14:43:45 	   在 DX_DataInterface.Controllers.HomeController.ManualSetData(String ST, String TT, String Ess_List, String Data_List, Int32 Rights) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\HomeController.cs:行号 2771未将对象引用设置到对象的实例。
+2019-03-05 14:46:05 	加载配置成功
+
+2019-03-05 14:53:48 	加载配置成功
+
+2019-03-05 15:02:46 	加载配置成功
+
+2019-03-05 16:29:58 	加载配置成功
+
+2019-03-05 16:59:38 	加载配置成功

@@ -1,0 +1,53 @@
+.bar .button {
+ 
+     top: 0rem; 
+
+}
+.mygroup{
+	font-size: .6rem;
+}
+.picker-calendar-month-picker a.icon-only, .picker-calendar-year-picker a.icon-only {
+    float: left;
+    width: 25%;
+    height: 2.2rem;
+    line-height: 2rem;
+    margin-top: 10px;
+    display: 
+}
+.mycontent-padded,#bigbox {
+    margin: .5rem;
+    padding-top: 10px;
+}
+li{
+    list-style:none;
+    /*float: left;;*/
+    width: 100%;
+}
+*{
+    margin: 0px;
+    padding:0px;
+}
+.icon-right{
+    float: left;
+}
+.content{
+    font-size: 14px;
+}
+.icon-right {
+    
+    padding-right: 5px;
+}
+.list-block ul {
+
+    font-size: 16px;
+}
+.list-block ul li{
+    border-bottom: #fff;
+}
+.card-header{
+    background: #ddd;
+}
+.content-block {
+
+    color: #333;
+}

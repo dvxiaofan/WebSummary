@@ -1,0 +1,95 @@
+
+2019-02-22 08:52:11 	加载配置成功
+
+2019-02-22 08:53:31 	加载配置成功
+
+2019-02-22 11:18:42 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:19:04 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:19:07 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:19:26 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:19:38 	加载配置成功
+
+2019-02-22 11:19:56 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:19:56 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:19:56 	192.168.1.138,1433
+2019-02-22 11:19:56 	water
+2019-02-22 11:19:56 	sa
+2019-02-22 11:19:56 	123456
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:22 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:20:23 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:27:07 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1268
+2019-02-22 11:27:10 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:27:10 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:27:10 	192.168.1.138,1433
+2019-02-22 11:27:10 	water
+2019-02-22 11:27:10 	sa
+2019-02-22 11:27:10 	123456
+2019-02-22 11:27:43 	加载配置成功
+
+2019-02-22 11:28:01 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:28:01 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:28:01 	192.168.1.138,1433
+2019-02-22 11:28:01 	water
+2019-02-22 11:28:01 	sa
+2019-02-22 11:28:01 	123456
+2019-02-22 11:28:17 	加载配置成功
+
+2019-02-22 11:28:39 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:28:39 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:28:39 	192.168.1.138,1433
+2019-02-22 11:28:39 	water
+2019-02-22 11:28:39 	sa
+2019-02-22 11:28:39 	123456
+2019-02-22 11:29:17 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:29:17 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:29:17 	192.168.1.138,1433
+2019-02-22 11:29:17 	water
+2019-02-22 11:29:17 	sa
+2019-02-22 11:29:17 	123456
+2019-02-22 11:29:17 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1399
+2019-02-22 11:29:26 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:29:26 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,ZB,AI,MST,VA,VJ,Q1,Q2,VT,CQ1,CQ2,C,DTEMP,CSIGNAL,PM25,PM10, UT FROM [tempdata] where  ST='8888888888' ;
+2019-02-22 11:29:26 	192.168.1.138,1433
+2019-02-22 11:29:26 	water
+2019-02-22 11:29:26 	sa
+2019-02-22 11:29:26 	123456
+2019-02-22 11:29:26 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1399
+2019-02-22 11:30:52 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:30:52 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:30:52 	192.168.1.138,1433
+2019-02-22 11:30:52 	water
+2019-02-22 11:30:52 	sa
+2019-02-22 11:30:52 	123456
+2019-02-22 11:30:54 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:30:54 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:30:54 	192.168.1.138,1433
+2019-02-22 11:30:54 	water
+2019-02-22 11:30:54 	sa
+2019-02-22 11:30:54 	123456
+2019-02-22 11:32:14 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:32:14 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:32:14 	192.168.1.138,1433
+2019-02-22 11:32:14 	water
+2019-02-22 11:32:14 	sa
+2019-02-22 11:32:14 	123456
+2019-02-22 11:32:31 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:32:31 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:32:31 	192.168.1.138,1433
+2019-02-22 11:32:31 	water
+2019-02-22 11:32:31 	sa
+2019-02-22 11:32:31 	123456
+2019-02-22 11:32:37 	GetRealData->QueryAndRreturnAdapter Error:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 远程计算机拒绝网络连接。)
+2019-02-22 11:32:37 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-22 11:32:37 	192.168.1.138,1433
+2019-02-22 11:32:37 	water
+2019-02-22 11:32:37 	sa
+2019-02-22 11:32:37 	123456
+2019-02-22 11:45:42 	加载配置成功

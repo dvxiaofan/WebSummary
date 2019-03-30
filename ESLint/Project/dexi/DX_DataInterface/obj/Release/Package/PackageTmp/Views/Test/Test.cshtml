@@ -1,0 +1,441 @@
+﻿
+<!DOCTYPE html>
+
+
+
+<html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>测试页面</title>
+
+    <!-- 引入 sui -->
+    <script src="http://g.tbcdn.cn/sj/lib/jquery/dist/jquery.min.js"></script>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet" />
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet" />
+    <script src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+
+
+</head>
+<body>
+    <div>
+         <!--显示一个导航栏-->
+        <div class="sui-navbar ">
+            <div class="navbar-inner">
+                <a class="sui-brand">微信绑定接口测试</a>
+                <a id="findinfo01" class="sui-brand"></a>
+            </div>
+        </div>
+
+
+         <!--微信绑定接口输入-->
+        <form id ="form1" class="sui-form form-horizontal sui-validate">
+            <div class="control-group">
+                <label for="input" class="control-label">微信ID：</label>
+                <div class="controls">
+                    <input type="text" id="inputl" name="name" placeholder="微信ID" data-rules="required">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="input" class="control-label">设备编号：</label>
+                <div class="controls">
+                    <input type="number" id="input2" name="sn" placeholder="10位编号" data-rules="required" title="密码">
+                </div>
+            </div>
+    
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button onclick="submit_onclick()" type="submit" class="sui-btn btn-primary">立即注册</button>
+                </div>
+            </div>
+
+            <!-- 屏蔽表单提交 -->
+            <script type="text/javascript">
+
+                $("#form1").submit(function (e) {
+                    e.preventDefault();
+                })
+            </script>
+
+            <!-- 注册处理 -->
+            <script type="text/javascript">
+                function submit_onclick() {
+                    var weixin_id = document.getElementById("inputl").value;
+                    var dev_sn = document.getElementById("input2").value;
+                    if ((weixin_id == "") || (dev_sn == "")) {
+                        /*输入为空*/
+                        alert("微信ID与设备序列号不能为空!");
+
+                        return;
+                    }
+
+                    if (weixin_id.length >= 32) {
+                        /*微信ID不能大于32个字符*/
+                        alert("微信ID长度不能超过32个字符!");
+
+                        return;
+                    }
+
+                    if (dev_sn.length != 10) {
+                        /*设备序列号必须为10个字符*/
+                        alert("设备序列号长度必须为10位!");
+
+                        return;
+                    }
+
+
+                    /*输入符合要求*/
+                    //获取防伪标记
+                    var token = $('input[name=__RequestVerificationToken]').val();
+                    var params = $("#form1");//.serializeObject();
+                    var jsonData = {
+                        GetFun: "WeixinDeviceBinding",  //功能说明：微信设备绑定
+                        WeiXinId: weixin_id,            //微信客户ID
+                        DeviceSn: dev_sn,               //当前要绑定的设备序列号
+                        DeviceName: ""                  //设备名称，保留
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "weixin_test",
+                        data: jsonData,
+                        headers: "",
+                        success: function (result) {
+                            alert(result);  //弹出提示
+                            if (result.msg != null && result.msg != "") {
+                                alert(result.msg);  //弹出提示
+                            }
+                            else {
+                                alert("返回出错");  //弹出提示
+                            }
+
+                        },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+            </script>
+
+
+
+        </form>
+
+
+
+
+     
+
+
+
+
+         <!--显示一个导航栏-->
+        <div class="sui-navbar ">
+            <div class="navbar-inner">
+                <a class="sui-brand">微信数据查询接口</a>
+                <a id="findinfo01" class="sui-brand"></a>
+            </div>
+        </div>
+
+        <!--实时数据查询接口-->
+        <form id="form2" class="sui-form form-horizontal sui-validate">
+            <div class="control-group">
+                <label for="input" class="control-label">微信ID：</label>
+                <div class="controls">
+                    <input type="text" id="input3" name="name" placeholder="微信ID" data-rules="required">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button onclick="find_onclick()" type="submit" class="sui-btn btn-primary">立即查询</button>
+                </div>
+            </div>
+
+            <!-- 屏蔽表单提交 -->
+            <script type="text/javascript">
+
+                $("#form2").submit(function (e) {
+                    e.preventDefault();
+                })
+            </script>
+
+            <!-- 查询处理 -->
+            <script type="text/javascript">
+                function find_onclick() {
+                    var weixin_id = document.getElementById("input3").value;
+                    if (weixin_id == "") {
+                        /*输入为空*/
+                        alert("微信ID不能为空!");
+
+                        return;
+                    }
+
+                    if (weixin_id.length >= 32) {
+                        /*微信ID不能大于32个字符*/
+                        alert("微信ID长度不能超过32个字符!");
+
+                        return;
+                    }
+
+
+                    /*输入符合要求*/
+                    //获取防伪标记
+                    var params = $("#form2");//.serializeObject();
+                    var jsonData = {
+                        GetFun: "WeixinDeviceDataQuery",    //功能说明：微信设备数据查询
+                        WeiXinId: weixin_id,                //微信客户ID
+                        DeviceSn: "",                       //设备名称空
+                        DeviceName: ""                      //设备名称，保留
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "weixin_test",
+                        data: jsonData,
+                        headers: "",
+                        success: function (result) {
+
+                            if (result.msg != null && result.msg != "") {
+                                alert(result.msg);  //弹出提示
+                            }
+                            else {
+                                alert("返回出错");  //弹出提示
+                            }
+
+                        },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+            </script>
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <!--显示一个导航栏-->
+        <div class="sui-navbar ">
+            <div class="navbar-inner">
+                <a class="sui-brand">微信解除绑定接口测试</a>
+                <a id="findinfo01" class="sui-brand"></a>
+            </div>
+        </div>
+
+
+        <!--微信解除绑定接口测试-->
+        <form id="form4" class="sui-form form-horizontal sui-validate">
+            <div class="control-group">
+                <label for="input" class="control-label">微信ID：</label>
+                <div class="controls">
+                    <input type="text" id="input5" name="name" placeholder="微信ID" data-rules="required">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="input" class="control-label">设备编号：</label>
+                <div class="controls">
+                    <input type="number" id="input6" name="sn" placeholder="10位编号" data-rules="required" title="密码">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button onclick="Unbound_onclick()" type="submit" class="sui-btn btn-primary">解除绑定</button>
+                </div>
+            </div>
+
+            <!-- 屏蔽表单提交 -->
+            <script type="text/javascript">
+
+                $("#form4").submit(function (e) {
+                    e.preventDefault();
+                })
+            </script>
+
+            <!-- 注册处理 -->
+            <script type="text/javascript">
+                function Unbound_onclick() {
+                    var weixin_id = document.getElementById("input5").value;
+                    var dev_sn = document.getElementById("input6").value;
+                    if ((weixin_id == "") || (dev_sn == "")) {
+                        /*输入为空*/
+                        alert("微信ID与设备序列号不能为空!");
+
+                        return;
+                    }
+
+                    if (weixin_id.length >= 32) {
+                        /*微信ID不能大于32个字符*/
+                        alert("微信ID长度不能超过32个字符!");
+
+                        return;
+                    }
+
+                    if (dev_sn.length != 10) {
+                        /*设备序列号必须为10个字符*/
+                        alert("设备序列号长度必须为10位!");
+
+                        return;
+                    }
+
+
+                    /*输入符合要求*/
+                    //获取防伪标记
+                    var token = $('input[name=__RequestVerificationToken]').val();
+                    var params = $("#form1");//.serializeObject();
+                    var jsonData = {
+                        GetFun: "WeixinDeviceUnbound",  //功能说明：微信解除设备绑定
+                        WeiXinId: weixin_id,            //微信客户ID
+                        DeviceSn: dev_sn,               //当前要绑定的设备序列号
+                        DeviceName: ""                  //设备名称，保留
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "weixin_test",
+                        data: jsonData,
+                        headers: "",
+                        success: function (result) {
+
+                            if (result.msg != null && result.msg != "") {
+                                alert(result.msg);  //弹出提示
+                            }
+                            else {
+                                alert("返回出错");  //弹出提示
+                            }
+
+                        },
+                        error: function () {
+                            alert("Error");
+                        }
+                    });
+                }
+            </script>
+
+
+
+        </form>
+
+
+
+
+<!--显示一个导航栏-->
+<div class="sui-navbar ">
+    <div class="navbar-inner">
+        <a class="sui-brand">微信所有设备解除绑定接口测试</a>
+        <a id="findinfo01" class="sui-brand"></a>
+    </div>
+</div>
+
+
+<!--微信所有设备解除绑定接口测试-->
+<form id="form5" class="sui-form form-horizontal sui-validate">
+    <div class="control-group">
+        <label for="input" class="control-label">微信ID：</label>
+        <div class="controls">
+            <input type="text" id="input7" name="name" placeholder="微信ID" data-rules="required">
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="input" class="control-label">设备编号：</label>
+        <div class="controls">
+            <input type="number" id="input8" name="sn" placeholder="10位编号" value="9999999999" data-rules="required" title="密码">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+            <button onclick="AllUnbound_onclick()" type="submit" class="sui-btn btn-primary">解除绑定</button>
+        </div>
+    </div>
+
+    <!-- 屏蔽表单提交 -->
+    <script type="text/javascript">
+
+        $("#form5").submit(function (e) {
+            e.preventDefault();
+        })
+    </script>
+
+    <!-- 注册处理 -->
+    <script type="text/javascript">
+        function AllUnbound_onclick() {
+            var weixin_id = document.getElementById("input7").value;
+            var dev_sn = document.getElementById("input8").value;
+            if ((weixin_id == "") || (dev_sn == "")) {
+                /*输入为空*/
+                alert("微信ID与设备序列号不能为空!");
+
+                return;
+            }
+
+            if (weixin_id.length >= 32) {
+                /*微信ID不能大于32个字符*/
+                alert("微信ID长度不能超过32个字符!");
+
+                return;
+            }
+
+            if (dev_sn.length != 10) {
+                /*设备序列号必须为10个字符*/
+                alert("设备序列号长度必须为10位!");
+
+                return;
+            }
+
+
+            /*输入符合要求*/
+            //获取防伪标记
+            var token = $('input[name=__RequestVerificationToken]').val();
+            var params = $("#form1");//.serializeObject();
+            var jsonData = {
+                GetFun: "WeixinAllDeviceUnbound",  //功能说明：微信所有设备解除设备绑定
+                WeiXinId: weixin_id,            //微信客户ID
+                DeviceSn: dev_sn,               //当前要绑定的设备序列号
+                DeviceName: ""                  //设备名称，保留
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "weixin_test",
+                data: jsonData,
+                headers: "",
+                success: function (result) {
+
+                    if (result.msg != null && result.msg != "") {
+                        alert(result.msg);  //弹出提示
+                    }
+                    else {
+                        alert("返回出错");  //弹出提示
+                    }
+
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+        }
+    </script>
+
+
+
+</form>
+           
+    </div>
+</body>
+</html>

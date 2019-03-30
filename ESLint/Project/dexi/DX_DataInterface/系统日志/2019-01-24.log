@@ -1,0 +1,37 @@
+
+2019-01-24 08:53:09 	加载配置成功
+
+2019-01-24 09:00:56 	加载配置成功
+
+2019-01-24 09:11:46 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 09:12:05 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-24 09:13:01 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 09:13:16 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-24 09:14:03 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 09:14:05 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-24 09:26:15 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 09:26:30 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-24 09:52:49 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 09:53:04 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-24 11:08:52 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-24 14:21:34 	加载配置成功
+
+2019-01-24 14:56:39 	加载配置成功
+
+2019-01-24 15:02:20 	
+身份验证错误
+2019-01-24 15:04:02 	加载配置成功
+
+2019-01-24 15:04:25 	加载配置成功
+
+2019-01-24 15:07:07 	加载配置成功
+
+2019-01-24 15:07:36 	加载配置成功
+
+2019-01-24 15:07:56 	加载配置成功
+
+2019-01-24 17:32:13 	加载配置成功
+
+2019-01-24 17:58:53 	加载配置成功
+
+2019-01-24 18:28:53 	加载配置成功

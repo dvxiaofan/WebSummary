@@ -1,0 +1,537 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑用户信息</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                        <div class="panel-content">
+                            <div class="row" style="width:600px">
+                                <div class="col-md-12">
+                                    <form class="form-horizontal">
+                                        <h5 class="mb-lg">编辑用户信息</h5>
+                                         
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">用户名<span class="required">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="username" name="username" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                         <label for="password" class="col-sm-2 control-label">密码<span class="required">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="password1" name="password" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="password" class="col-sm-2 control-label">密码<span class="required">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="password2" name="password" required>
+                                            </div>
+                                        </div>
+                                            <div class="form-group">
+                                            <label for="username" class="col-sm-2 control-label">昵称<span class="required">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="nick_name" name="nick_name" required>
+                                            </div>
+                                        </div>
+                                                <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="email" name="email">
+                                            </div>
+                                        </div>
+                                                    <div class="form-group">
+                                            <label for="cofirmation" class="col-sm-2 control-label">电话</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="phone" name="phone">
+                                            </div>
+                                        </div>
+                                                        <div class="form-group">
+                                            <label for="age" class="col-sm-2 control-label">公司</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="company" name="company">
+                                            </div>
+                                        </div>
+                                                            <div class="form-group">
+                                            <label for="url" class="col-sm-2 control-label">备注</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="remarks" name="remarks">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="float:left">
+                        <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                            <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                            <a>&nbsp;&nbsp;</a>
+                            <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/layui/layui.js"></script>
+<script src="../../Scripts/md5/md5.js"></script>
+
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+    var g_info;
+    //用于记录编辑之前的信息，用于对比查看是否修改了用户信息
+    var g_LastInfo = {
+        USER: '',
+        NICK_NAME: '',
+        COMPANY: '',
+        TEL: '',
+        EMAIL: '',
+        PASSWORD: '',
+        REMARKS: '',
+    };
+
+
+    //初始化加载执行
+    window.onload = function () {   //要执行的js代码段  
+        //获取编辑或新建用户信息
+        g_info = parent.GetEditUserInfo();
+        if(g_info==null)
+        {
+            layer.alert("无效的参数！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+        else
+        {
+            if(g_info.isEdit == true) //编辑用户
+            {
+                //将之前对象拷贝一份
+                g_LastInfo.USER = g_info.USER;
+                g_LastInfo.PASSWORD = g_info.PASSWORD;
+                g_LastInfo.NICK_NAME = g_info.NICK_NAME;
+                g_LastInfo.COMPANY = g_info.COMPANY;
+                g_LastInfo.TEL = g_info.TEL;
+                g_LastInfo.EMAIL = g_info.EMAIL;
+                g_LastInfo.REMARKS = g_info.REMARKS;
+
+                $("#username").attr("readOnly", "true");    //用户名只读
+                //初始化显示信息
+                document.getElementById("username").value = g_info.USER;
+                document.getElementById("password1").value = g_info.PASSWORD;
+                document.getElementById("password2").value = g_info.PASSWORD;
+                document.getElementById("nick_name").value = g_info.NICK_NAME;
+                document.getElementById("email").value = g_info.EMAIL;
+                document.getElementById("phone").value = g_info.TEL;
+                document.getElementById("company").value = g_info.COMPANY;
+                document.getElementById("remarks").value = g_info.REMARKS;
+
+               
+            }
+            else //新建用户，无需初始化显示
+            {
+
+            }
+        }
+    }
+
+    // 验证用户名是否含有特殊字符
+    function check_other_char(str)
+    {
+        var arr = ["&", "\\", "/", "*", ">", "<", "-", "!", "\"", "\'", " "];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < str.length; j++) {
+                if (arr[i] == str.charAt(j)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //检查邮箱是否合法
+    function isEmail(strEmail)
+    {
+        if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@{@Html.Raw("@");}[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+            return true;
+        else
+            return false;
+    }
+
+    //检查电话号码是否合法
+    function isPhone(val) {
+        var pattern = /(^[0-9]{3,4}\-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^\([0-9]{3,4}\)[0-9]{3,8}$)|(^0{0,1}1[0-9][0-9]{9}$)/;
+        if (pattern.test(val)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    //检查输入的内容是否合法
+    function check_input_data()
+    {
+        var str;
+
+        //检查用户名
+        str = document.getElementById("username").value;
+        if(str == null || str.length < 3 || str.length > 32)
+        {
+            layer.alert("用户名长度长度限制3-32个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+            document.getElementById("username").focus();    //激活焦点
+            return false;
+        }
+        if(check_other_char(str) == true)
+        { 
+            layer.alert("用户名不能含有特殊字符！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+            document.getElementById("username").focus();    //激活焦点
+            return false;
+        }
+
+        //检查密码1
+        str = document.getElementById("password1").value;
+        if(str == null || str.length < 6 || str.length > 16)
+        {
+            document.getElementById("password1").focus();    //激活焦点
+            layer.alert("密码长度限制6-16个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+            return false;
+        }
+        if (check_other_char(str) == true)
+        {
+            document.getElementById("password1").focus();    //激活焦点
+            layer.alert("密码不能含有特殊字符！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+            return false;
+        }
+
+        //检查密码2
+        str = document.getElementById("password2").value;
+        if(str == null || str.length < 6 || str.length > 16)
+        {
+            document.getElementById("password2").focus();    //激活焦点
+            layer.alert("密码长度限制6-16个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+            return false;
+        }
+        if (check_other_char(str) == true)
+        {
+            document.getElementById("password2").focus();    //激活焦点
+            layer.alert("密码不能含有特殊字符！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+            return false;
+        }
+        //对比两次密码是否一样
+        if(document.getElementById("password1").value != document.getElementById("password2").value)
+        {
+            document.getElementById("password2").focus();    //激活焦点
+            layer.alert("两次输入的密码不一样，请检查后重新输入！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+            return false;
+        }
+
+        //检查昵称
+        str = document.getElementById("nick_name").value;
+        if(str == null || str.length < 2 || str.length > 64)
+        {
+            document.getElementById("nick_name").focus();    //激活焦点
+            layer.alert("昵称长度限制2-64个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+            return false;
+        }
+        if(check_other_char(str) == true)
+        {
+            document.getElementById("nick_name").focus();    //激活焦点
+            layer.alert("昵称不能含有特殊字符！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+            return false;
+        }
+
+        //检查email
+        str = document.getElementById("email").value;
+        if (str != null && str.length>0)
+        {
+            if (str.length < 6 || str.length > 64) {
+                layer.alert("邮箱地址长度限制6-64个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                document.getElementById("email").focus();    //激活焦点
+                return false;
+            }
+            if(isEmail(str) == false)
+            {
+                document.getElementById("email").focus();    //激活焦点
+                layer.alert("邮箱地址格式不对，请检查后重新输入！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                return false;
+            }
+        }
+
+        //检查电话格式
+        str = document.getElementById("phone").value;
+        if (str != null && str.length>0) {
+            if (str.length < 6 || str.length > 16) {
+                layer.alert("电话号码长度限制6-16个数字！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                document.getElementById("phone").focus();    //激活焦点
+                return false;
+            }
+            if (isPhone(str) == false) {
+                layer.alert("电话号码格式不对，请检查后重新输入！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                document.getElementById("phone").focus();    //激活焦点
+                return false;
+            }
+        }
+ 
+        //检查公司信息
+        str = document.getElementById("company").value;
+        if (str != null && str.length>0) {
+            if (str.length > 64) {
+                layer.alert("公司名称限制1-64个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                document.getElementById("company").focus();    //激活焦点
+                return false;
+            }
+        }
+        //检查备注信息
+        str = document.getElementById("remarks").value;
+        if (str != null && str.length>0) {
+            if (str.length < 1 || str.length > 64) {
+                layer.alert("备注信息限制1-64个字符！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                document.getElementById("remarks").focus();    //激活焦点
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    //确定按钮
+    function button_ok_onclick()
+    {
+        if (g_info == null) {
+            layer.alert("无效的参数,无法完成请求的操作！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+        if(g_info.isEdit == true) //当前请求编辑用户信息
+        {
+        
+            //比较是否发生了修改
+            if (
+                document.getElementById("username").value != g_LastInfo.USER ||
+                    document.getElementById("nick_name").value != g_LastInfo.NICK_NAME ||
+                    document.getElementById("company").value != g_LastInfo.COMPANY ||
+                    document.getElementById("phone").value != g_LastInfo.TEL ||
+                    document.getElementById("email").value != g_LastInfo.EMAIL ||
+                    document.getElementById("remarks").value != g_LastInfo.REMARKS ||
+                    document.getElementById("password1").value != g_LastInfo.PASSWORD ||
+                    document.getElementById("password2").value != g_LastInfo.PASSWORD)
+            {
+                //发生了修改
+            }
+            else //没有发生过修改
+            {
+                parent.CloseLayer();        //关闭页面
+                return true; //无需修改
+            }
+
+            if (check_input_data() == true)  //用户信息合法
+            {
+                if (EditUsers(
+                    document.getElementById("username").value,
+                    document.getElementById("nick_name").value,
+                    document.getElementById("company").value,
+                    document.getElementById("phone").value,
+                    document.getElementById("email").value,
+                    document.getElementById("remarks").value,
+                    document.getElementById("password1").value) == true) {
+
+                    parent.UpdateUser(
+                        document.getElementById("username").value,
+                        document.getElementById("nick_name").value,
+                        document.getElementById("company").value,
+                        document.getElementById("phone").value,
+                        document.getElementById("email").value,
+                        document.getElementById("password1").value,
+                        document.getElementById("remarks").value
+                        );        //刷新数据
+
+
+                    //修改成功了，请求父页面接口添加相应的数据到本地缓冲区
+                    //询问框
+                    layer.confirm('编辑用户信息成功！', {
+                        btn: ['确定'], //按钮
+                        icon: 6
+                    }, function () {
+                       
+                        parent.CloseLayer();        //关闭页面
+                    });
+                }
+            }
+        }
+        else //当前请求添加用户
+        {
+            if(check_input_data() == true)  //用户信息合法
+            {
+                if (AddUsers(
+                    document.getElementById("username").value, 
+                    document.getElementById("nick_name").value, 
+                    document.getElementById("company").value, 
+                    document.getElementById("phone").value, 
+                    document.getElementById("email").value,
+                    document.getElementById("remarks").value,
+                    document.getElementById("password1").value) == true)
+                {
+                    parent.RefreshUserData();   //刷新父页面数据
+                    //用户添加成功了，请求父页面接口添加相应的数据到本地缓冲区
+                    //询问框
+                    layer.confirm('添加用户成功！', {
+                        btn: ['确定'], //按钮
+                        icon: 6
+                    }, function () { 
+                        parent.CloseLayer();        //关闭页面
+                    });
+                }
+            }
+        }
+    }
+    //取消按钮处理
+    function button_cancel_onclick()
+    {
+        parent.CloseLayer();
+    }
+
+    //请求添加用户(需要自己检查输入的数据合法性)
+    function AddUsers(USER, NICK_NAME, COMPANY, TEL, EMAIL, REMARKS, PASSWORD)
+    {
+        var sta = 0;
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'AddUsers',
+            USER:USER, 
+            NICK_NAME:NICK_NAME, 
+            COMPANY:COMPANY, 
+            TEL:TEL, 
+            EMAIL:EMAIL, 
+            REMARKS: REMARKS,
+            PASSWORD: PASSWORD,
+            PASSWORD_MD5: hex_md5(PASSWORD)
+        };
+
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                sta = 1;
+            }
+            else if (response.rel == 0)
+            {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else
+            {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+        if (sta == 1) return true;
+       
+        return false;
+    }
+
+
+
+    //请求编辑用户(需要自己检查输入的数据合法性)
+    function EditUsers(USER, NICK_NAME, COMPANY, TEL, EMAIL, REMARKS, PASSWORD) {
+        var sta = 0;
+
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'EditUsers',
+            USER: USER,
+            NICK_NAME: NICK_NAME,
+            COMPANY: COMPANY,
+            TEL: TEL,
+            EMAIL: EMAIL,
+            REMARKS: REMARKS,
+            PASSWORD: PASSWORD,
+            PASSWORD_MD5: hex_md5(PASSWORD)
+        };
+
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                sta = 1;
+            }
+            else if (response.rel == 0) {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+        if (sta == 1) return true;
+
+        return false;
+    }
+
+
+</script>
+
+</body>
+
+
+</html>
+

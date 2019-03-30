@@ -1,0 +1,45 @@
+
+2019-02-27 10:50:50 	加载配置成功
+
+2019-02-27 11:24:36 	
+身份验证错误
+2019-02-27 11:40:02 	加载配置成功
+
+2019-02-27 13:18:27 	
+身份验证错误
+2019-02-27 14:31:55 	加载配置成功
+
+2019-02-27 16:42:03 	
+身份验证错误
+2019-02-27 16:42:18 	
+身份验证错误
+2019-02-27 16:42:33 	
+身份验证错误
+2019-02-27 16:56:52 	加载配置成功
+
+2019-02-27 17:08:44 	加载配置成功
+
+2019-02-27 17:39:15 	加载配置成功
+
+2019-02-27 17:39:24 	GetRealData->QueryAndRreturnAdapter Error:Unable to connect to any of the specified MySQL hosts.
+2019-02-27 17:39:24 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-27 17:39:24 	192.168.1.138,1433
+2019-02-27 17:39:24 	water
+2019-02-27 17:39:24 	sa
+2019-02-27 17:39:24 	123456
+2019-02-27 17:39:42 	
+身份验证错误
+2019-02-27 17:39:47 	GetRealData->QueryAndRreturnAdapter Error:Unable to connect to any of the specified MySQL hosts.
+2019-02-27 17:39:47 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-27 17:39:47 	192.168.1.138,1433
+2019-02-27 17:39:47 	water
+2019-02-27 17:39:47 	sa
+2019-02-27 17:39:47 	123456
+2019-02-27 17:39:53 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-27 17:39:55 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-27 17:39:58 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-27 17:40:36 	加载配置成功
+
+2019-02-27 18:15:24 	加载配置成功
+
+2019-02-27 18:26:26 	加载配置成功

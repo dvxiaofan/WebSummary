@@ -1,0 +1,435 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑视频信息</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body style="overflow:auto;">
+    <!--影藏外部的滑动条-->
+
+    <style>
+        /* 弹出窗口副标题样式微调 */
+        .mb-lg {
+            margin-bottom: 25px !important;
+        }
+        /* 弹出窗口每一行信息样式微调 */
+        .form-group {
+            margin-bottom: 20px !important;
+        }
+    </style>
+
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                <div class="panel-content">
+                    <div class="row" style="width:600px">
+                        <div class="col-md-12">
+                            <form class="form-horizontal">
+                                <h5 class="mb-lg">编辑视频信息</h5>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">视频编号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="10" class="form-control" id="input_num_id" name="number" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">视频名称<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="64" class="form-control" id="input_name_id" name="name" required>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">HLS地址<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="120" class="form-control" id="input_hls_url_id" name="HLS" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="text" class="col-sm-2 control-label">H5地址</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="120" class="form-control" id="input_h5_url_id" name="H5">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="text" class="col-sm-2 control-label">设备编号<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="120" class="form-control" id="input_st_id" name="ST">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text" class="col-sm-2 control-label">备注</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" maxlength="120" class="form-control" id="input_remarks_id" name="remarks">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="float:left">
+            <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                <a>&nbsp;&nbsp;</a>
+                <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../Scripts/md5/md5.js"></script>
+
+
+    <!-- 界面js代码 -->
+    <script>
+        var g_info;
+        // 用于记录编辑之前的信息，用于对比查看是否修改了信息
+        var g_LastInfo = {
+            SERIAL: '',
+            NAME: '',
+            URL: '',
+            H5URL: '',
+            REMARKS: ''
+        };
+
+        //  缓存各个元素
+        var numElement      = document.getElementById("input_num_id"),
+             nameElement    = document.getElementById("input_name_id"),
+             hlsElement     = document.getElementById("input_hls_url_id"),
+             h5Element      = document.getElementById("input_h5_url_id"),
+             stElement      = document.getElementById("input_st_id"),
+             remarksElement = document.getElementById("input_remarks_id");
+
+        // 初始化加载执行
+        window.onload = function () {   // 要执行的js代码段
+            // 获取编辑或新建视频信息
+            g_info = parent.GetEditVideoInfo();
+            if (g_info == null) {
+                layer.alert("无效的参数！", { icon: 5, scrollbar: false }); // 5：失败；6：成功
+            }
+            else {
+                if (g_info.isEdit == true) {  // 编辑视频
+                    // 将之前对象拷贝一份
+                    g_LastInfo.SERIAL = g_info.SERIAL;
+                    g_LastInfo.NAME = g_info.NAME;
+                    g_LastInfo.URL = g_info.URL;
+                    g_LastInfo.H5URL = g_info.H5URL;
+                    g_LastInfo.ST = g_info.ST;
+                    g_LastInfo.REMARKS = g_info.REMARKS;
+
+                    console.log('g_LastInfo=', g_LastInfo);
+
+                    $("#input_num_id").attr("readOnly", "true");    // 编号只读
+                    // 初始化显示信息
+                    numElement.value = g_info.SERIAL;
+                    nameElement.value = g_info.NAME;
+                    hlsElement.value = g_info.URL;
+                    h5Element.value = g_info.H5URL;
+                    stElement.value = g_info.ST;
+                    remarksElement.value = g_info.REMARKS;
+                }
+                else { // 新建
+                    // 编号不需要填写, 由系统自动生成, 设置为已读
+                    $("#input_num_id").attr("readOnly", "true");
+                    // 初始化显示信息
+                    numElement.value = '由系统自动生成';
+                }
+            }
+        }
+
+        //  验证是否含有特殊字符
+        function check_other_char(str) {
+            var arr = ["&", "\\", "/", "*", ">", "<", "-", "!", "\"", "\'", " "];
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = 0; j < str.length; j++) {
+                    if (arr[i] == str.charAt(j)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+        //检查是否有非数字
+        function check_other_number(str) {
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] < '0' || str[i] > '9') {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // 检查输入的内容是否合法
+        function check_input_data() {
+            var str;
+
+            // 检查名称
+            str = nameElement.value;
+            if (str == null || str.length < 2 || str.length > 64) {
+                nameElement.focus();    // 激活焦点
+                layer.alert("名称长度限制2-64个字符！", { icon: 5, scrollbar: false });    // 5：失败；6：成功
+                return false;
+            }
+            if (check_other_char(str) == true) {
+                nameElement.focus();    // 激活焦点
+                layer.alert("名称不能含有特殊字符！", { icon: 5, scrollbar: false });         // 5：失败；6：成功
+                return false;
+            }
+
+            // 检查编号
+            str = stElement.value;
+            if (str == null || str.length != 10) {
+                layer.alert("编号必须为10位数字！", { icon: 5, scrollbar: false });    //5：失败；6：成功
+                stElement.focus();    //激活焦点
+                return false;
+            }
+            if (check_other_number(str) == true) {
+                layer.alert("编号必须为数字！", { icon: 5, scrollbar: false });         //5：失败；6：成功
+                stElement.focus();    //激活焦点
+                return false;
+            }
+
+            //  检查HLS视频视频地址
+            str = hlsElement.value;
+            if (str == null || str.length == 0 || str.length > 120) {
+                hlsElement.focus(); //  激活焦点
+                layer.alert("HLS地址不存在或者长度超过120个字符!", { icon: 5, scrollbar: false }); //  5: 失败; 6: 成功
+                return false;
+            }
+
+            // 检查备注信息
+            str = remarksElement.value;
+            if (str != null && str.length > 0) {
+                if (str.length < 1 || str.length > 64) {
+                    layer.alert("备注信息限制1-64个字符！", { icon: 5, scrollbar: false });    // 5：失败；6：成功
+                    remarksElement.focus();    // 激活焦点
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // 确定按钮
+        function button_ok_onclick() {
+            if (g_info == null) {
+                layer.alert("无效的参数,无法完成请求的操作！", { icon: 5, scrollbar: false }); // 5：失败；6：成功
+            }
+
+            if (g_info.isEdit == true) {    // 当前请求编辑视频信息
+
+                //  发生了修改
+                if (nameElement.value != g_LastInfo.NAME ||
+                    hlsElement.value != g_LastInfo.URL ||
+                    h5Element.value != g_LastInfo.H5URL ||
+                    stElement.value != g_LastInfo.ST ||
+                    (remarksElement.value != g_LastInfo.REMARKS)) {
+                    //  修改了信息
+                }
+                else { // 没有发生过修改
+                    console.log(9999)
+                    parent.CloseLayer();        // 关闭页面
+                    return true; // 无需修改
+                }
+
+                if (check_input_data() == true) {  // 视频信息合法
+                    if (EditVideoBasicInfo(
+                        g_LastInfo.SERIAL,
+                        nameElement.value,
+                        hlsElement.value,
+                        h5Element.value,
+                        stElement.value,
+                        remarksElement.value) == true) {
+
+                        parent.UpdateVideo(
+                            g_LastInfo.SERIAL,
+                            nameElement.value,
+                            hlsElement.value,
+                            h5Element.value,
+                            stElement.value,
+                            remarksElement.value
+                            );
+                        // 刷新数据
+                        // 修改成功了，请求父页面接口添加相应的数据到本地缓冲区
+                        // 询问框
+                        layer.confirm('编辑视频信息成功！', {
+                            btn: ['确定'], // 按钮
+                            icon: 6
+                        }, function () {
+                            parent.CloseLayer();        // 关闭页面
+                        });
+                    }
+                }
+            }
+            else { // 当前请求添加视频
+                if (check_input_data() == true) {  // 视频信息合法
+                    if (AddVideo(
+                        nameElement.value,
+                        hlsElement.value,
+                        h5Element.value,
+                        stElement.value,
+                        remarksElement.value) == true) {
+
+                        parent.RefreshVideoData();   // 刷新数据
+                        // 视频添加成功了，请求父页面接口添加相应的数据到本地缓冲区
+                        // 询问框
+                        layer.confirm('添加视频成功！', {
+                            btn: ['确定'], // 按钮
+                            icon: 6
+                        }, function () {
+                            parent.CloseLayer();        // 关闭页面
+                        });
+                    }
+                }
+            }
+        }
+        // 取消按钮处理
+        function button_cancel_onclick() {
+            parent.CloseLayer();
+        }
+
+        // 请求添加视频(需要自己检查输入的数据合法性)
+        function AddVideo(NAME, URL, H5URL, ST, REMARKS) {
+            var sta = 0;
+            // 请求服务器进行登录
+            var jsonData = {
+                GetFun: 'AddVideo',
+                NAME: NAME,
+                URL: URL,
+                H5URL: H5URL,
+                ST: ST,
+                REMARKS: REMARKS,
+            };
+
+
+            $.ajax({
+                url: '/Home/Index',
+                type: 'POST',
+                dataType: 'json',
+                async: false,   // 同步模式，等待结果再返回
+                data: jsonData,
+            })
+            .done(function (response) {
+                if (response.rel == 1) sta = 1; //  成功
+                else if (response.rel == 0) {
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                }
+                else if (response.rel == -1) { // 需要登录
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                    parent.JumpLogon();
+                }
+                else {
+                    layer.alert('未知错误！', { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                }
+            })
+            .fail(function () {
+                layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); // 5：失败；6：成功
+            })
+            if (sta == 1) return true;
+
+            return false;
+        }
+
+
+
+        // 请求编辑信息(需要自己检查输入的数据合法性)
+        function EditVideoBasicInfo(SERIAL, NAME, URL, H5URL, ST, REMARKS) {
+            var sta = 0;
+
+            // 请求服务器进行登录
+            var jsonData = {
+                GetFun: 'EditVideoBasicInfo',
+                SERIAL: SERIAL,
+                NAME: NAME,
+                URL: URL,
+                H5URL: H5URL,
+                ST: ST,
+                REMARKS: REMARKS,
+            };
+
+
+            $.ajax({
+                url: '/Home/Index',
+                type: 'POST',
+                dataType: 'json',
+                async: false,   // 同步模式，等待结果再返回
+                data: jsonData,
+            })
+            .done(function (response) {
+                if (response.rel == 1) sta = 1; //  成功
+                else if (response.rel == 0) {
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                }
+                else if (response.rel == -1) { // 需要登录
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                    parent.JumpLogon();
+                }
+                else {
+                    layer.alert('未知错误！', { icon: 5, scrollbar: false }); // 5：失败；6：成功
+                }
+            })
+            .fail(function () {
+                layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); // 5：失败；6：成功
+            })
+            if (sta == 1) return true;
+
+            return false;
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>

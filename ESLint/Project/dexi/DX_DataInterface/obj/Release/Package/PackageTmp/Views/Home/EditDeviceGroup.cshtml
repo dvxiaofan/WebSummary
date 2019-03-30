@@ -1,0 +1,723 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Group-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>修改设备分组</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                        <div class="panel-content">
+
+                            <form class="form-inline" id="search_form_id_01">                                                                   
+                                <div class="form-group">
+                                    <a  class="control-label">搜索分组:</a> 
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" style="height:28px" type="text" id="search_user_name_id" placeholder="分组">
+                                    <button  class="btn btn-info fa fa-search" onclick="search_name_onclick()" type="button">&nbsp;&nbsp;搜索</button>
+                                    <button  class="btn btn-info fa fa-remove" onclick="search_cancel_onclick()" type="button" id="cancel_search_button_id">&nbsp;&nbsp;取消搜索</button>
+                                </div>
+                                <div class="form-group"  style="float:right">
+                                    <a href="#" onclick="RefreshPage_onClick()" class="fa fa-refresh" id="lable_refresh_data_id">刷新数据</a>
+                                </div>
+                            </form>
+
+
+                                         <div class="table-responsive" id="table_and_page_div_id" >
+                                        <!--此处放一个表格-->
+                                        <table id="ess_list_table_id" lay-filter="tabl_lay_filter"></table>
+                                        <div class="btn-group" style="margin-left: auto;margin-right: auto;" id="limt_butt_id">
+                                        </div>
+
+                                        </div>
+                                   
+                    
+                  
+                        </div>
+                    </div>
+                </div>
+
+                <div style="float:left">
+                        <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                            <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                            <a>&nbsp;&nbsp;</a>
+                            <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/layui/layui.js"></script>
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+    var g_AllGroupListData;                            //所有用户列表基本数据-已经转换为可以被显示的数据
+    var g_SearchGroupListDataData;                       //符合搜索条件的用户信息-链接到g_AllGroupListData(注意：存在搜索，这个序号可能会乱)
+    var g_GroupInfoDataPage = JSON.parse('[]');          //用于最终显示的一页数据-链接到g_AllGroupListData或g_SearchGroupListDataData
+    var g_SelectPageIndex = 0;                          //当前页索引，从0开始
+    var cg_OnePageDataCount = 50;                       //一页显示数据条数
+    var g_layer_msg_index;                              //加载框id
+    var g_layer_id;                                     //全局新窗口id
+    var g_tableIns;                                     //tableIns 来源于 table.render() 方法的实例-用于表格重载
+    var g_isSearchMode = false;                         //是否处于搜索模式
+    var g_DefaultBindGroupSTArr = JSON.parse('[]');    //记录初始时已经绑定的分组信息
+    var g_ThisDeviceST;                                 //当前设备编号-从父页面获取
+    var g_ThisDeviceName;                               //当前设备名称-从父页面获取
+    var g_DefaultGroupName;                             //当前设备默认绑定的分组名称-从父界面获取
+    var g_LastSelectGroup;                              //上一次选中的分组
+
+    //table表格配置
+    var g_table_config = {
+        elem: '#ess_list_table_id'
+        , data: g_GroupInfoDataPage
+        , limit: cg_OnePageDataCount
+        , text: { none: '暂无相关数据' }
+        , height: 500
+      , page: false //开启分页
+      , cols: [[ //表头
+        { type: 'checkbox' }
+        , { field: 'ID', title: '序号', width: 60 } //80
+        , { field: 'GROUP', title: '分组', width: 500 }//240 
+      ]]
+
+         , even: true //开启隔行背景
+        , size: 'sm' //小尺寸的表格
+    };
+
+    //底部分页栏配置
+    var g_table_limt = {
+        elem: 'limt_butt_id',
+        theme: '#5BC0DE',                   //主题风格
+        count: 0,              //数总数
+        limit: cg_OnePageDataCount,         //单页显示数据条数
+        groups: 8,      //连续出现的页码个数
+        curr: (g_SelectPageIndex + 1),             //当前页码
+        jump: function (obj, first) {//分页回调
+            table_limt_jump_event(obj, first);  //翻页处理
+        },
+        layout: ['prev', 'page', 'next', 'count'],
+    };
+    //用于记录当前滑动条位置
+    var g_scrollTop = {
+        dev_obj: null,          //layui table 父div
+        layuitable: null,       //当前的layui table
+        scrollTop: 0            //记录位置
+    };
+
+
+    //初始化加载执行
+    window.onload = function () {   //要执行的js代码段  
+        var UserInfoObj;
+        var AllGroupList;            //原始的所有分组数据列表
+
+        $.ajaxSettings.async = false;              //由于有ajax，强制js为同步执行
+        loading_message('加载数据中...');            //弹出提示框
+
+        try {
+            var DeviceOjb = parent.GetEditDeviceInfo();               //从父界面获取当前编辑的设备ST
+            g_ThisDeviceST = DeviceOjb.ST;
+            g_ThisDeviceName = DeviceOjb.NAME;
+            g_DefaultGroupName = DeviceOjb.GROUP; //初始化默认选择的分组
+            g_LastSelectGroup = DeviceOjb.GROUP; //初始化上次选中的分组
+        } catch (e) {
+            layer.alert("从父界面获取设备信息失败！", { icon: 5, scrollbar: false });      //5：失败；6：成功
+        }
+        
+
+        AllGroupList = ajaxSyncGetAllGroupList();            //获取所有分组基本信息
+        //转换原始的分组列表为table可以显示的数据，注意是全部的数据进行转换
+        g_AllGroupListData = conversion_all_data_layui_table(AllGroupList, g_DefaultGroupName);
+
+
+        g_GroupInfoDataPage = get_user_data(g_AllGroupListData, 0, cg_OnePageDataCount);          //获取第一页要显示的信息
+
+        data_table_init(g_GroupInfoDataPage, g_AllGroupListData.length, cg_OnePageDataCount, 0);  //初始化表格，并显示数据
+
+        close_message();                                    //关闭提示框 
+
+        document.getElementById("cancel_search_button_id").disabled = "true";    //禁用取消搜索按钮
+
+        //初始化当前要素选中状态表  
+        /*for (var i = 0; i < obj.length; i++) {
+            if (check_ess(g_SelectGroupEssListArr, i + '') == true) {
+                g_GroupEssSelectStatusArr[i] = 1;  //当前要素选中有效
+            }
+            else {
+                g_GroupEssSelectStatusArr[i] = 0;  //当前要素选中无效
+            }
+        }*/
+
+
+
+    }
+
+
+    //浏览器窗口大小变化事件
+    $(window).resize(function () {          //当浏览器大小变化时
+        //自动高度
+        //var oDiv = document.getElementById('user_panel_id_1');
+        //oDiv.style.height = ($(window).height() - 40) + 'px';
+
+        //表格高度自适应
+        data_table_auto_height();                           //自动调节表格高度
+
+    });
+
+
+
+    //获取指定索引开始的指定条数据
+    function get_user_data(AllGroupListData, StartIndex, Count) {
+        var obj = JSON.parse('[]');
+        var cnt = 0;
+
+        //alert(AllGroupListData.length + ',' + StartIndex + ',' + Count);
+        if (AllGroupListData == null || AllGroupListData.length == 0 || Count == 0) {
+            layer.alert("要获取的用户列表为空！", { icon: 5, scrollbar: false });      //5：失败；6：成功
+
+            return obj;
+        }
+
+        if (StartIndex >= AllGroupListData.length) StartIndex = AllGroupListData.length - 1;  //限制
+
+        //准备好数据
+        for (var i = StartIndex; i < AllGroupListData.length; i++) {
+            obj[cnt] = AllGroupListData[i];
+            obj[cnt].ID = (1 + i) + '';    //重新设置序号
+            if (i == (AllGroupListData.length - 1) || cnt == (Count - 1)) //最后一个
+            {
+                break;//完成了
+            }
+            cnt++;
+        }
+
+
+        return obj;
+    }
+
+
+
+    //初始化表格(只能调用一次，并且会在调用后延时一段时间才能初始化完成)DataTableObj:当前要显示的数据；AllDataCount：总数据条数；OnePageCount：一页显示的数据条数；ThisPageIndex：当前页索引，从0开始
+    function data_table_init(DataTableObj, AllDataCount, OnePageCount, ThisPageIndex) {
+        layui.use('table', function () {
+            var table1 = layui.table;
+            //第一个实例
+            g_table_config.data = DataTableObj;
+            g_tableIns = table1.render(g_table_config);
+            table1.on('checkbox(tabl_lay_filter)', function (obj) {
+                //console.log(obj.checked); //当前是否选中状态
+                //console.log(obj.data); //选中行的相关数据
+                //console.log(obj.type); //如果触发的是全选，则为：all，如果触发的是单选，则为：one
+
+                //alert(obj.data.USER + ' ' + obj.data.LAY_CHECKED);
+                try {
+                    if (obj.type == 'all') {
+                        layer.alert("错误：只允许选中一个分组！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                        OneSelect(g_AllGroupListData, g_LastSelectGroup); //列表只选中当前，取消掉其余的选中状态
+                    }
+                    else //单个选中
+                    {
+                        g_LastSelectGroup = obj.data.GROUP;
+                        OneSelect(g_AllGroupListData, g_LastSelectGroup); //列表只选中当前，取消掉其余的选中状态
+                    }
+                } catch (e) {
+                    layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+                
+            });
+
+            data_table_auto_height();                           //自动调节表格高度
+        });
+
+        //刷新底部的分页栏
+        table_limt_refresh(AllDataCount, OnePageCount, ThisPageIndex);
+    }
+
+
+
+    //表格高度自动调节（要在表格初始化之后进行调用）
+    function data_table_auto_height() {
+        //表格高度自适应
+        if (g_tableIns != null) {
+            g_table_config.height = $(window).height() - 210;
+            g_tableIns.reload(g_table_config);              //表格重载
+        }
+    }
+
+
+
+
+
+    //刷新底部分页栏(AllDataCount:总的数据条数；OnePageCount：一页显示的数据条数；ThisPageIndex：当前页索引，从0开始,无需修改的参数可以为null)
+    function table_limt_refresh(AllDataCount, OnePageCount, ThisPageIndex) {
+        //刷新底部的分页栏
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+            //执行一个laypage实例-设置分页
+            if (AllDataCount != null) {
+                g_table_limt.count = AllDataCount;          //数总数
+            }
+            if (OnePageCount != null) {
+                g_table_limt.limit = OnePageCount;          //单页显示数据条数
+            }
+            if (ThisPageIndex != null) {
+                g_table_limt.curr = ThisPageIndex + 1;      //当前页
+            }
+            laypage.render(g_table_limt);                   //重新刷新底部分页
+        });
+    }
+
+
+
+    //转换全部要显示的用户信息-转换为可以被显示的格式，注意是全部的用户信息(AllGroupList:全部分组列表；ThisGroupName：当前分组名称)
+    function conversion_all_data_layui_table(AllGroupList, ThisGroupName) {
+        var UserTableData = JSON.parse('[]');                  //清空数据，创建一个对象数组
+        var Count = 0;
+
+        try {
+            if (AllGroupList == null || AllGroupList.length == 0)//没有数据
+            {
+                return UserTableData;
+            }
+            else {
+                for (var i = 0; i < AllGroupList.length; i++) {
+                    var obj = new Object();                     //定义对象
+                    //给对象添加属性
+                    obj.ID = (1 + i) + '';                      //行号，加上起始行号
+                    obj.GROUP = AllGroupList[i].GROUP;
+                    if (ThisGroupName != null && ThisGroupName == AllGroupList[i].GROUP)   //当前用户已经被绑定
+                    {
+                        g_DefaultBindGroupSTArr[Count++] = AllGroupList[i].ST;            //初始化记录默认已经绑定的分组列表
+                        obj.LAY_CHECKED = true;
+                    }
+
+                    UserTableData[i] = obj;                    //添加对象到数组
+                }
+            }
+        }
+        catch (e) {
+            layer.alert("处理数据发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+
+        return UserTableData;
+    }
+
+
+    //记录scrollTop位置，在表格重载之前调用（依赖全局g_scrollTop）
+    function RecordScrollTop() {
+        try {
+            g_scrollTop.dev_obj = document.getElementById('table_and_page_div_id'); //table的父div
+            if (g_scrollTop.dev_obj != null) {
+                g_scrollTop.layuitable = g_scrollTop.dev_obj.getElementsByClassName("layui-table-main");
+            }
+            if (g_scrollTop.layuitable != null && g_scrollTop.layuitable.length > 0) {
+                g_scrollTop.scrollTop = g_scrollTop.layuitable[0].scrollTop; //layuitable获取到的是 class=layui-table-main的集合
+            }
+        }
+        catch (e) {
+            g_scrollTop.scrollTop = 0;
+            console.log(e.message);
+        }
+    }
+
+    //还原scrollTop位置，在表格重载之后调用（依赖全局g_scrollTop）
+    function RestoreScrollTop() {
+        try {
+            //还原scroll位置
+            if (g_scrollTop.layuitable != null && g_scrollTop.layuitable.length > 0) {
+                g_scrollTop.layuitable[0].scrollTop = g_scrollTop.scrollTop;
+            }
+        }
+        catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    //重载表格
+    function table_reload(UserInfoDataPage) {
+        try {
+            //刷新当前页
+            g_table_config.data = UserInfoDataPage;
+            g_tableIns.reload(g_table_config);//表格重载
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+
+    }
+
+    //表格翻页处理
+    function table_limt_jump_event(obj, first) {
+        try {
+            //obj包含了当前分页的所有参数，比如：
+            //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            // console.log(obj.limit); //得到每页显示的条数
+
+            //首次不执行
+            if (!first) {
+                //alert(obj.curr + " " + obj.limit);
+
+                //弹出提示框
+                g_layer_msg_index = layer.msg('加载中',
+                {
+                    icon: 16
+                    , shade: 0.5 //越大界面越黑
+                    , time: 60000,//时间
+                    anim: 0, //平滑放大
+                    scrollbar: false//锁定浏览器滑动
+                });
+
+                g_SelectPageIndex = obj.curr - 1;   //获取当前页索引
+
+
+                if (g_isSearchMode == false)  //不处于搜索模式
+                {
+                    g_GroupInfoDataPage = get_user_data(g_AllGroupListData, g_SelectPageIndex * cg_OnePageDataCount, cg_OnePageDataCount);  //获取第n页要显示的用户详细信息
+                }
+                else //处于搜索模式
+                {
+                    g_GroupInfoDataPage = get_user_data(g_SearchGroupListDataData, g_SelectPageIndex * cg_OnePageDataCount, cg_OnePageDataCount);  //获取第n页要显示的用户详细信息
+                }
+
+                RecordScrollTop();      //记录scrollTop位置，在表格重载之前调用（依赖全局g_scrollTop）
+                //刷新当前页
+                table_reload(g_GroupInfoDataPage);       //重载表格
+                layer.close(g_layer_msg_index);      //关闭提示框
+                RestoreScrollTop();      //还原scrollTop位置，在表格重载之后调用（依赖全局g_scrollTop）
+            }
+            else {
+                g_SelectPageIndex = obj.curr - 1;
+            }
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+    }
+
+
+    // 验证是否含有特殊字符
+    function check_other_char(str) {
+        var arr = ["&", "\\", "/", "*", ">", "<", "-", "!", "\"", "\'", " "];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < str.length; j++) {
+                if (arr[i] == str.charAt(j)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //检查是否有非数字
+    function check_other_number(str) {
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] < '0' || str[i] > '9') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //查找当前分组是否存在于列表中
+    function FindSTToList(ST, STList) {
+        if (ST == null || STList == null || STList.length == 0) return false;
+        try {
+            for (var i = 0; i < STList.length; i++) {
+                if (ST == STList[i]) return true;
+            }
+        } catch (e) {
+
+        }
+
+        return false;
+    }
+
+    //确定按钮
+    function button_ok_onclick() {
+        var AddBindGroupList = JSON.parse('[]');   //需要绑定的分组列表
+        var DeleteBindGroupList = JSON.parse('[]'); //需要解除绑定的分组列表
+        var AddCount = 0;
+        var DeleteCount = 0;
+
+        try //循环获取增加了哪些分组的绑定
+        {
+
+            if (g_AllGroupListData == null || g_AllGroupListData.length == 0) {
+                layer.alert('没有分组需要绑定！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.CloseLayer(); //关闭
+                return;
+            }
+            if (g_LastSelectGroup == null || g_LastSelectGroup == g_DefaultGroupName)
+            {
+                layer.alert('没有修改绑定，直接退出！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.CloseLayer(); //关闭
+                return;
+            }
+
+            loading_message('请求数据中...');            //弹出提示框
+
+            if (ajax_sync_UpdateDeviceBindGroup(g_ThisDeviceST, g_LastSelectGroup) == true) {
+                close_message();                                    //关闭提示框 
+                parent.RefreshDeviceData();         //刷新父界面
+                //用户添加成功了，请求父页面接口添加相应的数据到本地缓冲区
+                //询问框
+                layer.confirm('修改设备分组成功！', {
+                    btn: ['确定'], //按钮
+                    icon: 6
+                }, function () {
+                    parent.CloseLayer();        //关闭页面
+                });
+            }
+            close_message();                                    //关闭提示框 
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+        close_message();                                    //关闭提示框 
+    }
+
+
+    //取消按钮处理
+    function button_cancel_onclick() {
+        parent.CloseLayer();
+    }
+
+
+    //搜索符合条件的用户列表(AllGroupListData:所有的用户数据；Keyword:搜索关键字，分组名与昵称）
+    function search_Group_list(AllGroupListData, Keyword) {
+        var obj = JSON.parse('[]');
+        var count = 0;
+
+        if (AllGroupListData == null || AllGroupListData.length == 0) {
+            layer.alert("错误：列表为空，无法搜索！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+            return obj;
+        }
+        if (Keyword == null || Keyword.length == 0) {
+            layer.alert("错误：请输入搜索关键字！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+            return obj;
+        }
+
+        try {
+            //搜索
+            for (var i = 0; i < AllGroupListData.length; i++) {
+                if (AllGroupListData[i].GROUP.indexOf(Keyword) >= 0) {
+                    obj[count++] = AllGroupListData[i];  //找到了
+                    if (count >= 1000) {
+                        layer.alert("搜索到超过1000个满足条件的数据，提前结束搜索，请修改搜索条件缩小范围！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+                        break;
+                    }
+                }
+            }
+            if (count == 0) //没有搜索到满足条件的数据
+            {
+                layer.alert("没有搜索到满足条件的数据！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+        catch (e) {
+            layer.alert("搜索发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+
+        return obj;
+    }
+
+
+    //搜索按钮处理
+    function search_name_onclick() {
+        var Keyword = document.getElementById("search_user_name_id").value; //获取搜索框内容
+        if (Keyword == null || Keyword.length < 1) {
+            layer.alert("错误：搜索内容不能为空！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+            return;
+        }
+
+        g_SearchGroupListDataData = search_Group_list(g_AllGroupListData, Keyword);    //搜索
+        if (g_SearchGroupListDataData.length == 0) return;                       //没有搜索到
+        //开始获取搜索的内容，并进行显示
+        try {
+            g_isSearchMode = true;  //处于搜索模式
+            document.getElementById("cancel_search_button_id").disabled = false;    //启用取消搜索按钮
+            loading_message('加载数据中...');            //弹出提示框
+
+            g_GroupInfoDataPage = get_user_data(g_SearchGroupListDataData, 0, cg_OnePageDataCount);          //获取第N页要显示的信息
+
+            //刷新当前页
+            table_reload(g_GroupInfoDataPage);       //重载表格
+            //刷新底部的分页栏
+            table_limt_refresh(g_SearchGroupListDataData.length, cg_OnePageDataCount, 0);
+            layer.close(g_layer_msg_index);         //关闭提示框
+            if (g_SearchGroupListDataData.length >= 1000) {
+                layer.alert("搜索到超过1000条，只显示" + g_SearchGroupListDataData.length + "条记录，请缩小搜索范围！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+            }
+            else {
+                layer.alert("搜索到" + g_SearchGroupListDataData.length + "条记录！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+            }
+
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+
+
+
+    }
+    //取消搜索按钮处理
+    function search_cancel_onclick() {
+        try {
+            if (g_isSearchMode == false) return;    //不处于搜索模式的话，直接返回
+            g_isSearchMode = false;                 //不处于搜索模式
+
+            loading_message('加载数据中...');            //弹出提示框
+            g_GroupInfoDataPage = get_user_data(g_AllGroupListData, 0, cg_OnePageDataCount);          //获取第一页要显示的信息
+            //刷新当前页
+            table_reload(g_GroupInfoDataPage);       //重载表格
+            //刷新底部的分页栏
+            table_limt_refresh(g_AllGroupListData.length, cg_OnePageDataCount, 0);
+            layer.close(g_layer_msg_index);         //关闭提示框
+
+            document.getElementById("cancel_search_button_id").disabled = "true";    //禁用取消搜索按钮
+        }
+        catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+    }
+
+    //请求修改设备绑定的分组（ST:当前设备ST；GROUP:要绑定的分组名）
+    function ajax_sync_UpdateDeviceBindGroup(ST, GROUP) {
+        var sta = 0;
+
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'UpdateDeviceBindGroup',
+            GROUP: GROUP,
+            ST: ST,
+        };
+
+
+        $.ajax({
+            url: '/Home/Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                sta = 1;
+            }
+            else if (response.rel == 0) {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else if (response.rel == -1) //需要登录
+            {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.JumpLogon();
+            }
+            else {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+        if (sta == 1) return true;
+
+        return false;
+    }
+
+    //刷新当前页面-点击刷新按钮
+    function RefreshPage_onClick() {
+        location.reload();
+    }
+
+    //弹出加载框
+    function loading_message(str) {
+        g_layer_msg_index = layer.msg('加载中',
+        {
+            icon: 16
+          , shade: 0.5 //越大界面越黑
+            , time: 60000,//时间
+            anim: 0, //平滑放大
+            scrollbar: false//锁定浏览器滑动
+        });
+    }
+
+    //关闭所有弹出
+    function close_message() {
+        layer.close(g_layer_msg_index);         //关闭提示框   
+    }
+
+
+    //表格只选中一个分组，会取消掉其余的分组选中状态
+    function OneSelect(AllTableData, GROUP)
+    {
+        if (AllTableData == null || AllTableData.length == 0 || GROUP == null) return;
+        try { 
+            for (var i = 0; i < AllTableData.length; i++)
+            {
+                if (AllTableData[i].GROUP == GROUP) //选中当前分组，取消掉其余分组的选中状态
+                {
+                    AllTableData[i].LAY_CHECKED = true;
+                }
+                else 
+                {
+                    AllTableData[i].LAY_CHECKED = false;
+                }
+            }
+        } catch (e) {
+
+        }
+        RecordScrollTop();      //记录scrollTop位置，在表格重载之前调用（依赖全局g_scrollTop）
+        //刷新当前页
+        table_reload(g_GroupInfoDataPage);       //重载表格
+        RestoreScrollTop();      //还原scrollTop位置，在表格重载之后调用（依赖全局g_scrollTop）
+    }
+
+</script>
+
+</body>
+
+
+</html>
+

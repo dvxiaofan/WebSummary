@@ -1,0 +1,470 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>视频列表</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /*INFO 按钮蓝色*/
+        .btn-info {
+            background-color: #3E79BB;
+            border-color: #3E79BB;
+        }
+
+        /*INFO 按钮禁用淡蓝色*/
+        .btn-info.disabled,
+        .btn-info[disabled] {
+            background-color: #88bffc;
+            border-color: #88bffc;
+        }
+
+        /*表格字体颜色，黑色*/
+        .layui-table {
+            color: #232323;
+        }
+    </style>
+</head>
+
+<style type="text/css">
+    html {
+        font-weight: normal;
+        position: relative;
+        height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        border-style: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    /* 基础部分*/
+    body {
+        position: relative;
+        height: 100%;
+        padding: 0;
+        margin: 0 auto;
+        font-family: "Microsoft Yahei";
+    }
+
+    /*图片列表*/
+    .piclist {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    .listul {
+        margin-left: 0;
+        padding-left: 10px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .listul li {
+        margin-left: 15px;
+        float: left;
+        width: 164px;
+        height: 190px;
+        position: relative;
+    }
+
+    .listul li span {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        width: 150px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+        color: #fff;
+        font-size: 15px;
+        padding: 3px 0;
+    }
+</style>
+
+
+<body class="row" style="overflow:-Scroll;overflow-y:hidden;margin-left:0px;">
+
+    <div id="right_panle_id">
+        <div class="user_content" , id="user_content_id_1" style="overflow:auto;">
+            <div class="row animated ">
+                <div class="panel" style="height:100%;width:100%;min-width:1100px;" id="user_panel_id_1">
+                    <div class="panel-content">
+
+
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <h4 class="section-subtitle"><b>视频监控列表</b>&nbsp;&nbsp;<a>&nbsp;&nbsp;&nbsp;&nbsp;</a><a
+                                        id="lable_number_id">总数：0</a><a>&nbsp;&nbsp;&nbsp;&nbsp;</a></h4>
+                            </div>
+                            <div class="form-group" style="float:right">
+                                <button class="btn btn-info fa fa-refresh" onclick="RefreshPage_onClick()"
+                                    type="button">&nbsp;&nbsp;刷新</button>
+                            </div>
+                        </form>
+                        <hr style="margin-top:-17px;background-color:#3E79BB;height:2px;">
+
+                        <div class="panel-content" style="height:100%;">
+                            <!--提示无数据-->
+                            <div id="no_data_info_id" class="panel-content" style="text-align:center;display:none;">
+                                无视频数据，请联系管理员添加
+                            </div>
+
+                            <div class="piclist">
+                                <ul class="listul"></ul>
+                                <div class="fydiv">
+                                    <ul class="fenye"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <!-- <script src="../../helsinki-blue/user/js/UserTree.js"></script>  -->
+    <script src="../../helsinki-blue/user/js/DeviceGroupList.js"></script>
+
+    <!-- 界面js代码 -->
+    <script type="text/javascript">
+        var g_VideoList = []; //视频信息
+        var video_layer_index = -1; //视频播放窗口
+        var g_ThisVideoURL = null; //当前视频的地址
+
+        //显示图片
+        function getPicture(obj) {
+            var ul = $(".listul");
+            ul.empty();
+
+            var e = "";
+            for (var i = 0; i < obj.length; i++) {
+                var name = obj[i].NAME;
+                if (name == null) name = '未命名';
+                var e = "<li  onclick=\"Picture_onClick(" + i +
+                    ")\"><a href=\"#\"><div style=\"width:160px;height:160px;display: table-cell;vertical-align: middle;text-align: center;\"><img style=\"width:150px;height:150px;\" src=\"../../Images/14-video.png\"></div></a><p><span>" +
+                    name + "</span></p></li>";
+                ul.append(e);
+            }
+        }
+
+
+
+        function choosele(num, cur) {
+            if (num == cur) {
+                return " choose";
+            } else {
+                return "";
+            }
+        }
+        //初始化加载执行
+        window.onload = function () { //要执行的js代码段  
+
+            // $.ajaxSettings.async = false;                   //由于有ajax，强制js为同步执行
+            loading_message('加载数据中...'); //弹出提示框
+
+
+            //自动高度-右侧正文
+            var oDiv = document.getElementById('user_content_id_1');
+            oDiv.style.height = ($(window).height() - 2) + 'px';
+
+            //下载数据
+            ajax_async_get_video_info(null, get_video_success_callback);
+
+
+        }
+
+        //数据下载成功回调
+        function get_video_success_callback(obj) {
+            try {
+                //清除页面之前的图片数据
+                var ul = $(".listul");
+                ul.empty();
+                document.getElementById('no_data_info_id').style.display = "none"; //隐藏提示
+                if (obj != null && obj.length != 0) {
+                    document.getElementById('lable_number_id').innerHTML = '总数：' + obj.length;
+                    getPicture(obj); //显示视频播放图片列表
+                } else {
+                    document.getElementById('lable_number_id').innerHTML = '总数：0';
+                    document.getElementById('no_data_info_id').style.display = ""; //显示提示
+                    layer.msg("错误：没有数据！", {
+                        icon: 5,
+                        scrollbar: false
+                    }); //5：失败；6：成功
+                }
+            } catch (e) {
+                layer.msg("错误：" + e.message, {
+                    icon: 5,
+                    scrollbar: false
+                }); //5：失败；6：成功
+            }
+            close_message(); //关闭提示框 
+        }
+
+        //点击选中播放视频
+        function Picture_onClick(index) {
+            try {
+                if (g_VideoList == null || g_VideoList.length == 0 || index >= g_VideoList.length) //没有视频可以播放
+                {
+                    layer.msg("错误：没有视频可以播放！", {
+                        icon: 5,
+                        scrollbar: false
+                    }); //5：失败；6：成功
+                } else {
+                    var name = g_VideoList[index].NAME;
+                    if (name == null) name = '未命名';
+
+                    name += ' 视频播放';
+                    //alert(g_VideoList[index].URL);
+                    //alert(g_VideoList[index].TYPE);
+                    if (g_VideoList[index].TYPE == "" || g_VideoList[index].TYPE == null) {
+                        open_real_frame(name, g_VideoList[index].URL);
+                    } else if (g_VideoList[index].TYPE == "HLS") //HLS视频
+                    {
+                        open_real_frame_hls(name, g_VideoList[index].URL);
+                    } else if (g_VideoList[index].TYPE == "RTMP") //RTMP视频
+                    {
+                        open_real_frame_hls(name, g_VideoList[index].URL);
+                    } else {
+                        open_real_frame(name, g_VideoList[index].URL);
+                    }
+                }
+            } catch (e) {
+                layer.msg("错误：" + e.message, {
+                    icon: 5,
+                    scrollbar: false
+                }); //5：失败；6：成功
+            }
+        }
+
+        //弹窗子窗口-视频播放测试
+        function open_real_frame(title, URL) {
+            try {
+                g_ThisVideoURL = URL; //记录视频的地址，传递到子窗口中
+
+                if (video_layer_index >= 0) //窗口无效才打开
+                {
+                    layer.close(video_layer_index); //先关闭
+                }
+                video_layer_index = layer.open({
+                    skin: 'layui-layer-lan', //主题
+                    type: 2,
+                    title: title,
+                    shadeClose: false,
+                    shade: false,
+                    maxmin: false, //开启最大化最小化按钮
+                    area: ['750px', '700px'],
+                    //content: URL,
+                    content: '/home/VideoFrame',
+                    offset: 'rt', //右上角弹出,
+                    //skin: 'layui-layer-rim', //加上边框
+                    closeBtn: 1, //关闭按钮无
+                    maxBtn: 0, //最大化按钮
+                    resize: false, //是否允许窗口拉伸
+                    scrollbar: false, //屏蔽浏览器的滑动条
+                    success: function (layero, index) {
+                        // var body = layer.getChildFrame('body', index);
+                        //g_iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                        //alert(body.html()) //得到iframe页的body内容
+                        //iframeWin.test();
+                    },
+                    cancel: function (index, layero) { //关闭回调
+                        layer.close(video_layer_index);
+                        video_layer_index = -1;
+                    }
+                });
+
+
+                //alert(g_frame_id);
+
+
+            } catch (e) {
+                layer.alert("错误：" + e.message, {
+                    icon: 5,
+                    scrollbar: false
+                }); //5：失败；6：成功
+            }
+        }
+
+
+        //弹窗子窗口-视频播放测试 HLS
+        function open_real_frame_hls(title, URL) {
+            try {
+                g_ThisVideoURL = URL; //记录视频的地址，传递到子窗口中
+
+                if (video_layer_index >= 0) //窗口无效才打开
+                {
+                    layer.close(video_layer_index); //先关闭
+                }
+                video_layer_index = layer.open({
+                    skin: 'layui-layer-lan', //主题
+                    type: 2,
+                    title: title,
+                    shadeClose: false,
+                    shade: false,
+                    maxmin: false, //开启最大化最小化按钮
+                    area: ['750px', '700px'],
+                    //content: URL,
+                    content: '/home/VideoFrame_HLS',
+                    offset: 'rt', //右上角弹出,
+                    //skin: 'layui-layer-rim', //加上边框
+                    closeBtn: 1, //关闭按钮无
+                    maxBtn: 0, //最大化按钮
+                    resize: false, //是否允许窗口拉伸
+                    scrollbar: false, //屏蔽浏览器的滑动条
+                    success: function (layero, index) {
+                        // var body = layer.getChildFrame('body', index);
+                        //g_iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                        //alert(body.html()) //得到iframe页的body内容
+                        //iframeWin.test();
+                    },
+                    cancel: function (index, layero) { //关闭回调
+                        layer.close(video_layer_index);
+                        video_layer_index = -1;
+                    }
+                });
+
+
+                //alert(g_frame_id);
+
+
+            } catch (e) {
+                layer.alert("错误：" + e.message, {
+                    icon: 5,
+                    scrollbar: false
+                }); //5：失败；6：成功
+            }
+        }
+
+
+
+        //获取当前要播放的视频地址
+        function GetVideoURL() {
+            return g_ThisVideoURL;
+        }
+
+        //浏览器窗口大小变化事件
+        $(window).resize(function () { //当浏览器大小变化时
+
+        });
+
+
+        //异步获取所有的视频设备信息(获取的数据更新到g_VideoList)
+        function ajax_async_get_video_info(fail_callback, success_callback) {
+            var obj = JSON.parse('[]');
+
+            try {
+                //请求服务器
+                var jsonData = {
+                    GetFun: 'GetUserVideoList',
+                };
+
+                $.ajax({
+                        url: '/Home/Index',
+                        type: 'POST',
+                        dataType: 'json',
+                        //async: false,                                       //同步执行
+                        data: jsonData,
+                    })
+                    .done(function (response) {
+                        if (response.rel == 1) { //获取成功
+                            obj = JSON.parse(response.obj); //全局缓存设备信息
+                            //alert(JSON.stringify(response.obj, 4));         //调试显示信息
+                            if (response.obj == null) //没有数据
+                            {
+                                layer.alert("没有获取到数据！", {
+                                    icon: 5,
+                                    scrollbar: false
+                                }); //5：失败；6：成功
+                            } else {
+                                obj = JSON.parse(response.obj); //转换为对象
+                                g_VideoList = obj; //写入全局缓冲区
+                                if (success_callback != null) success_callback(obj); //调用成功回调
+                            }
+                        } else if (response.rel == -1) //需要登录
+                        {
+                            layer.alert(response.msg, {
+                                icon: 5,
+                                scrollbar: false
+                            }); //5：失败；6：成功
+                            parent.JumpLogon();
+                        } else {
+
+                            layer.alert(response.msg, {
+                                icon: 5,
+                                scrollbar: false
+                            }); //5：失败；6：成功
+                            if (fail_callback != null) fail_callback(); //调用失败回调
+                        }
+                    })
+                    .fail(function () {
+                        layer.msg('通信错误，请求数据失败！', {
+                            icon: 5,
+                            scrollbar: false
+                        }); //5：失败；6：成功
+                        if (fail_callback != null) fail_callback(); //调用失败回调
+                    })
+            } catch (e) {
+                layer.msg("发生了错误：" + e.message, {
+                    icon: 5,
+                    scrollbar: false
+                }); //5：失败；6：成功
+                if (fail_callback != null) fail_callback(); //调用失败回调
+            }
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+
+</html>

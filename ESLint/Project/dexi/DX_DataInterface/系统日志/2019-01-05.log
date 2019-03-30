@@ -1,0 +1,199 @@
+
+2019-01-05 08:32:12 	加载配置成功
+
+2019-01-05 08:53:55 	加载配置成功
+
+2019-01-05 08:57:18 	DeleteUserToDevice，Unknown column 'VIDEO_ID' in 'where clause'
+2019-01-05 08:58:55 	DeleteUserToDevice，Unknown column 'VIDEO_ID' in 'where clause'
+2019-01-05 08:59:19 	DeleteUserToDevice，Unknown column 'VIDEO_ID' in 'where clause'
+2019-01-05 09:00:47 	DeleteUserToDevice，Unknown column 'VIDEO_ID' in 'where clause'
+2019-01-05 09:30:15 	加载配置成功
+
+2019-01-05 09:43:14 	加载配置成功
+
+2019-01-05 09:43:37 	AddUserToDevice，Unknown column 'VIDEO_ID' in 'field list'
+2019-01-05 09:44:15 	AddUserToDevice，Unknown column 'VIDEO_ID' in 'field list'
+2019-01-05 09:49:35 	AddUserToDevice，Unknown column 'VIDEO_ID' in 'field list'
+2019-01-05 09:51:46 	加载配置成功
+
+2019-01-05 09:56:12 	
+身份验证错误
+2019-01-05 09:56:28 	
+身份验证错误
+2019-01-05 09:56:31 	
+身份验证错误
+2019-01-05 09:56:52 	
+身份验证错误
+2019-01-05 09:57:06 	
+身份验证错误
+2019-01-05 09:57:44 	
+身份验证错误
+2019-01-05 09:58:04 	
+身份验证错误
+2019-01-05 09:58:07 	
+身份验证错误
+2019-01-05 09:58:58 	
+身份验证错误
+2019-01-05 09:59:29 	
+身份验证错误
+2019-01-05 09:59:34 	
+身份验证错误
+2019-01-05 10:00:42 	
+身份验证错误
+2019-01-05 10:36:41 	加载配置成功
+
+2019-01-05 10:46:26 	加载配置成功
+
+2019-01-05 10:46:37 	
+身份验证错误
+2019-01-05 11:00:37 	加载配置成功
+
+2019-01-05 13:57:01 	加载配置成功
+
+2019-01-05 13:57:14 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 13:57:38 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 13:58:41 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:05:18 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:05:23 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:06:24 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:09:32 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:13:00 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:19:50 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:19:56 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:21:15 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:22:25 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:24:01 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:24:34 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:25:09 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:26:07 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:26:43 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:26:52 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:27:55 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:28:10 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:29:56 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:30:35 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:30:42 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:31:26 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:31:30 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:32:15 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:32:24 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:32:40 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:32:45 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:36:45 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:37:26 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:38:45 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:39:56 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:42:25 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:43:25 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:45:16 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:46:29 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:48:43 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:49:09 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:52:00 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:52:17 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:59:26 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 14:59:58 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:00:49 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:01:14 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:01:18 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:01:55 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:03:51 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:04:33 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:05:32 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:05:41 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:05:49 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:10:52 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:10:56 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:13:02 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:13:08 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:14:50 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:14:50 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:14:58 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:15:00 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:15:11 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:19:35 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:06 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:07 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:35 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:36 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:39 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:40 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:49 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:21:49 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:22:19 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:22:20 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:22:56 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:22:57 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:24:00 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:24:01 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:24:03 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:24:03 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:25:32 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:25:32 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:25:36 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:25:36 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:26:49 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:27:06 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:27:06 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6656
+2019-01-05 15:27:07 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:27:43 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:34:58 	加载配置成功
+
+2019-01-05 15:35:08 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:35:24 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6656
+2019-01-05 15:35:25 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:35:39 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:35:39 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6656
+2019-01-05 15:35:39 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:35:52 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:37:13 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:37:14 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:18 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:37:19 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:19 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:37:20 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:27 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:33 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:37:33 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:39 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:37:40 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:37:40 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime)
+2019-01-05 15:41:30 	加载配置成功
+
+2019-01-05 15:41:39 	GetAlarmDataCnt未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmDataCnt(String USER, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6595
+2019-01-05 15:44:35 	加载配置成功
+
+2019-01-05 15:44:39 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655
+2019-01-05 15:44:43 	加载配置成功
+
+2019-01-05 15:45:42 	加载配置成功
+
+2019-01-05 15:45:51 	加载配置成功
+
+2019-01-05 15:50:04 	加载配置成功
+
+2019-01-05 15:53:27 	加载配置成功
+
+2019-01-05 15:55:56 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655
+2019-01-05 15:57:13 	加载配置成功
+
+2019-01-05 15:57:21 	加载配置成功
+
+2019-01-05 15:58:04 	加载配置成功
+
+2019-01-05 15:58:34 	加载配置成功
+
+2019-01-05 15:59:12 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 15:59:24 	加载配置成功
+
+2019-01-05 16:01:36 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC)
+2019-01-05 16:04:39 	加载配置成功
+
+2019-01-05 16:07:02 	加载配置成功
+
+2019-01-05 16:09:51 	加载配置成功
+
+2019-01-05 16:10:09 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655
+2019-01-05 16:10:13 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655
+2019-01-05 16:23:34 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655
+2019-01-05 16:25:23 	GetAlarmData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAlarmData(String USER, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 6655

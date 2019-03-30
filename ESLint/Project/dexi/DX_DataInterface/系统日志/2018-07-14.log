@@ -1,0 +1,87 @@
+
+2018-07-14 05:57:26 	加载配置成功
+
+2018-07-14 06:24:19 	加载配置成功
+
+2018-07-14 06:26:02 	加载配置成功
+
+2018-07-14 06:42:58 	加载配置成功
+
+2018-07-14 06:56:26 	加载配置成功
+
+2018-07-14 11:22:03 	加载配置成功
+
+2018-07-14 12:30:05 	加载配置成功
+
+2018-07-14 12:30:22 	UpdateDevicesBindingGroup，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateDevicesBindingGroup(String user, String group, String[] AddBindSTList, String[] DeleteBindSTList) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4862
+2018-07-14 12:31:30 	加载配置成功
+
+2018-07-14 12:31:46 	UpdateDevicesBindingGroup，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateDevicesBindingGroup(String user, String group, String[] AddBindSTList, String[] DeleteBindSTList) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4863
+2018-07-14 12:33:14 	加载配置成功
+
+2018-07-14 12:33:28 	UpdateDevicesBindingGroup，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateDevicesBindingGroup(String user, String group, String[] AddBindSTList, String[] DeleteBindSTList) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4863
+2018-07-14 12:34:45 	加载配置成功
+
+2018-07-14 12:35:25 	UpdateDevicesBindingGroup，You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`USER_DEVICE` SET `GROUP`='' WHERE `USER`='dexi' AND `ST`='1705130004'' at line 1
+2018-07-14 12:36:18 	加载配置成功
+
+2018-07-14 12:36:32 	UpdateDevicesBindingGroup，You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`USER_DEVICE` SET `GROUP`= WHERE `USER`='dexi' AND `ST`='1705130004'' at line 1
+2018-07-14 12:37:01 	加载配置成功
+
+2018-07-14 12:37:21 	UpdateDevicesBindingGroup，You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`USER_DEVICE` SET `GROUP`=null WHERE `USER`='dexi' AND `ST`='1705130004'' at line 1
+2018-07-14 12:38:08 	加载配置成功
+
+2018-07-14 12:59:15 	加载配置成功
+
+2018-07-14 13:01:38 	加载配置成功
+
+2018-07-14 13:12:48 	
+身份验证错误
+2018-07-14 13:16:18 	加载配置成功
+
+2018-07-14 13:17:35 	
+身份验证错误
+2018-07-14 13:17:58 	
+身份验证错误
+2018-07-14 13:22:33 	加载配置成功
+
+2018-07-14 13:35:20 	加载配置成功
+
+2018-07-14 13:35:24 	加载配置成功
+
+2018-07-14 13:37:14 	   在 DX_DataInterface.Controllers.HomeController.InsertBindDevice(String USER, String STListString, Int32 Rights) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\HomeController.cs:行号 1148索引超出了数组界限。
+2018-07-14 13:38:20 	加载配置成功
+
+2018-07-14 13:38:46 	   在 DX_DataInterface.Controllers.HomeController.InsertBindDevice(String USER, String STListString, Int32 Rights) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\HomeController.cs:行号 1148索引超出了数组界限。
+2018-07-14 13:39:41 	加载配置成功
+
+2018-07-14 13:40:07 	   在 DX_DataInterface.Controllers.HomeController.InsertBindDevice(String USER, String STListString, Int32 Rights) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\HomeController.cs:行号 1152索引超出了数组界限。
+2018-07-14 13:45:37 	加载配置成功
+
+2018-07-14 14:18:15 	加载配置成功
+
+2018-07-14 14:20:39 	
+身份验证错误
+2018-07-14 15:45:57 	加载配置成功
+
+2018-07-14 16:03:43 	加载配置成功
+
+2018-07-14 16:48:50 	
+身份验证错误
+2018-07-14 16:50:08 	
+身份验证错误
+2018-07-14 16:52:47 	加载配置成功
+
+2018-07-14 16:53:00 	
+身份验证错误
+2018-07-14 16:54:37 	加载配置成功
+
+2018-07-14 16:54:37 	
+身份验证错误
+2018-07-14 16:55:01 	DELETE FROM `USER_DEVICE` where `USER`="dexi" ; select row_count();
+2018-07-14 16:55:01 	DELETE FROM `USER_GROUP` where `USER`="dexi" ; select row_count();
+2018-07-14 16:55:52 	
+身份验证错误
+2018-07-14 17:10:02 	加载配置成功
+
+2018-07-14 17:13:21 	加载配置成功

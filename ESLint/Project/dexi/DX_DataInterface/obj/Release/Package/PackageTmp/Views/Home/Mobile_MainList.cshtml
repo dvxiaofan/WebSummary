@@ -1,0 +1,116 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/Light7/css/light7.css" rel="stylesheet" />
+
+    <style type="text/css">
+        /*调整列表的位置*/
+        .layui-colla-content {
+            padding: 1px 1px;
+
+        }
+
+        .list-block {
+            margin: 1px 1px 10px 1px;
+        }
+
+        .item-inner {
+            margin-left: 5px;
+        }
+
+        /*列表字体大小*/
+        .item-title {
+            font-size: 13px;
+            color: #020335;
+        }
+
+        .list-block .item-subtitle {
+            font-size: .6rem;
+        }
+
+        /*列表图标位置微调*/
+        .list-block .item-content {
+            padding-left: .3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-group">
+
+        <div class="page">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <!--<a class="icon icon-me pull-left open-panel"></a>-->
+                <img id="image_id" class="icon icon-me pull-left open-panel"
+                    src="../../Images/user.png" /
+                    style="width:35px;height:50px; margin:-4px auto; border-radius:50%">
+                <h1 class="title" id="mobile_title"></h1>
+            </header>
+            <div class="bar bar-header-secondary">
+                <div class="searchbar">
+                    <a class="searchbar-cancel" onclick="search_cancel_onclick()">取消</a>
+                    <div class="search-input">
+                        <label class="icon icon-search" for="search"></label>
+                        <input type="search" id='search' on placeholder='输入关键字...' />
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="main_content_id">
+                <!-- 列表 -->
+                <div class="layui-collapse" lay-filter="test" id="device_list_id">
+
+                </div>
+
+                <!-- 弹出加载框 -->
+                <p><a href="#" class="open-preloader"></a></p>
+            </div>
+
+        </div>
+
+
+        <div class="page">...</div>
+    </div>
+
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p id="userInfo"></p>
+            <p></p>
+            <p><a href="javascript:;" class="close-panel" onclick="reloadMainList()">刷新页面</a></p>
+            <p><a href="javascript:;" class="video-panel" id="video_panel_id"
+                    onclick="showVideoList()">视频列表</a></p>
+            <p><a href="javascript:;" class="close-panel" onclick="loginout()">退出登录</a></p>
+            <p><a href="#" class="close-panel">关闭</a></p>
+        </div>
+    </div>
+
+
+
+    <!-- 注意SUI与jquery冲突 -->
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../helsinki-blue/user/Light7/light7.js"></script>
+    <script src="../../helsinki-blue/user/js/Mobile_MainList.js"></script>
+    <script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_Text.js"></script>
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

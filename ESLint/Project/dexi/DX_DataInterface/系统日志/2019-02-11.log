@@ -1,0 +1,192 @@
+
+2019-02-11 08:33:36 	加载配置成功
+
+2019-02-11 08:33:51 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-02-11 08:35:03 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-02-11 09:21:39 	加载配置成功
+
+2019-02-11 09:21:54 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-02-11 10:10:16 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:10:16 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:10:16 	192.168.1.138;;Port=3306
+2019-02-11 10:10:16 	water
+2019-02-11 10:10:16 	water
+2019-02-11 10:10:16 	123456
+2019-02-11 10:10:28 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:10:28 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:10:28 	192.168.1.138;;Port=3306
+2019-02-11 10:10:28 	water
+2019-02-11 10:10:28 	water
+2019-02-11 10:10:28 	123456
+2019-02-11 10:10:35 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:10:35 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:10:35 	192.168.1.138;;Port=3306
+2019-02-11 10:10:35 	water
+2019-02-11 10:10:35 	water
+2019-02-11 10:10:35 	123456
+2019-02-11 10:10:36 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:12:24 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:12:24 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:12:24 	192.168.1.138;;Port=3306
+2019-02-11 10:12:24 	water
+2019-02-11 10:12:24 	water
+2019-02-11 10:12:24 	123456
+2019-02-11 10:12:24 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:12:38 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:12:38 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:12:38 	192.168.1.138;;Port=3306
+2019-02-11 10:12:38 	water
+2019-02-11 10:12:38 	water
+2019-02-11 10:12:38 	123456
+2019-02-11 10:12:38 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:13:08 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:13:08 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:13:08 	192.168.1.138;;Port=3306
+2019-02-11 10:13:08 	water
+2019-02-11 10:13:08 	water
+2019-02-11 10:13:08 	123456
+2019-02-11 10:17:10 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:17:10 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM `tempdata` where  ST="1705130004" ;
+2019-02-11 10:17:10 	192.168.1.138;;Port=3306
+2019-02-11 10:17:10 	water
+2019-02-11 10:17:10 	water
+2019-02-11 10:17:10 	123456
+2019-02-11 10:17:10 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:17:41 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:17:41 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:17:41 	192.168.1.138;;Port=3306
+2019-02-11 10:17:41 	water
+2019-02-11 10:17:41 	water
+2019-02-11 10:17:41 	123456
+2019-02-11 10:17:41 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:19:41 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:19:41 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:19:41 	192.168.1.138;;Port=3306
+2019-02-11 10:19:41 	water
+2019-02-11 10:19:41 	water
+2019-02-11 10:19:41 	123456
+2019-02-11 10:21:41 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:21:41 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:21:41 	192.168.1.138;;Port=3306
+2019-02-11 10:21:41 	water
+2019-02-11 10:21:41 	water
+2019-02-11 10:21:41 	123456
+2019-02-11 10:23:41 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:23:41 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:23:41 	192.168.1.138;;Port=3306
+2019-02-11 10:23:41 	water
+2019-02-11 10:23:41 	water
+2019-02-11 10:23:41 	123456
+2019-02-11 10:25:14 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:25:14 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:25:14 	192.168.1.138;;Port=3306
+2019-02-11 10:25:14 	water
+2019-02-11 10:25:14 	water
+2019-02-11 10:25:14 	123456
+2019-02-11 10:25:15 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-02-11 10:27:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:27:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:27:15 	192.168.1.138;;Port=3306
+2019-02-11 10:27:15 	water
+2019-02-11 10:27:15 	water
+2019-02-11 10:27:15 	123456
+2019-02-11 10:29:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:29:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:29:15 	192.168.1.138;;Port=3306
+2019-02-11 10:29:15 	water
+2019-02-11 10:29:15 	water
+2019-02-11 10:29:15 	123456
+2019-02-11 10:31:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:31:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:31:15 	192.168.1.138;;Port=3306
+2019-02-11 10:31:15 	water
+2019-02-11 10:31:15 	water
+2019-02-11 10:31:15 	123456
+2019-02-11 10:33:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:33:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:33:15 	192.168.1.138;;Port=3306
+2019-02-11 10:33:15 	water
+2019-02-11 10:33:15 	water
+2019-02-11 10:33:15 	123456
+2019-02-11 10:35:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:35:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:35:15 	192.168.1.138;;Port=3306
+2019-02-11 10:35:15 	water
+2019-02-11 10:35:15 	water
+2019-02-11 10:35:15 	123456
+2019-02-11 10:37:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:37:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:37:15 	192.168.1.138;;Port=3306
+2019-02-11 10:37:15 	water
+2019-02-11 10:37:15 	water
+2019-02-11 10:37:15 	123456
+2019-02-11 10:39:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:39:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:39:15 	192.168.1.138;;Port=3306
+2019-02-11 10:39:15 	water
+2019-02-11 10:39:15 	water
+2019-02-11 10:39:15 	123456
+2019-02-11 10:41:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:41:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:41:15 	192.168.1.138;;Port=3306
+2019-02-11 10:41:15 	water
+2019-02-11 10:41:15 	water
+2019-02-11 10:41:15 	123456
+2019-02-11 10:43:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:43:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:43:15 	192.168.1.138;;Port=3306
+2019-02-11 10:43:15 	water
+2019-02-11 10:43:15 	water
+2019-02-11 10:43:15 	123456
+2019-02-11 10:45:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:45:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:45:15 	192.168.1.138;;Port=3306
+2019-02-11 10:45:15 	water
+2019-02-11 10:45:15 	water
+2019-02-11 10:45:15 	123456
+2019-02-11 10:47:15 	GetRealData->QueryAndRreturnAdapter Error:Table 'water.tempdata' doesn't exist
+2019-02-11 10:47:15 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,AI,VA,VJ,Q1,Q2,VT, UT FROM `tempdata` where  ST="0311000002" ;
+2019-02-11 10:47:15 	192.168.1.138;;Port=3306
+2019-02-11 10:47:15 	water
+2019-02-11 10:47:15 	water
+2019-02-11 10:47:15 	123456
+2019-02-11 15:38:44 	加载配置成功
+
+2019-02-11 16:16:31 	加载配置成功
+
+2019-02-11 16:21:09 	加载配置成功
+
+2019-02-11 16:24:33 	加载配置成功
+
+2019-02-11 16:24:34 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:24:38 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:25:13 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:26:51 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:32:38 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:36:17 	加载配置成功
+
+2019-02-11 16:36:18 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:36:20 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:36:24 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:37:34 	身份验证有误：给定关键字不在字典中。
+
+2019-02-11 16:43:49 	加载配置成功
+
+2019-02-11 16:51:12 	加载配置成功
+
+2019-02-11 16:52:35 	加载配置成功
+
+2019-02-11 17:01:18 	加载配置成功
+
+2019-02-11 17:05:55 	加载配置成功

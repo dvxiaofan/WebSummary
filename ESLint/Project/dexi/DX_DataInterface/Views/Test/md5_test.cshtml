@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MD5 加密测试</title>
+
+    <!-- 引入 sui -->
+    <script src="http://g.tbcdn.cn/sj/lib/jquery/dist/jquery.min.js"></script>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet" />
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet" />
+    <script src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+    <script src="../../Scripts/md5/md5.js"></script>
+
+</head>
+<body>
+    <div>
+
+          <!--显示一个导航栏-->
+        <div class="sui-navbar ">
+            <div class="navbar-inner">
+                <a class="sui-brand">MD5加密测试</a>
+                <a id="findinfo_md5" class="sui-brand"></a>
+            </div>
+        </div>
+
+
+         <!--微信绑定接口输入-->
+        <form id ="form_md5" class="sui-form form-horizontal sui-validate">
+            <div class="control-group">
+                <label for="input" class="control-label">原字符串：</label>
+                <div class="controls">
+                    <input type="text" id="input_md5" name="value" placeholder="" data-rules="required">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="input" class="control-label">加密字符：</label>
+                <label id="output_md5" class="control-label"></label>
+
+            </div>
+    
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button onclick="submit_onclick()" type="submit" class="sui-btn btn-primary">生成</button>
+                </div>
+            </div>
+
+            <!-- 屏蔽表单提交 -->
+            <script type="text/javascript">
+
+                $("#form_md5").submit(function (e) {
+                    e.preventDefault();
+                })
+            </script>
+
+            <!-- 注册处理 -->
+            <script type="text/javascript">
+                function submit_onclick() {
+                    var value = document.getElementById("input_md5").value;
+                    if (value == "") {
+                        /*输入为空*/
+                        alert("不能为空!");
+
+                        return;
+                    }
+                    var hash = hex_md5(value);
+                    document.getElementById("output_md5").innerHTML = hash;
+
+                }
+            </script>
+
+
+
+        </form> 
+    </div>
+</body>
+</html>

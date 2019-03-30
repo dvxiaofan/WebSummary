@@ -1,0 +1,16 @@
+
+2019-01-28 08:33:07 	加载配置成功
+
+2019-01-28 08:33:22 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-28 11:08:37 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-28 11:08:38 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-28 11:08:39 	GetOneTelField未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 758
+2019-01-28 11:08:41 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistData(String ST, String StartTime, String EndTime, UInt32 StartIndex, UInt32 ReadCnt, Boolean isASC) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1007
+2019-01-28 14:17:28 	加载配置成功
+
+2019-01-28 14:39:55 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-28 14:39:56 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-28 14:41:01 	加载配置成功
+
+2019-01-28 14:47:12 	加载配置成功

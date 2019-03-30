@@ -1,0 +1,23 @@
+
+2019-03-06 08:54:10 	加载配置成功
+
+2019-03-06 10:11:27 	加载配置成功
+
+2019-03-06 10:12:35 	GetDeviceDetails未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetDeviceDetails(String ST) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 7098
+2019-03-06 10:12:54 	GetDeviceDetails未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetDeviceDetails(String ST) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 7098
+2019-03-06 10:13:20 	GetDeviceDetails未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetDeviceDetails(String ST) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 7098
+2019-03-06 10:13:29 	GetDeviceDetails未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetDeviceDetails(String ST) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 7098
+2019-03-06 10:15:40 	加载配置成功
+
+2019-03-06 10:17:03 	加载配置成功
+
+2019-03-06 10:18:37 	加载配置成功
+
+2019-03-06 10:19:09 	加载配置成功
+
+2019-03-06 10:30:03 	UpdateDeviceDetails，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.UpdateDeviceDetails(String ST, String DETAILS) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4182
+2019-03-06 10:33:26 	加载配置成功
+
+2019-03-06 10:36:24 	加载配置成功
+
+2019-03-06 15:12:23 	加载配置成功

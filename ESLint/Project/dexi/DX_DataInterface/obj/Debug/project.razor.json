@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "d:\\张艳坤\\DX数据查询平台(正式项目)\\DX数据查询平台_新(DX_DataInterface)\\DX_DataInterface\\DX数据查询平台.csproj",
+  "TargetFramework": "v4.0",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

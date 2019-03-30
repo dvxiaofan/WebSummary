@@ -1,0 +1,36 @@
+
+2018-06-27 08:18:11 	加载配置成功
+
+2018-06-27 09:11:42 	加载配置成功
+
+2018-06-27 10:24:42 	加载配置成功
+
+2018-06-27 10:25:02 	
+身份验证错误,OK
+2018-06-27 10:25:04 	
+身份验证错误,OK
+2018-06-27 10:27:13 	
+身份验证错误,OK
+2018-06-27 10:27:22 	
+身份验证错误,OK
+2018-06-27 10:27:26 	
+身份验证错误,OK
+2018-06-27 10:27:30 	
+身份验证错误,OK
+2018-06-27 20:33:55 	加载配置成功
+
+2018-06-27 20:34:15 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:34:26 	
+身份验证错误,OK
+2018-06-27 20:34:37 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:34:43 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:35:58 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:36:05 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:37:50 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:38:10 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:38:33 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:39:00 	加载配置成功
+
+2018-06-27 20:39:26 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:39:54 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceStList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2525
+2018-06-27 20:43:28 	加载配置成功

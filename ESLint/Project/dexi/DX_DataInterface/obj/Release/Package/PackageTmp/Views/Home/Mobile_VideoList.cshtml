@@ -1,0 +1,109 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>视频播放</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../../helsinki-blue/user/Light7/css/light7.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+    <style type="text/css">
+        /*调整列表的位置*/
+        .layui-colla-content {
+            padding: 1px 1px;
+        }
+
+        .list-block {
+            margin: 1px 1px 10px 1px;
+        }
+
+        .item-inner {
+            margin-left: 5px;
+        }
+
+        /*列表字体大小*/
+        .item-title {
+            font-size: 13px;
+            color: #020335;
+        }
+
+        .list-block .item-subtitle {
+            font-size: .6rem;
+        }
+        /*列表图标位置微调*/
+        .list-block .item-content {
+            padding-left: .3rem;
+        }
+    </style>
+
+    <div class="page-group">
+
+        <div class="page">
+
+            <header class="bar bar-nav">
+                <button style="font-size:14px;" onclick="back_onclick()" class="button button-link button-nav pull-left">
+                    <span class="icon icon-left"></span>
+                    返回
+                </button>
+                <button style="font-size:14px;" onclick="RefreshVideoList()" class="button button-link button-nav pull-right">
+                    刷新
+                    <span class="icon icon-refresh"></span>
+                </button>
+
+                <div class="bar bar-header-secondary">
+                    <div class="searchbar">
+                        <a class="searchbar-cancel" onclick="search_cancel_onclick()">取消</a>
+                        <div class="search-input">
+                            <label class="icon icon-search" for="search"></label>
+                            <input type="search" id='search' on placeholder='输入关键字...' />
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="title" style="margin-left:0px;" id="title_st_id">视频列表</h1>
+            </header>
+
+
+            <!-- 列表 -->
+            <div class="layui-collapse" lay-filter="test" id="video_list_id" style="overflow: auto; margin-top:90px;height:100%;">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- 注意SUI与jquery冲突 -->
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../helsinki-blue/user/Light7/light7.js"></script>
+    <script src="../../helsinki-blue/user/js/Mobile_VideoList.js"></script>
+
+    <script>
+
+
+        // 返回
+        function back_onclick() {
+            try {
+                parent.iframe_show_main_list(); //显示主设备列表
+            } catch (e) {
+                layer.msg("处理数据发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

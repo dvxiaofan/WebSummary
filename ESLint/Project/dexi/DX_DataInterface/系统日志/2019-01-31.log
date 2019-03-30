@@ -1,0 +1,15 @@
+
+2019-01-31 09:19:29 	加载配置成功
+
+2019-01-31 10:34:34 	GetOneTelField未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 758
+2019-01-31 10:52:21 	加载配置成功
+
+2019-01-31 10:53:06 	加载配置成功
+
+2019-01-31 12:11:44 	加载配置成功
+
+2019-01-31 12:12:00 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-31 12:12:20 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-31 12:12:43 	身份验证有误：Unable to connect to any of the specified MySQL hosts.

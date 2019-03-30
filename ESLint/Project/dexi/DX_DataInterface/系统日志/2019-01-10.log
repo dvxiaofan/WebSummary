@@ -1,0 +1,86 @@
+
+2019-01-10 08:15:15 	加载配置成功
+
+2019-01-10 08:34:15 	加载配置成功
+
+2019-01-10 09:48:59 	加载配置成功
+
+2019-01-10 09:56:08 	加载配置成功
+
+2019-01-10 09:56:23 	
+身份验证错误
+2019-01-10 11:38:54 	加载配置成功
+
+2019-01-10 15:21:21 	加载配置成功
+
+2019-01-10 15:21:36 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:21:51 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:22:05 	加载配置成功
+
+2019-01-10 15:22:21 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:22:39 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:22:54 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:23:09 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:23:24 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:23:39 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:23:48 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 15:27:10 	加载配置成功
+
+2019-01-10 15:29:35 	加载配置成功
+
+2019-01-10 18:27:50 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-10 18:28:06 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-10 18:42:46 	加载配置成功
+
+2019-01-10 18:43:02 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:43:21 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:43:36 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:43:51 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:44:14 	加载配置成功
+
+2019-01-10 18:44:29 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:44:45 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:45:00 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:45:15 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:45:30 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:45:46 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 18:57:55 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:08:18 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:38:05 	加载配置成功
+
+2019-01-10 19:38:21 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:39:39 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:41:02 	加载配置成功
+
+2019-01-10 19:41:04 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:41:07 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:41:11 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:42:13 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-10 19:45:18 	身份验证有误：Unable to connect to any of the specified MySQL hosts.

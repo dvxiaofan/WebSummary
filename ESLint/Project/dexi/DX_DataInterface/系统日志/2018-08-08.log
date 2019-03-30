@@ -1,0 +1,41 @@
+
+2018-08-08 13:13:03 	加载配置成功
+
+2018-08-08 13:13:03 	
+身份验证错误
+2018-08-08 13:19:14 	加载配置成功
+
+2018-08-08 14:12:38 	加载配置成功
+
+2018-08-08 14:12:50 	GetAllVideoList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAllVideoList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5102
+2018-08-08 14:13:11 	加载配置成功
+
+2018-08-08 14:13:35 	GetAllVideoList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAllVideoList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5102
+2018-08-08 14:15:05 	加载配置成功
+
+2018-08-08 14:15:25 	GetAllVideoList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAllVideoList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 5117
+2018-08-08 14:15:57 	加载配置成功
+
+2018-08-08 14:17:58 	加载配置成功
+
+2018-08-08 14:28:24 	加载配置成功
+
+2018-08-08 14:39:12 	加载配置成功
+
+2018-08-08 15:01:03 	加载配置成功
+
+2018-08-08 15:06:46 	
+身份验证错误
+2018-08-08 15:17:57 	加载配置成功
+
+2018-08-08 15:48:28 	加载配置成功
+
+2018-08-08 15:58:21 	加载配置成功
+
+2018-08-08 16:17:41 	
+身份验证错误
+2018-08-08 16:27:33 	加载配置成功
+
+2018-08-08 16:36:48 	加载配置成功
+
+2018-08-08 16:44:26 	加载配置成功

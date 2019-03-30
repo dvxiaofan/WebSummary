@@ -1,0 +1,94 @@
+
+2018-08-31 08:11:09 	加载配置成功
+
+2018-08-31 08:31:12 	加载配置成功
+
+2018-08-31 08:32:17 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'PIC' in 'field list'
+2018-08-31 08:32:17 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VA,VJ,Q1,Q2,VT,CQ1,CQ2,PIC, UT FROM `tempdata` where  ST="0000002638"  OR  ST="0000002639"  OR  ST="0000002640"  OR  ST="0000002641"  OR  ST="0000002642"  OR  ST="0000002643"  OR  ST="0000002644"  OR  ST="0000002645"  OR  ST="0000002646"  OR  ST="0000002647"  OR  ST="0000002648"  OR  ST="0000002649"  OR  ST="0000002650"  OR  ST="0000002651"  OR  ST="0000002652"  OR  ST="0000002653"  OR  ST="0000002654"  OR  ST="0000002655"  OR  ST="0000002656"  OR  ST="0000002657"  OR  ST="0000002658"  OR  ST="0000002659"  OR  ST="0000002660"  OR  ST="0000002661"  OR  ST="0000002662"  OR  ST="0000002663"  OR  ST="0000002664"  OR  ST="0000002665"  OR  ST="1234567899"  OR  ST="9874561230"  OR  ST="2018030301"  OR  ST="8888888888" ;
+2018-08-31 08:32:17 	10.254.1.104;Port=3306
+2018-08-31 08:32:17 	water
+2018-08-31 08:32:17 	root
+2018-08-31 08:32:17 	313171813
+2018-08-31 08:32:26 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'PIC' in 'field list'
+2018-08-31 08:32:26 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT,PIC, UT FROM `tempdata` where  ST="8888888888" ;
+2018-08-31 08:32:26 	10.254.1.104;Port=3306
+2018-08-31 08:32:26 	water
+2018-08-31 08:32:26 	root
+2018-08-31 08:32:26 	313171813
+2018-08-31 08:43:10 	加载配置成功
+
+2018-08-31 08:52:43 	加载配置成功
+
+2018-08-31 08:52:49 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:57:44 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:57:47 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:57:58 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:01 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:06 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:08 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:23 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:26 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:27 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:29 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:30 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:31 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:34 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:35 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 08:58:52 	加载配置成功
+
+2018-08-31 08:58:59 	GetOneTelFieldStartIndex 不能小于 0。
+参数名: startIndex   在 System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 822
+2018-08-31 09:00:51 	加载配置成功
+
+2018-08-31 10:05:57 	加载配置成功
+
+2018-08-31 10:06:59 	加载配置成功
+
+2018-08-31 10:40:19 	加载配置成功
+
+2018-08-31 11:01:04 	加载配置成功
+
+2018-08-31 11:14:17 	加载配置成功
+
+2018-08-31 13:18:03 	加载配置成功
+
+2018-08-31 13:24:47 	加载配置成功
+
+2018-08-31 14:03:14 	加载配置成功
+
+2018-08-31 14:03:21 	
+身份验证错误
+2018-08-31 14:03:32 	
+身份验证错误
+2018-08-31 19:06:44 	加载配置成功

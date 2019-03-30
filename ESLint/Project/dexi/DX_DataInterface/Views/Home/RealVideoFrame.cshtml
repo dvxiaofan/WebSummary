@@ -1,0 +1,200 @@
+﻿
+
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>实时数据弹窗</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+
+ <style type="text/css">
+.layui-table-body{overflow: visible;}
+</style>
+
+</head>
+
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+
+
+    <div id="user_content_id_1" style="width:100%;height:100%;">        
+        <!--此处放一个表格-->
+        <div id="table_and_page_div_id">
+            <table id="real_data_table_id" lay-filter="tabl_lay_filter" style="overflow-y: scroll;"></table>     
+        </div>
+        
+    </div>
+
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js?verson=4"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js?verson=3"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/layui/layui.js"></script>
+<script src="../../Scripts/md5/md5.js"></script>
+
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+    var g_RealDataObj = [];                                 //当前实时数据
+    var g_AllEssDataCache;                                  //所有要素数据列表-从父页面加载
+    var g_TableData = [];                                        //当前表格显示的数据
+
+    var g_ThisST;                                           //当前设备ST
+    var g_ThisName;                                         //当前设备Name
+    var g_tableIns = null;
+
+    //table表格配置
+    var g_table_config = {
+        elem: '#real_data_table_id'
+        , data: null
+        , limit: 100   //每页显示100条
+        , text: { none: '暂无相关数据' }
+      , page: false //开启分页
+      , cols: [[ //表头
+         { field: 'ESS', title: '要素', width:100}
+        , { field: 'DATA', title: '值', width:180}
+      ]]
+        // , even: true //开启隔行背景
+        , size: 'sm' //小尺寸的表格    
+        , done: function (res, curr, count) { //刷新完成回调
+            AutoTableHeight();
+        }
+    };
+
+    function test()
+    {
+        alert('test');
+    }
+    //初始化加载执行
+    window.onload = function () {   //要执行的js代码段  
+        //data_table_init(g_TableData);
+    }
+
+
+    //初始化表格(只能调用一次，并且会在调用后延时一段时间才能初始化完成)
+    function data_table_init(DataTableObj) {
+        try {
+            
+            layui.use('table', function () {
+                var table1 = layui.table;
+                //第一个实例
+                g_table_config.data = DataTableObj;
+                g_tableIns = table1.render(g_table_config);
+            });
+        } catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+        
+    }
+
+
+    function data_table_copy(obj_arr) {
+        var newobj = [];
+        for (var i = 0; i < obj_arr.length; i++)
+        {
+            var obj = new Object();
+            obj.ESS = obj_arr[i].ESS;
+            obj.DATA = obj_arr[i].DATA;
+            newobj[i] = obj;
+        }
+
+        return newobj;
+    }
+
+
+    //刷新实时数据-从父页面调用，必须将对象拷贝一份到本地
+    function refresh_data(obj)
+    {
+        try {
+            //alert(JSON.stringify(obj.TableData), 4);
+
+            //g_table_config.data = obj.TableData;
+           // g_table_config.data = [{ESS:"编号",DATA:"1709080028"},{ESS:"名称",DATA:"DXRTU1709080028"}];
+            //alert(JSON.stringify(g_table_config.data), 4);
+            //alert(JSON.stringify(g_tableIns), 4);
+            //alert(DataTableObj.TT);
+            var data = data_table_copy(obj.TableData);
+            if (g_tableIns == null)
+            {
+                data_table_init(data);
+            }
+             else
+            {
+                g_table_config.data = data;
+                g_tableIns.reload(g_table_config);
+            }
+            
+
+            //alert(JSON.stringify(g_table_config), 4);
+        } catch (e) {
+            layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+        }
+    }
+
+    //在layui table加载完成后，重新设置表格高度为100%,不限制表格高度，不会在表格上出现垂直滚动条
+    function AutoTableHeight() {
+
+        var dev_obj = document.getElementById('table_and_page_div_id'); //table的父div
+
+
+
+        var layuitable_main = dev_obj.getElementsByClassName("layui-table-main");   //在父div中找 layui-table-main 属性所在标签
+
+        if (layuitable_main != null && layuitable_main.length > 0) {
+
+            layuitable_main[0].style.height = '100%';
+            layuitable_main[0].style.overflow = ''; //防止出现横向滑动条
+        }
+
+
+
+        var layuitable = dev_obj.getElementsByClassName("layui-form");   //在父div中找 layui-form 属性所在标签
+
+        if (layuitable != null && layuitable.length > 0) {
+
+            layuitable[0].style.height = '100%';
+
+        }
+
+    }
+
+
+
+</script>
+
+</body>
+
+
+</html>
+

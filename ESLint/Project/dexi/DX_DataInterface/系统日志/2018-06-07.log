@@ -1,0 +1,6 @@
+
+2018-06-07 22:10:26 	   在 System.Globalization.EncodingTable.internalGetCodePageFromName(String name)
+   在 System.Globalization.EncodingTable.GetCodePageFromName(String name)
+   在 System.Text.Encoding.GetEncoding(String name)
+   在 DX_DataInterface.Controllers.ValuesController.Post(String value) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\ValuesController.cs:行号 51“UTF8”不是支持的编码名。有关定义自定义编码的信息，请参阅关于 Encoding.RegisterProvider 方法的文档。
+参数名: name

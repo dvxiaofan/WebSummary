@@ -1,0 +1,207 @@
+<li id="li_home_id" class="has-child-item close-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-home" aria-hidden="true"></i><span>主 页</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_home_1_id" onclick="button_on_click(this.id, 'li_home_id')"><a href="#" >GIS总览</a></li>
+    </ul>
+</li>
+
+<li  id="li_realdata_id" class="has-child-item close-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-cubes" aria-hidden="true"></i><span>实时数据</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_realdata_1_id" onclick="button_on_click(this.id, 'li_realdata_id')"><a href="#" >全部站点</a></li>
+        <li id="li_realdata_2_id"  onclick="button_on_click(this.id, 'li_realdata_id')"><a href="#">分组列表</a></li>
+        <li id="li_realdata_3_id"  onclick="button_on_click(this.id, 'li_realdata_id')"><a href="#">站点详情</a></li>
+        <li id="li_realdata_4_id" onclick="button_on_click(this.id, 'li_realdata_id')"><a href="#">动态总览</a></li>
+    </ul>
+</li>
+<li id="li_histdata_id" class="has-child-item close-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-bar-chart" aria-hidden="true"></i><span>历史数据</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_histdata_1_id"  onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">历史报表</a></li>
+        <li id="li_histdata_7_id"  onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">整点报表</a></li>
+        <li  id="li_histdata_2_id" onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">历史图形</a></li>
+        <li id="li_histdata_3_id" onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">报警记录</a></li>
+        <!-- <li id="li_histdata_4_id" onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">导出测试</a></li> -->
+        <li id="li_histdata_5_id" onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">数据对比</a></li>
+        <li id="li_histdata_6_id" onclick="button_on_click(this.id, 'li_histdata_id')"><a href="#">多站对比</a></li>
+    </ul>
+</li>
+<li id="li_VideoImage_id" class="has-child-item close-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-film" aria-hidden="true"></i><span>视频图像</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_video_1_id"  onclick="button_on_click(this.id, 'li_VideoImage_id')"><a href="#">视频列表</a></li>
+        <li id="li_video_2_id"  onclick="button_on_click(this.id, 'li_VideoImage_id')"><a href="#">历史图片</a></li>
+    </ul>
+</li>
+<li id="li_manage_id" class="has-child-item open-item active-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-cogs" aria-hidden="true"></i><span>管理菜单</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_manage_1_id" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">用户信息</a></li>
+        <li id="li_manage_2_id" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">用户管理</a></li>
+        <li id="li_manage_3_id" class="open-item active-item" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">设备管理</a></li>
+        <li id="li_manage_4_id" class="open-item active-item" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">视频管理</a></li>
+        <li id="li_manage_5_id" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">人工置数</a></li>
+        <li id="li_manage_6_id" onclick="button_on_click(this.id, 'li_manage_id')"><a href="#">微信管理</a></li>
+    </ul>
+</li>
+<li id="li_test_id" class="has-child-item open-item active-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-bug" aria-hidden="true"></i><span>调试接口</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_test_1_id" onclick="button_on_click(this.id, 'li_test_id')"><a href="#">MD5加密测试</a></li>
+        <li id="li_test_2_id" class="open-item active-item" onclick="button_on_click(this.id, 'li_test_id')"><a href="#">外部实时数据接口</a></li>
+        <li id="li_test_3_id" onclick="button_on_click(this.id, 'li_test_id')"><a href="#">微信接口</a></li>
+    </ul>
+</li>
+<!-- <li id="li_about_id" class="has-child-item close-item" onclick="button_on_click(this.id, this.id)">
+    <a><i class="fa fa-info-circle" aria-hidden="true"></i><span>关于我们</span></a>
+    <ul class="nav child-nav level-1">
+        <li id="li_about_1_id" onclick="button_on_click(this.id, 'li_about_id')"><a href="#">关于</a></li>
+        <li id="li_about_2_id" onclick="button_on_click(this.id, 'li_about_id')"><a href="#">帮助</a></li>
+    </ul>
+</li> -->
+
+
+
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+
+    //获取用户信息
+    function button_on_click(li_id, ParentNode_id) {
+        var PageName;
+        if (li_id == ParentNode_id) return; //当前节点==父节点 意味着点击了父节点，直接返回
+
+        //请求服务器进行登录
+        //alert('你点击了' + li_index);   //调试显示信息
+
+        //获取当前菜单下所有的li标签，并去掉全部的选中状态
+        var arr = document.querySelectorAll("#user_main_menu_id li");
+        for(var i = 0;i < arr.length;i ++)
+        {  
+             arr[i].classList.remove("open-item");
+             arr[i].classList.remove("active-item");
+             arr[i].classList.add("close-item");
+        }
+        //选中的标签-父标签
+        document.getElementById(ParentNode_id).classList.add("open-item");
+        document.getElementById(ParentNode_id).classList.add("active-item");
+        document.getElementById(ParentNode_id).classList.remove("close-item");
+        //选中的标签-子标签
+        document.getElementById(li_id).classList.add("open-item");
+        document.getElementById(li_id).classList.add("active-item");
+        document.getElementById(li_id).classList.remove("close-item");
+        //显示顶部导航信息
+        /*document.getElementById('Navigation_00_id').innerHTML = document.getElementById(ParentNode_id).getElementsByTagName('a')[0].innerHTML;       //父节点
+        document.getElementById('Navigation_01_id').innerHTML = document.getElementById(li_id).getElementsByTagName('a')[0].innerHTML;               //子节点*/
+
+        //开始针对点击不同的标签，进行不同的响应
+        if (li_id == 'li_home_1_id') //主页-GIS总览
+        {
+            PageName = 'InfoOver_Page';
+        }
+        else if (li_id == 'li_realdata_1_id') //实时数据-全部站点
+        {
+            PageName = 'Real_AllTelData_Page';
+        }
+        else if (li_id == 'li_realdata_2_id') //实时数据-分组列表
+        {
+            PageName = 'Real_GrouplData_Page';
+        }
+        else if (li_id == 'li_realdata_3_id') //实时数据-站点详细
+        {
+            PageName = 'Real_OneTelData_Page';
+        }
+        else if (li_id == 'li_realdata_4_id') //实时数据-动态总览
+        {
+            PageName = 'InfoOver_PicPage';
+        }
+        else if (li_id == 'li_histdata_1_id') //历史数据-历史报表
+        {
+            PageName = 'Hist_ReportForm_Page';
+        }
+        else if (li_id == 'li_histdata_7_id') //历史数据-整点报表
+        {
+            PageName = 'Hist_HourReportForm_Page';
+        }
+        else if (li_id == 'li_histdata_2_id') //历史数据-历史图形
+        {
+            PageName = 'Hist_Graph_Page';
+        }
+        else if (li_id == 'li_histdata_3_id') //历史数据-报警记录
+        {
+            PageName = 'Hist_AlarmForm_Page';
+        }
+        // else if (li_id == 'li_histdata_4_id') //历史数据-导出测试
+        // {
+        //     PageName = 'ToExcel_Test_Page';
+        // }
+        else if (li_id == 'li_histdata_5_id') //历史数据-数据对比
+        {
+            PageName = 'Hist_Contrast_Page';
+        }
+        else if (li_id == 'li_histdata_6_id') //历史数据-多站对比
+        {
+            PageName = 'Hist_MultiDeviceCont_Page';
+        }
+        else if (li_id == 'li_manage_1_id') //管理界面-用户信息
+        {
+            PageName = 'Setting_UserInfo_Page';
+        }
+        else if (li_id == 'li_manage_2_id') //管理界面-用户管理
+        {
+            PageName = 'Sys_Setting_User_Page';
+        }
+        else if (li_id == 'li_manage_3_id') //管理界面-设备管理
+        {
+            PageName = 'Sys_Setting_Device_Page';
+        }
+        else if (li_id == 'li_manage_4_id') //管理界面-视频管理
+        {
+            PageName = 'Sys_Setting_Video_Page';
+        }
+        else if (li_id == 'li_manage_5_id') //管理界面-人工置数
+        {
+            PageName = 'Sys_Manual_SetData_page';
+        }
+        else if (li_id == 'li_manage_6_id') //管理界面-微信管理
+        {
+            PageName = 'Sys_Setting_WeiXin_Page';
+        }
+        else if (li_id == 'li_about_1_id') //关于我们-关于
+        {
+            PageName = 'About_About_Page';
+        }
+        else if (li_id == 'li_about_2_id') //关于我们-帮助
+        {
+            PageName = 'About_Help_Page';
+        }
+        else if(li_id == 'li_test_1_id') //MD5加密测试
+        {
+        	PageName = '../Test/md5_test';
+        }
+        else if(li_id == 'li_test_2_id') //实时数据接口
+        {
+        	PageName = '../Test/RealTimeDataInterface_Test';
+        }
+        else if(li_id == 'li_test_3_id') //微信数据接口
+        {
+        	PageName = '../Test/test';
+        }
+        else if(li_id == 'li_video_1_id') //视频列表
+        {
+        	PageName = 'video_page';
+        }
+        else if(li_id == 'li_video_2_id') //图片列表
+        {
+        	PageName = 'Hist_Pic_Page';
+        }
+        else	
+        {
+            PageName = 'pages_error_404';
+        }
+        //document.getElementById('main_iframe_id').setAttribute('src', PageName);  
+        user_add_tabs(g_table_id_cnt++, document.getElementById(li_id).getElementsByTagName('a')[0].innerHTML, true, true,'/Home/'+PageName);  
+    }
+
+    
+</script>

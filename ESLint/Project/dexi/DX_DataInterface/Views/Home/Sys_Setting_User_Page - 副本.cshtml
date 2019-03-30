@@ -1,0 +1,322 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>用户管理</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="user_content"  style="top:-10px">
+        <div class="row">
+            <h4 class="section-subtitle"><b>&nbsp;用户管理</b> 增加或修改用户信息</h4>
+            <div class="panel">
+                <div class="panel-content">
+                    <div class="row">
+                        
+                        <div class="col-sm-12">
+                            <form class="form-inline" id="search_form_id_01">                                                                   
+                                <div class="form-group">
+                                    <label  class="control-label">搜索用户:</label> 
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" style="height:28px" type="text" id="search_user_name_id" placeholder="用户名">
+                                    <button  class="btn btn-info fa fa-search" onclick="search_name_onclick()" type="button">&nbsp;&nbsp;搜索</button>
+                                    <button  class="btn btn-info fa fa-remove" onclick="search_cancel_onclick()" type="button" >&nbsp;&nbsp;取消搜索</button>
+                                    <a>&nbsp;</a>
+                                    <button class="btn btn-info fa fa-plus-square-o" onclick="add_user_onclick()" type="button" >&nbsp;&nbsp;添加用户</button>
+                                </div>
+                                
+                            </form>
+                         </div>
+                       </div>
+                       <div style="height:10px">
+                           &nbsp;
+                       </div>
+
+                        <div class="table-responsive">
+                            <!--此处放一个用户表格-->
+                            <table class="table table-striped table-hover table-bordered text-center">
+                                <thead>
+                                <tr class="info">
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Salary</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Olivia Liang</td>
+                                    <td>Support Engineer</td>
+                                    <td>Singapore</td>
+                                    <td>64</td>
+                                    <td>$234,500</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bruno Nash</td>
+                                    <td>Software Engineer</td>
+                                    <td>London</td>
+                                    <td>38</td>
+                                    <td>$163,500</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sakura Yamamoto</td>
+                                    <td>Support Engineer</td>
+                                    <td>Tokyo</td>
+                                    <td>37</td>
+                                    <td>$139,575</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Thor Walton</td>
+                                    <td>Developer</td>
+                                    <td>New York</td>
+                                    <td>61</td>
+                                    <td>$98,540</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Finn Camacho</td>
+                                    <td>Support Engineer</td>
+                                    <td>San Francisco</td>
+                                    <td>47</td>
+                                    <td>$87,500</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Shad Decker</td>
+                                    <td>Regional Director</td>
+                                    <td>Edinburgh</td>
+                                    <td>51</td>
+                                    <td>$183,000</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Bruce</td>
+                                    <td>Javascript Developer</td>
+                                    <td>Singapore</td>
+                                    <td>29</td>
+                                    <td>$183,000</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent"><i class="fa fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-transparent"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>New York</td>
+                                    <td>27</td>
+                                    <td>$112,000</td>
+                                    <td>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-transparent mouse-hover-green"><i class="fa fa-eye mouse-hover-green"></i>
+                                            </button>
+                                            <button class="btn btn-transparent mouse-hover-blue"><i class="fa fa-pencil mouse-hover-blue"></i>
+                                            </button>
+                                            <button class="btn btn-transparent mouse-hover-red"><i class="fa fa-times mouse-hover-red"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                             
+                            <div class="btn-group" style="margin-left: auto;margin-right: auto;">
+                                <a>&nbsp;&nbsp;&nbsp;</a>
+                                <label  class="h5">共：50 页 当前显示：90条</label> 
+                                
+                                <button class="btn btn-o btn-lighter-1 fa fa-chevron-left" style="height:34px"></button>
+                                <button class="btn btn-o btn-info">1</button>
+                                <button class="btn btn-o btn-info">2</button>
+                                <button class="btn btn-o btn-info">3</button>
+                                <button class="btn btn-o btn-info">4</button>
+                                <button class="btn btn-o btn-lighter-1 fa fa-chevron-right" style="height:34px"></button>
+
+                             </div>
+                        </div>
+                     
+            
+
+                    
+                </div>
+            </div>
+      
+
+        </div>
+    </div>
+
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js?verson=4"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js?verson=3"></script>
+
+
+<!-- 弹出message占位 -->
+<div id="message_id"></div>
+
+
+    
+<!-- 界面js代码 -->
+<script type="text/javascript">
+
+    
+    //初始化加载执行
+    window.onload = function () {//要执行的js代码段  
+        var obj;
+
+        obj = parent.Get_g_UserNameList();  //访问父窗口的全局变量
+        if(obj == null) //没有获取过用户信息
+        {
+            GetAllUserNameList();     //获取用户信息-获取到了就会写入到全局缓冲区中，下次就不用获取了
+        }
+    }
+
+    //搜索按钮处理
+    function search_name_onclick()
+    {
+
+    }
+    //取消搜索按钮处理
+    function search_cancel_onclick()
+    {
+
+    }
+    //添加用户按钮处理
+    function add_user_onclick()
+    {
+        return false;  
+    }
+
+    //管理员获取所有普通用户的名称与登录名称列表
+
+    //获取用户信息
+    function GetAllUserNameList() {
+        var obj = null;
+
+        //请求服务器进行登录
+        var jsonData = {
+            GetFun: 'GetAllUserNameList',
+        };
+
+        $.ajax({
+            url: 'Index',
+            type: 'POST',
+            dataType: 'json',
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //获取成功
+                obj = JSON.parse(response.obj);                 //全局缓存用户信息
+                alert(JSON.stringify(response.obj, 4));         //调试显示信息
+                parent.Set_g_UserNameList(obj);                 //记录全局的用户列表信息，下次访问就可以不用重新获取了
+            }
+        })
+        .fail(function () {
+            
+        })
+    }
+
+</script>
+
+</body>
+
+
+</html>
+

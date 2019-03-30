@@ -1,0 +1,81 @@
+
+2019-02-12 08:31:59 	加载配置成功
+
+2019-02-12 08:41:32 	加载配置成功
+
+2019-02-12 08:41:32 	身份验证有误：给定关键字不在字典中。
+
+2019-02-12 08:41:35 	身份验证有误：给定关键字不在字典中。
+
+2019-02-12 08:46:30 	身份验证有误：给定关键字不在字典中。
+
+2019-02-12 08:46:32 	身份验证有误：给定关键字不在字典中。
+
+2019-02-12 08:46:42 	加载配置成功
+
+2019-02-12 08:52:49 	加载配置成功
+
+2019-02-12 10:21:45 	加载配置成功
+
+2019-02-12 10:35:50 	加载配置成功
+
+2019-02-12 11:24:28 	加载配置成功
+
+2019-02-12 11:29:49 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:29:50 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:29:53 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:29:55 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:29:56 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:30:00 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:30:03 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:30:04 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:30:08 	GetHistData未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetHistDataCnt(String ST, String StartTime, String EndTime) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 1042
+2019-02-12 11:32:59 	加载配置成功
+
+2019-02-12 13:27:44 	加载配置成功
+
+2019-02-12 13:27:52 	GetRealData->QueryAndRreturnAdapter Error:不支持关键字: “port”。
+2019-02-12 13:27:52 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VT, UT FROM [tempdata] where  ST='1705130004' ;
+2019-02-12 13:27:52 	192.168.1.138;Port=1433
+2019-02-12 13:27:52 	water
+2019-02-12 13:27:52 	sa
+2019-02-12 13:27:52 	123456
+2019-02-12 13:27:56 	GetRealData->QueryAndRreturnAdapter Error:不支持关键字: “port”。
+2019-02-12 13:27:56 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VA,Q1,VT,DTEMP,CSIGNAL, UT FROM [tempdata] where  ST='0971000003' ;
+2019-02-12 13:27:56 	192.168.1.138;Port=1433
+2019-02-12 13:27:56 	water
+2019-02-12 13:27:56 	sa
+2019-02-12 13:27:56 	123456
+2019-02-12 13:28:01 	GetRealData->QueryAndRreturnAdapter Error:不支持关键字: “port”。
+2019-02-12 13:28:01 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,VA,SBL1,VT,C,DTEMP,CSIGNAL, UT FROM [tempdata] where  ST='0519000002' ;
+2019-02-12 13:28:01 	192.168.1.138;Port=1433
+2019-02-12 13:28:01 	water
+2019-02-12 13:28:01 	sa
+2019-02-12 13:28:01 	123456
+2019-02-12 13:31:25 	加载配置成功
+
+2019-02-12 13:42:34 	加载配置成功
+
+2019-02-12 13:49:19 	加载配置成功
+
+2019-02-12 13:51:13 	
+身份验证错误
+2019-02-12 14:26:10 	加载配置成功
+
+2019-02-12 14:29:50 	加载配置成功
+
+2019-02-12 14:49:00 	加载配置成功
+
+2019-02-12 14:50:03 	加载配置成功
+
+2019-02-12 15:00:44 	加载配置成功
+
+2019-02-12 15:01:40 	加载配置成功
+
+2019-02-12 15:13:42 	加载配置成功
+
+2019-02-12 15:19:02 	加载配置成功
+
+2019-02-12 15:22:05 	加载配置成功
+
+2019-02-12 17:30:09 	加载配置成功

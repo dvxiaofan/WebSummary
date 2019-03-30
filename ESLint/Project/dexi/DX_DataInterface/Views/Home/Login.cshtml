@@ -1,0 +1,219 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed accounts lock-screen">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>登录</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+
+    <link href="../../helsinki-blue/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../helsinki-blue/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+    <link href="../../helsinki-blue/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../helsinki-blue/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+
+     <!-- 界面js代码 -->
+<script type="text/javascript">
+    //用于在页面加载的瞬间判断是否为移动端，立即跳转到移动端界面
+    //判断是否为PC（true:PC,false:非PC端）
+    function IsPC1() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        }
+        return flag;
+    }
+
+    if (IsPC1()) {
+
+
+    } else { //移动端
+        window.location.href = "../Home/Mobile_Index";
+    }
+</script>
+
+</head>
+
+
+
+
+<body style="overflow:-Scroll;overflow-y:hidden;" >
+
+<input type="hidden" id="TenantId" name="TenantId" value="" />
+<div class="header" id="public_title" style="height:60px; background:#426374; font-size: 25px; line-height: 60px; color: #fff; padding-left: 10px;"></div>
+<div class="loginWraper">
+    <div id="loginform" class="loginBox">
+        <form class="form form-horizontal" action="index.html" method="post">
+            <div class="row cl">
+                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+                <div class="formControls col-xs-8">
+                    <input id="username" name="" type="text" placeholder="账户" class="input-text size-L">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+                <div class="formControls col-xs-8">
+                    <input id="password" name="" type="password" placeholder="密码" class="input-text size-L">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <label for="online">
+                        <input type="checkbox" name="online" id="remember-me" value="" checked="checked">
+                        使我保持登录状态</label>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <input style="background-color: #3e79bb;border-color: #3e79bb;" onclick="login_onclick()"
+                        name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+                    <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 占位id -->
+<div id="tanchuchuangkou_id"> </div>
+<div class="footer" style="font-size: 15px;height: 10px; line-height: 10px;">
+    <span class="footer-tips" style="color: #FFCC00;">建议使用IE9以上或者谷歌浏览器</span>
+</div>
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+
+    
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/js/Index.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_Text.js"></script>
+    <script type="text/javascript" src="../../helsinki-blue/h-ui/js/H-ui.min.js"></script>
+    
+    <!-- js -->
+    <script type="text/javascript">
+        var UrlParameterObj = null;
+
+        $("form").submit(function (e) {
+            e.preventDefault();
+        })
+
+        window.onload = function () {   //要执行的js代码段
+
+            try {
+                UrlParameterObj = GetRequest(); //获取URL参数
+                if (UrlParameterObj != null && UrlParameterObj.isAuto == "true" && UrlParameterObj.user != null && UrlParameterObj.password != null) {
+                    document.getElementById("username").value = UrlParameterObj.user;
+                    document.getElementById("password").value = UrlParameterObj.password;
+                    login_onclick();    //自动登录
+                }
+
+            } catch (e) {
+
+            }
+
+        }
+
+        //获取URL参数
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        function login_onclick() //登录处理
+        {
+            //检查用户名是否合法
+            var username = document.getElementById("username").value;
+            if (username == "" || username.length < 3 || username.length > 32) {
+
+                user_message('tanchuchuangkou_id', '用户名输入错误', "用户名必须为3-32个字母或数字", 'default', 'warning', null, null);
+
+                return;
+            }
+            //检查密码是否合法
+            var password = document.getElementById("password").value;
+            if (password == "" || password.length < 3 || password.length > 32) {
+
+                user_message('tanchuchuangkou_id', '密码输入错误', "密码必须为3-32个字母或数字", 'default', 'warning', null, null);
+                return;
+            }
+            var password_md5 = hex_md5(password);  //计算密码的md5值
+
+            //获取是否记住密码
+            var remember = document.getElementById("remember-me").checked;
+
+            //请求服务器进行登录
+            var jsonData = {
+                GetFun: 'LogonRequest',
+                UserName: username,
+                PasswordMD5: password_md5,
+                RememberMe: remember
+            };
+
+            //调试将json打印出来
+            // var json_str = JSON.stringify(jsonData, null, 4);    // 缩进4个空格;
+            // alert(json_str); //调试js
+
+            $.ajax({
+                url: '/Home/Login',
+                type: 'POST',
+                dataType: 'json',
+                data: jsonData,
+            })
+            .done(function (response) {
+                if (response.rel == 1) {
+
+                    // user_ShowNotice('提示', '登录成功', 'success', 1000, false);
+                    if (IsPC()) {
+                        window.location.href = "../Home/index";
+
+                    } else {
+                        window.location.href = "../Home/Mobile_Index";
+                    }
+                }
+                else if (response.msg != null) {
+                    user_message('tanchuchuangkou_id', '登录失败', response.msg, 'default', 'error', null, null);
+                }
+                else {
+                    user_message('tanchuchuangkou_id', '登录失败', '出现未知的错误，登录请求失败！', 'default', 'warning', null, null);
+                }
+
+            })
+            .fail(function (e) {
+                user_message('tanchuchuangkou_id', '登录失败', '发送登录请求失败，请检查服务器连接状态：' + e.message, 'default', 'warning', null, null);
+                return;
+            })
+        };
+
+    </script>
+
+</body>
+
+
+
+
+     
+</html>

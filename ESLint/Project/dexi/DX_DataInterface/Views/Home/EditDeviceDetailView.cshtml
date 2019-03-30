@@ -1,0 +1,231 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>编辑设备详细信息</title>
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+    <style>
+        .layui-inline {
+            padding-top: 5px;
+            padding-bottom: 0;
+        }
+        .form-control {
+            width: 60% !important;
+        }
+
+        .layui-form-label, .layui-form-item .layui-inline {
+            width: 45%;
+        }
+
+        .layui-form-item .layui-input-inline {
+            width: 50%;
+        }
+        form button.btn {
+            margin-right: 10px !important;
+        }
+
+        .form-ess-item {
+            box-shadow: rgb(204, 204, 204) 1px 1px 1px;
+            border-radius: 4px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body style="overflow:auto;">
+    <!--影藏外部的滑动条-->
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel-content">
+                <form class="layui-form" lay-filter="layui-form" >
+                    <div class="form-ess-item" style="background: #fff;">
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">水电站全称</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="deviceName" lay-verify="required|noChars|textLength"
+                                        autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">所属管辖区域</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="area" lay-verify="noChars|textLength" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">下泄流量工作负责人</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="principal" lay-verify="noChars|textLength" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">移动电话</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="mobilePhone" lay-verify="noChars|mobilePhone" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">固定电话</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="fixedPhone" lay-verify="noChars" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">通信地址</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="address" lay-verify="noChars|textLength" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">总库容（万立方米）</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="total" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">坝高（M）</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="damHeight" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">装机容量（万kw）</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="capacity" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">电站类型</label>
+                                <div class="layui-input-inline">
+                                    <select name="deviceType">
+                                        <option value="">请选择电站类型</option>
+                                        <option value="蓄水式水电站" selected="">蓄水式水电站</option>
+                                        <option value="径流式水电站" selected="">径流式水电站</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">所属流域</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="watershed" lay-verify="noChars|textLength" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">机组数量</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="deviceCount" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">最高水位（M）</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="heightLevel" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">最低水位（M）</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="lowLevel" lay-verify="noChars|num" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item" style="margin-left: 90px; margin-top: 15px;">
+                        <div class="layui-inline">
+                            <button class="btn btn-info" lay-submit="" lay-filter="demo1" style="width:100px;">确定</button>
+                            <button type="reset" class="btn layui-btn layui-btn-primary" style="width:100px;">重置</button>
+                            <button type="button" class="btn" onclick="button_cancel_onclick()" style="background:#b4b4b4;width:100px;">取消</button>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script
+        src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/user/js/Sys_Edit_DeviceDetail_View.js"></script>
+    <script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_Compare.js"></script>
+
+
+</body>
+
+
+</html>

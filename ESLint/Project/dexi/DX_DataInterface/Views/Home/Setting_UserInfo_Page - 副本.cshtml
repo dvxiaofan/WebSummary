@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>用户信息</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+</head>
+
+<body>
+
+   
+    <div class="user_content">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div>
+                    <div class="profile-photo">
+                        <img alt="用户图标" src="../../helsinki-blue/images/user-avatar.jpg"/>
+                    </div>
+                    <div class="user-header-info">
+                        <h2 class="user-name" id="user_name_id">用户名称</h2>
+                        <h5 class="user-position" id="user_type_id">用户类型</h5>                           
+                    </div>
+                </div>
+                <div class="panel bg-scale-0 b-primary bt-sm mt-xl">
+                    <div class="panel-content">
+                        <h4 class=""><b><i class="color-primary mr-sm fa fa-info"></i>用户信息</b></h4>
+                        <ul class="user-contact-info ph-sm">
+                            <li><b><i class="color-primary mr-sm fa fa-user"></i></b><a id="login_name_id">登录用户名</a> </li>
+                            <li><b><i class="color-primary mr-sm fa fa-envelope"></i></b><a id="email_id">邮箱</a></li>
+                            <li><b><i class="color-primary mr-sm fa fa-phone"></i></b><a id="phone_id">电话</a></li>
+                            <li><b><i class="color-primary mr-sm fa fa-globe"></i></b><a id="addr_id">地址</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+
+
+
+    
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js?verson=3"></script>
+
+<!-- 弹出message占位 -->
+<div id="sign_out_message_id"></div>
+
+   
+
+    
+   <!-- 界面js代码 -->
+<script type="text/javascript">
+    //初始化加载执行-更新用户信息
+    window.onload = function () {//要执行的js代码段  
+        var obj = parent.GetUserInfoCache();   //调用父窗口函数，获取缓存的用户信息
+        if (obj == null) {
+            alert('无效的用户信息');               //调试显示信息
+        }
+        else
+        {
+            //alert(JSON.stringify(obj, 4));     //调试显示信息
+            var info = obj[0];
+            //显示用户信息
+            document.getElementById('user_name_id').innerHTML = info.NICK_NAME;//用户名称
+            if (info.ROLE == 64) //普通用户
+            {
+                document.getElementById('user_type_id').innerHTML = '普通用户';
+            }
+            else if (info.ROLE == 256) //管理员
+            {
+                document.getElementById('user_type_id').innerHTML = '管理员';
+            }
+            else
+            {
+                document.getElementById('user_type_id').innerHTML = '未知类型';
+            }
+            document.getElementById('login_name_id').innerHTML = '用户名：'+info.USER;//登录用户名
+            document.getElementById('email_id').innerHTML = '  邮 箱：' + info.EMAIL;//邮箱
+            document.getElementById('phone_id').innerHTML = '  电 话：' + info.TEL;//电话
+            document.getElementById('addr_id').innerHTML = '  公 司：' + info.COMPANY;//地址
+
+        }
+    }
+
+</script>
+
+</body>
+
+
+</html>
+

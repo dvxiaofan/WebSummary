@@ -1,0 +1,640 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>添加绑定用户</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body style="overflow:auto;">
+    <!--影藏外部的滑动条-->
+
+
+    <div class="user_content" , id="user_content_id_1">
+        <div class="row animated ">
+            <div class="panel" style="min-width:500px;min-height:400px">
+                <div class="panel-content">
+
+                    <form class="form-inline" id="search_form_id_01">
+                        <div class="form-group">
+                            <a class="control-label">搜索用户:</a>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" style="height:28px" type="text" id="search_user_name_id" placeholder="用户名/昵称">
+                            <button class="btn btn-info fa fa-search" onclick="search_name_onclick()" type="button">&nbsp;&nbsp;搜索</button>
+                            <button class="btn btn-info fa fa-remove" onclick="search_cancel_onclick()" type="button" id="cancel_search_button_id">&nbsp;&nbsp;取消搜索</button>
+                        </div>
+                        <div class="form-group" style="float:right">
+                            <a href="#" onclick="RefreshPage_onClick()" class="fa fa-refresh" id="lable_refresh_data_id">刷新数据</a>
+                        </div>
+                    </form>
+
+
+                    <div class="table-responsive" id="table_and_page_div_id">
+                        <!--此处放一个表格-->
+                        <table id="ess_list_table_id" lay-filter="tabl_lay_filter"></table>
+                        <div class="btn-group" style="margin-left: auto;margin-right: auto;" id="limt_butt_id">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="float:left">
+            <div class="col-sm-offset-3 col-sm-12" style="float:left">
+                <button type="button" onclick="button_ok_onclick()" class="btn btn-info" style="width:100px"> 确 定 </button>
+                <a>&nbsp;&nbsp;</a>
+                <button type="button" onclick="button_cancel_onclick()" class="btn " style="width:100px;background:#b4b4b4"> 取 消 </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+    <script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+    <script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+    <script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+    <script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- 相关js -->
+    <script src="../../Scripts/md5/md5.js"></script>
+    <script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+    <script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+    <script src="../../helsinki-blue/user/js/SetUser.js"></script>
+    <script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+    <script src="../../Scripts/md5/md5.js"></script>
+
+
+    <!-- 界面js代码 -->
+    <script>
+        var g_AllUserListData;                              //所有用户列表基本数据-已经转换为可以被显示的数据
+        var g_SearchUserListDataData;                           //符合搜索条件的用户信息-链接到g_AllUserListData(注意：存在搜索，这个序号可能会乱)
+        var g_UserInfoDataPage = JSON.parse('[]');          //用于最终显示的一页数据-链接到g_AllUserListData或g_SearchUserListDataData
+        var g_SelectPageIndex = 0;                          //当前页索引，从0开始
+        var cg_OnePageDataCount = 50;                       //一页显示数据条数
+        var g_layer_msg_index;                              //加载框id
+        var g_layer_id;                                     //全局新窗口id
+        var g_tableIns;                                     //tableIns 来源于 table.render() 方法的实例-用于表格重载
+        var g_isSearchMode = false;                         //是否处于搜索模式
+        var g_DefaultBindUserNameArr = JSON.parse('[]');    //记录初始时已经绑定的用户信息-从父页面获取（用于最终检查是否有新绑定的用户）
+        var g_ThisVideoSerial;                               //当前页面编号-从父页面获取
+
+        //table表格配置
+        var g_table_config = {
+            elem: '#ess_list_table_id',
+            data: g_UserInfoDataPage,
+            limit: cg_OnePageDataCount,
+            text: { none: '暂无相关数据' },
+            height: 500,
+            page: false, //开启分页
+            cols: [[ //表头
+            { type: 'checkbox' },
+            { field: 'ID', title: '序号', width: 60 }, 
+            { field: 'USER', title: '用户名', width: 200 },
+            { field: 'NICK_NAME', title: '昵称', width: 300 },
+            ]],
+            even: true, //开启隔行背景
+            size: 'sm' //小尺寸的表格
+        };
+
+        //底部分页栏配置
+        var g_table_limt = {
+            elem: 'limt_butt_id',
+            theme: '#5BC0DE',                   //主题风格
+            count: 0,              //数总数
+            limit: cg_OnePageDataCount,         //单页显示数据条数
+            groups: 8,      //连续出现的页码个数
+            curr: (g_SelectPageIndex + 1),             //当前页码
+            jump: function (obj, first) {//分页回调
+                table_limt_jump_event(obj, first);  //翻页处理
+            },
+            layout: ['prev', 'page', 'next', 'count'],
+        };
+        //用于记录当前滑动条位置
+        var g_scrollTop = {
+            dev_obj: null,          //layui table 父div
+            layuitable: null,       //当前的layui table
+            scrollTop: 0            //记录位置
+        };
+
+        //初始化加载执行
+        window.onload = function () {   //要执行的js代码段
+            var UserInfoObj;
+            var AllUserList;            //原始的所有用户数据列表
+
+            $.ajaxSettings.async = false;              //由于有ajax，强制js为同步执行
+            loading_message('加载数据中...');            //弹出提示框
+            //从父页面读取所有用户基本信息表
+            try {
+                AllUserList = parent.Read_AllUsersDataCache();    //读取父页面缓存的数据
+            }
+            catch (e) { }
+            if (AllUserList == null || AllUserList.length == 0) { //缓存无效才从服务器获取
+                AllUserList = parent.ajax_sync_get_all_list();            //获取所有用户基本信息
+                parent.Write_AllUsersDataCache(AllUserList);              //写入缓存到父页面
+            }
+            //从父页面获取已经选中的用户列表数据
+            try {
+                g_DefaultBindUserNameArr = parent.Read_BindUserList();    //读取父页面缓存的数据-当前已经绑定的用户数据
+                //alert(JSON.stringify(g_DefaultBindUserNameArr, 4));     //调试显示信息
+            }
+            catch (e) { }
+            //从父页面获取当前设备编号
+            try {
+                g_ThisVideoSerial = parent.Read_ThisVideoSerial();    //读取父页面缓存的数据-当前设备编号
+            }
+            catch (e) { }
+
+            //转换原始的用户列表为table可以显示的数据，注意是全部的数据进行转换
+            g_AllUserListData = conversion_all_data_layui_table(AllUserList, g_DefaultBindUserNameArr);
+
+            g_UserInfoDataPage = get_user_data(g_AllUserListData, 0, cg_OnePageDataCount);          //获取第一页要显示的信息
+            data_table_init(g_UserInfoDataPage, g_AllUserListData.length, cg_OnePageDataCount, 0);  //初始化表格，并显示数据
+
+            close_message();                                                                        //关闭提示框
+            document.getElementById("cancel_search_button_id").disabled = "true";                   //禁用取消搜索按钮
+
+        }
+
+        //浏览器窗口大小变化事件
+        $(window).resize(function () {          //当浏览器大小变化时
+
+            //表格高度自适应
+            data_table_auto_height();                           //自动调节表格高度
+
+        });
+
+        //获取指定索引开始的指定条数据
+        function get_user_data(AllUserListData, StartIndex, Count) {
+            var obj = JSON.parse('[]');
+            var cnt = 0;
+
+            if (AllUserListData == null || AllUserListData.length == 0 || Count == 0) {
+                layer.alert("要获取的用户列表为空！", { icon: 5, scrollbar: false });      //5：失败；6：成功
+
+                return obj;
+            }
+
+            if (StartIndex >= AllUserListData.length) StartIndex = AllUserListData.length - 1;  //限制
+
+            //准备好数据
+            for (var i = StartIndex; i < AllUserListData.length; i++) {
+                obj[cnt] = AllUserListData[i];
+                obj[cnt].ID = (1 + i) + '';    //重新设置序号
+                if (i == (AllUserListData.length - 1) || cnt == (Count - 1)) { //最后一个
+                    break;//完成了
+                }
+                cnt++;
+            }
+
+            return obj;
+        }
+
+        //初始化表格(只能调用一次，并且会在调用后延时一段时间才能初始化完成)DataTableObj:当前要显示的数据；AllDataCount：总数据条数；OnePageCount：一页显示的数据条数；ThisPageIndex：当前页索引，从0开始
+        function data_table_init(DataTableObj, AllDataCount, OnePageCount, ThisPageIndex) {
+            layui.use('table', function () {
+                var table1 = layui.table;
+                //第一个实例
+                g_table_config.data = DataTableObj;
+                g_tableIns = table1.render(g_table_config);
+                table1.on('checkbox(tabl_lay_filter)', function (obj) {
+                    //console.log(obj.checked); //当前是否选中状态
+                    //console.log(obj.data); //选中行的相关数据
+                    //console.log(obj.type); //如果触发的是全选，则为：all，如果触发的是单选，则为：one
+
+                    //alert(obj.data.USER + ' ' + obj.data.LAY_CHECKED);
+
+                    if (obj.type == 'all') {
+
+                    }
+                    else { //单个选中
+                        var n = obj.data.序号;
+                    }
+                });
+
+                data_table_auto_height();                           //自动调节表格高度
+            });
+
+            //刷新底部的分页栏
+            table_limt_refresh(AllDataCount, OnePageCount, ThisPageIndex);
+        }
+
+        //表格高度自动调节（要在表格初始化之后进行调用）
+        function data_table_auto_height() {
+            //表格高度自适应
+            if (g_tableIns != null) {
+                g_table_config.height = $(window).height() - 210;
+                g_tableIns.reload(g_table_config);              //表格重载
+            }
+        }
+
+        //刷新底部分页栏(AllDataCount:总的数据条数；OnePageCount：一页显示的数据条数；ThisPageIndex：当前页索引，从0开始,无需修改的参数可以为null)
+        function table_limt_refresh(AllDataCount, OnePageCount, ThisPageIndex) {
+            //刷新底部的分页栏
+            layui.use('laypage', function () {
+                var laypage = layui.laypage;
+                //执行一个laypage实例-设置分页
+                if (AllDataCount != null) {
+                    g_table_limt.count = AllDataCount;          //数总数
+                }
+                if (OnePageCount != null) {
+                    g_table_limt.limit = OnePageCount;          //单页显示数据条数
+                }
+                if (ThisPageIndex != null) {
+                    g_table_limt.curr = ThisPageIndex + 1;      //当前页
+                }
+                laypage.render(g_table_limt);                   //重新刷新底部分页
+            });
+        }
+
+        //查找当前用户名是否已经被绑定
+        function check_name_isBind(DefaultBindUserNameArr, USER) {
+            if (DefaultBindUserNameArr == null || DefaultBindUserNameArr.length == 0) return false;
+            if (USER == null) return false;
+            for (var i = 0; i < DefaultBindUserNameArr.length; i++) {
+                if (USER == DefaultBindUserNameArr[i].USER) return true;
+            }
+            return false;
+        }
+
+        //转换全部要显示的用户信息-转换为可以被显示的格式，注意是全部的用户信息(AllUserList:全部用户列表；DefaultBindUserNameArr：已经被绑定的用户列表)
+        function conversion_all_data_layui_table(AllUserList, DefaultBindUserNameArr) {
+            var UserTableData = JSON.parse('[]');                  //清空数据，创建一个对象数组
+
+            try {
+                if (AllUserList == null || AllUserList.length == 0) { //没有数据
+                    return UserTableData;
+                }
+                else {
+                    for (var i = 0; i < AllUserList.length; i++) {
+                        var obj = new Object();                     //定义对象
+                        //给对象添加属性
+                        obj.ID = (1 + i) + '';                      //行号，加上起始行号
+                        obj.USER = AllUserList[i].USER;
+                        obj.NICK_NAME = AllUserList[i].NICK_NAME;
+                        if (check_name_isBind(DefaultBindUserNameArr, obj.USER) == true) { //当前用户已经被绑定
+                            obj.LAY_CHECKED = true;
+                        }
+
+                        UserTableData[i] = obj;                    //添加对象到数组
+                    }
+                }
+            }
+            catch (e) {
+                layer.alert("处理数据发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+
+            return UserTableData;
+        }
+
+
+        //记录scrollTop位置，在表格重载之前调用（依赖全局g_scrollTop）
+        function RecordScrollTop() {
+            try {
+                g_scrollTop.dev_obj = document.getElementById('table_and_page_div_id'); //table的父div
+                if (g_scrollTop.dev_obj != null) {
+                    g_scrollTop.layuitable = g_scrollTop.dev_obj.getElementsByClassName("layui-table-main");
+                }
+                if (g_scrollTop.layuitable != null && g_scrollTop.layuitable.length > 0) {
+                    g_scrollTop.scrollTop = g_scrollTop.layuitable[0].scrollTop; //layuitable获取到的是 class=layui-table-main的集合
+                }
+            }
+            catch (e) {
+                g_scrollTop.scrollTop = 0;
+                console.log(e.message);
+            }
+        }
+
+        //还原scrollTop位置，在表格重载之后调用（依赖全局g_scrollTop）
+        function RestoreScrollTop() {
+            try {
+                //还原scroll位置
+                if (g_scrollTop.layuitable != null && g_scrollTop.layuitable.length > 0) {
+                    g_scrollTop.layuitable[0].scrollTop = g_scrollTop.scrollTop;
+                }
+            }
+            catch (e) {
+                console.log(e.message);
+            }
+        }
+
+        //重载表格
+        function table_reload(UserInfoDataPage) {
+            try {
+                //刷新当前页
+                g_table_config.data = UserInfoDataPage;
+                g_tableIns.reload(g_table_config);//表格重载
+            }
+            catch (e) {
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+
+        }
+
+        //表格翻页处理
+        function table_limt_jump_event(obj, first) {
+            try {
+                //obj包含了当前分页的所有参数，比如：
+                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                // console.log(obj.limit); //得到每页显示的条数
+
+                //首次不执行
+                if (!first) {
+                    //alert(obj.curr + " " + obj.limit);
+
+                    //弹出提示框
+                    g_layer_msg_index = layer.msg('加载中', {
+                        icon: 16,
+                        shade: 0.5,     //越大界面越黑
+                        time: 60000,    //时间
+                        anim: 0,        //平滑放大
+                        scrollbar: false//锁定浏览器滑动
+                    });
+
+                    g_SelectPageIndex = obj.curr - 1;   //获取当前页索引
+
+
+                    if (g_isSearchMode == false) {      //不处于搜索模式
+                        g_UserInfoDataPage = get_user_data(g_AllUserListData, g_SelectPageIndex * cg_OnePageDataCount, cg_OnePageDataCount);  //获取第n页要显示的用户详细信息
+                    }
+                    else { //处于搜索模式
+                        g_UserInfoDataPage = get_user_data(g_SearchUserListDataData, g_SelectPageIndex * cg_OnePageDataCount, cg_OnePageDataCount);  //获取第n页要显示的用户详细信息
+                    }
+
+                    RecordScrollTop();      //记录scrollTop位置，在表格重载之前调用（依赖全局g_scrollTop）
+                    //刷新当前页
+                    table_reload(g_UserInfoDataPage);       //重载表格
+                    layer.close(g_layer_msg_index);         //关闭提示框
+                    RestoreScrollTop();      //还原scrollTop位置，在表格重载之后调用（依赖全局g_scrollTop）
+                }
+                else {
+                    g_SelectPageIndex = obj.curr - 1;
+                }
+            }
+            catch (e) {
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+        //确定按钮
+        function button_ok_onclick() {
+            var BindUserList = JSON.parse('[]'); //需要绑定的用户列表
+            var count = 0;
+
+            try { //循环获取增加了哪些用户的绑定
+
+                if (g_AllUserListData == null || g_AllUserListData.length == 0) {
+                    layer.alert('没有用户需要绑定！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                    parent.CloseLayer(); //关闭
+                    return;
+                }
+                loading_message('请求数据中...');            //弹出提示框
+                for (var i = 0; i < g_AllUserListData.length; i++) {
+                    if (g_AllUserListData[i].LAY_CHECKED == true) { //需要绑定当前用户
+                        if (check_name_isBind(g_DefaultBindUserNameArr, g_AllUserListData[i].USER) == false) { //之前没有被绑定才需要绑定
+                            BindUserList[count++] = g_AllUserListData[i].USER;                              //添加到列表
+                        }
+                    }
+                }
+                if (BindUserList.length == 0) { //没有设备需要绑定
+                    close_message();                                    //关闭提示框
+                    parent.CloseLayer(); //关闭
+                    return;
+                }
+
+                //alert(JSON.stringify(BindUserList, 4));     //调试显示信息
+                //准备要绑定的用户列表，转换为字符串
+                var UserListString = '';
+                for (var i = 0; i < BindUserList.length; i++) {
+                    if (i == (BindUserList.length - 1)) { //最后一个不加逗号
+                        UserListString += BindUserList[i];
+                    }
+                    else {
+                        UserListString += BindUserList[i] + ',';
+                    }
+                }
+
+                if (ajax_sync_InsertBindUser(g_ThisVideoSerial, UserListString) == true) {
+                    close_message();                                    //关闭提示框
+                    parent.RefreshBindUserData();                       //刷新父页面信息
+                    //用户添加成功了，请求父页面接口添加相应的数据到本地缓冲区
+                    //询问框
+                    layer.confirm('添加绑定用户成功！', {
+                        btn: ['确定'], //按钮
+                        icon: 6
+                    }, function () {
+                        parent.CloseLayer();        //关闭页面
+                    });
+                }
+                close_message();                                    //关闭提示框
+            }
+            catch (e) {
+
+            }
+            close_message();                                    //关闭提示框
+        }
+
+        //取消按钮处理
+        function button_cancel_onclick() {
+            parent.CloseLayer();
+        }
+
+
+        //搜索符合条件的用户列表(AllUserListData:所有的用户数据；Keyword:搜索关键字，设备名与昵称）
+        function search_user_list(AllUserListData, Keyword) {
+            var obj = JSON.parse('[]');
+            var count = 0;
+
+            if (AllUserListData == null || AllUserListData.length == 0) {
+                layer.alert("错误：列表为空，无法搜索！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                return obj;
+            }
+            if (Keyword == null || Keyword.length == 0) {
+                layer.alert("错误：请输入搜索关键字！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                return obj;
+            }
+
+            try {
+                //搜索
+                for (var i = 0; i < AllUserListData.length; i++) {
+                    if ((AllUserListData[i].USER.indexOf(Keyword) >= 0) || (AllUserListData[i].NICK_NAME.indexOf(Keyword) >= 0)) {
+                        obj[count++] = AllUserListData[i];  //找到了
+                        if (count >= 1000) {
+                            layer.alert("搜索到超过1000个满足条件的数据，提前结束搜索，请修改搜索条件缩小范围！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+                            break;
+                        }
+                    }
+                }
+                if (count == 0) { //没有搜索到满足条件的数据
+                    layer.alert("没有搜索到满足条件的设备数据！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+            }
+            catch (e) {
+                layer.alert("搜索发生了错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+
+            return obj;
+        }
+
+
+        //搜索按钮处理
+        function search_name_onclick() {
+            var Keyword = document.getElementById("search_user_name_id").value; //获取搜索框内容
+            if (Keyword == null || Keyword.length < 1) {
+                layer.alert("错误：搜索内容不能为空！", { icon: 5, scrollbar: false }); //5：失败；6：成功
+                return;
+            }
+
+            g_SearchUserListDataData = search_user_list(g_AllUserListData, Keyword);    //搜索
+            if (g_SearchUserListDataData.length == 0) return;                       //没有搜索到
+            //开始获取搜索的内容，并进行显示
+            try {
+                g_isSearchMode = true;  //处于搜索模式
+                document.getElementById("cancel_search_button_id").disabled = false;    //启用取消搜索按钮
+                loading_message('加载数据中...');            //弹出提示框
+
+                g_UserInfoDataPage = get_user_data(g_SearchUserListDataData, 0, cg_OnePageDataCount);          //获取第N页要显示的信息
+
+                //刷新当前页
+                table_reload(g_UserInfoDataPage);       //重载表格
+                //刷新底部的分页栏
+                table_limt_refresh(g_SearchUserListDataData.length, cg_OnePageDataCount, 0);
+                layer.close(g_layer_msg_index);         //关闭提示框
+                if (g_SearchUserListDataData.length >= 1000) {
+                    layer.alert("搜索到超过1000条，只显示" + g_SearchUserListDataData.length + "条记录，请缩小搜索范围！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+                }
+                else {
+                    layer.alert("搜索到" + g_SearchUserListDataData.length + "条记录！", { icon: 6, scrollbar: false }); //5：失败；6：成功
+                }
+
+            }
+            catch (e) {
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+
+
+
+        }
+        //取消搜索按钮处理
+        function search_cancel_onclick() {
+            try {
+                if (g_isSearchMode == false) return;    //不处于搜索模式的话，直接返回
+                g_isSearchMode = false;                 //不处于搜索模式
+
+                // 清空搜索栏内容
+                document.getElementById('search_user_name_id').value = '';
+
+                loading_message('加载数据中...');            //弹出提示框
+                g_UserInfoDataPage = get_user_data(g_AllUserListData, 0, cg_OnePageDataCount);          //获取第一页要显示的信息
+                //刷新当前页
+                table_reload(g_UserInfoDataPage);       //重载表格
+                //刷新底部的分页栏
+                table_limt_refresh(g_AllUserListData.length, cg_OnePageDataCount, 0);
+                layer.close(g_layer_msg_index);         //关闭提示框
+
+                document.getElementById("cancel_search_button_id").disabled = "true";    //禁用取消搜索按钮
+            }
+            catch (e) {
+                layer.alert("错误：" + e.message, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        }
+
+
+
+        //请求添加新的用户绑定到指定设备（SERIAL:需要绑定的设备编号；BindUserListString：绑定的用户列表，用逗号隔开）
+        function ajax_sync_InsertBindUser(SERIAL, BindUserListString) {
+            var sta = 0;
+
+            //请求服务器进行登录
+            var jsonData = {
+                GetFun: 'InsertVideoBindUser',
+                SERIAL: SERIAL,
+                User_List: BindUserListString,
+            };
+
+
+            $.ajax({
+                url: '/Home/Index',
+                type: 'POST',
+                dataType: 'json',
+                async: false,   //同步模式，等待结果再返回
+                data: jsonData,
+            })
+            .done(function (response) {
+                if (response.rel == 1) { //成功
+                    sta = 1;
+                }
+                else if (response.rel == 0) {
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+                else if (response.rel == -1) { //需要登录
+                    layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                    parent.JumpLogon();
+                }
+                else {
+                    layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+            })
+            .fail(function () {
+                layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            })
+            if (sta == 1) return true;
+
+            return false;
+        }
+
+        //刷新当前页面-点击刷新按钮
+        function RefreshPage_onClick() {
+            parent.Write_AllUsersDataCache(null);              //清除父页面缓存
+            location.reload();
+        }
+
+        //弹出加载框
+        function loading_message(str) {
+            g_layer_msg_index = layer.msg('加载中', {
+                icon: 16,
+                shade: 0.5,         //越大界面越黑
+                time: 60000,        //时间
+                anim: 0,            //平滑放大
+                scrollbar: false    //锁定浏览器滑动
+            });
+        }
+
+        //关闭所有弹出
+        function close_message() {
+            layer.close(g_layer_msg_index);         //关闭提示框
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>

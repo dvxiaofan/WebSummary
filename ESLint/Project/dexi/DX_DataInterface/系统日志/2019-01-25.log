@@ -1,0 +1,16 @@
+
+2019-01-25 08:45:53 	加载配置成功
+
+2019-01-25 09:12:14 	加载配置成功
+
+2019-01-25 09:17:09 	加载配置成功
+
+2019-01-25 12:53:34 	加载配置成功
+
+2019-01-25 15:59:06 	加载配置成功
+
+2019-01-25 19:30:25 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-25 19:30:26 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-25 19:30:27 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-25 20:03:32 	加载配置成功

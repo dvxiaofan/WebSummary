@@ -1,0 +1,66 @@
+
+2019-01-23 08:55:01 	加载配置成功
+
+2019-01-23 08:55:17 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 08:55:47 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 09:22:11 	加载配置成功
+
+2019-01-23 09:49:11 	GetOneTelField未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 758
+2019-01-23 09:49:45 	GetRealData->QueryAndRreturnAdapter Error:Unable to connect to any of the specified MySQL hosts.
+2019-01-23 09:49:45 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,VT, UT FROM `tempdata` where  ST="0898000001" ;
+2019-01-23 09:49:45 	192.168.1.138;;Port=3306
+2019-01-23 09:49:45 	water
+2019-01-23 09:49:45 	water
+2019-01-23 09:49:45 	123456
+2019-01-23 10:39:15 	GetOneTelField未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetTelField(String[] ST_List) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 758
+2019-01-23 10:39:49 	GetRealData->QueryAndRreturnAdapter Error:Unable to connect to any of the specified MySQL hosts.
+2019-01-23 10:39:49 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,VT, UT FROM `tempdata` where  ST="0000000007" ;
+2019-01-23 10:39:49 	192.168.1.138;;Port=3306
+2019-01-23 10:39:49 	water
+2019-01-23 10:39:49 	water
+2019-01-23 10:39:49 	123456
+2019-01-23 10:40:05 	GetDeviceInfo未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceConfig(String USER, String[] STArray) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 3721
+2019-01-23 10:40:20 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 10:40:35 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 10:41:01 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 10:41:16 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 10:41:31 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 13:16:52 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 13:17:07 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 13:17:22 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 13:47:50 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 13:51:51 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 14:52:03 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 15:00:44 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 15:00:59 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 18:05:14 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 18:05:29 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-23 18:06:50 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 18:07:05 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-23 18:07:28 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 18:07:43 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-23 18:08:24 	身份验证有误：Unable to connect to any of the specified MySQL hosts.
+
+2019-01-23 18:08:39 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 18:08:54 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-23 18:40:24 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 18:40:25 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278
+2019-01-23 18:48:36 	加载配置成功
+
+2019-01-23 19:11:40 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserDeviceList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 354
+2019-01-23 19:11:41 	GetUserGroupList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetUserGroupList(String UserName) 位置 d:\张艳坤\DX数据查询平台(正式项目)\DX数据查询平台_新(DX_DataInterface)\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 278

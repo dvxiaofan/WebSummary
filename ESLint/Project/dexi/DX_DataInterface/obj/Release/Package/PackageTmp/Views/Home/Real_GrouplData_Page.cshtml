@@ -1,0 +1,157 @@
+﻿<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>查看分组数据</title>
+     <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-user.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/layui/css/layui.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/css/MyTreeNormalize.css" rel="stylesheet" />
+    <link href="../../helsinki-blue/user/css/MyTreeStyle.css" rel="stylesheet" />
+
+     <style type="text/css">
+        /*INFO 按钮蓝色*/
+       .btn-info
+        {
+            background-color: #3E79BB;
+            border-color: #3E79BB;
+        } 
+       /*INFO 按钮禁用淡蓝色*/
+       .btn-info.disabled, .btn-info[disabled] {
+            background-color: #88bffc;
+            border-color: #88bffc;
+        }
+
+        /*表格字体颜色，黑色*/
+       .layui-table {
+            color: #232323;
+        }
+</style>
+
+</head>
+
+<body class="row animated " style="overflow:-Scroll;overflow-y:hidden;margin-left:0px;" > 
+    <!--左侧列表栏-->
+    <div style="float: left;padding:5px;background-color:#EAEDF1;width:253px;height:100%;border:1px solid #808080;" id="left_panle_id">   
+         <div class="row">
+            <div >
+                <div>
+                    <form class="form-inline" id="search_form_id_01A">                                                                   
+                        <div class="form-group"  style="font-size:12px;">
+                            <input class="form-control" style="height:28px;width:167px;margin-left:10px;" type="text"placeholder="" disabled="true">
+                            <button  class="btn btn-info fa fa-search" " type="button"  disabled="true"></button>
+                            <button  class="btn btn-info fa fa-remove" " type="button"  disabled="true"></button>
+                        </div>
+                                
+                    </form>
+                </div>
+                <div class="panel" style="width:250px;height:100%;overflow:auto;margin-top:3px;font-size: 12px;margin-left:10px;" id="panel_id_1" >
+               
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--右侧正文-->
+    <div style="margin-left:253px;" id="right_panle_id">
+        <div class="user_content" , id="user_content_id_1" style="overflow:hidden;height:100%;">
+            <div class="row  ">
+
+            <!--一个用于影藏左边栏的标签-->
+            <div id="div_scroll_id" style="float:left;vertical-align:middle;z-index:3;position:absolute;left:-1px;height:100%;"  data-user-flag="1">
+                <button id="scroll_ico_id" type="button" class="fa fa-chevron-left" onclick="scroll_button_onclick()" style="position:fixed;font-size:18px;float:left;vertical-align:middle;width:20px;height:100px;margin-left:0px;margin-top:200px;z-index:10000;"></button>
+            </div>
+
+            <div class="panel" style="height:100%;width:100%;" id="user_panel_id_1" >
+                <div class="panel-content">
+                    <div class="row">
+                       <div class="col-sm-12">
+                            <form class="form-inline" id="search_form_id_01">                                                                   
+                                <div class="form-group">
+                                    <a  class="control-label">搜索设备:</a> 
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" style="height:28px" type="text" id="search_device_id" placeholder="设备/编号">
+                                    <button  class="btn btn-info fa fa-search" onclick="search_name_onclick()" type="button">&nbsp;&nbsp;搜索</button>
+                                    <button  class="btn btn-info fa fa-remove" onclick="search_cancel_onclick()" type="button" id="cancel_search_button_id">&nbsp;&nbsp;取消搜索</button>
+                                </div>
+                                 <div class="form-group"  style="float:right">
+                                     <button  class="btn btn-info fa fa-refresh" onclick="RefreshPage_onClick()" type="button">&nbsp;&nbsp;刷新</button>
+                                </div>
+                                
+                            </form>
+                            <hr  style="margin-top:0px;background-color:#3E79BB;height:2px;">
+                            
+                         </div>
+                       </div>
+                       <div style="height:5px">
+                           &nbsp;
+                       </div >
+
+                       <div class="table-responsive" id="table_and_page_div_id" style="margin-top:-5px">
+                            <!--此处放一个表格-->
+                            <table id="device_list_table_id" lay-filter="tabl_lay_filter"></table>
+                            <div class="btn-group" style="margin-left: auto;margin-right: auto;" id="limt_butt_id">
+                            </div>
+
+                      </div>
+                </div>
+            </div>
+      
+
+        </div>
+        </div>
+    </div>
+
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/SetUser.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/layui/layui.js"></script>
+<script src="../../helsinki-blue/user/js/MyTree.js"></script>
+<script src="../../helsinki-blue/user/js/GroupList.js"></script>
+<script src="../../helsinki-blue/user/js/Real_GrouplData_Page.js"></script>
+<script src="../../helsinki-blue/user/js/PublicDataRequest.js"></script>
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+    
+   
+</script>
+   
+
+
+
+</body>
+
+
+</html>
+

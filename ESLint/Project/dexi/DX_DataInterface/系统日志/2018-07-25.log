@@ -1,0 +1,35 @@
+
+2018-07-25 08:30:33 	加载配置成功
+
+2018-07-25 09:02:58 	加载配置成功
+
+2018-07-25 09:03:01 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAllDeviceList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4181
+2018-07-25 09:03:07 	GetUserDeviceList，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetAllDeviceList() 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 4181
+2018-07-25 09:04:06 	加载配置成功
+
+2018-07-25 09:04:49 	加载配置成功
+
+2018-07-25 09:16:19 	加载配置成功
+
+2018-07-25 10:06:08 	加载配置成功
+
+2018-07-25 10:28:20 	
+身份验证错误
+2018-07-25 10:29:21 	
+身份验证错误
+2018-07-25 10:56:29 	加载配置成功
+
+2018-07-25 11:16:55 	加载配置成功
+
+2018-07-25 11:23:17 	加载配置成功
+
+2018-07-25 11:26:41 	加载配置成功
+
+2018-07-25 11:28:20 	加载配置成功
+
+2018-07-25 11:31:40 	加载配置成功
+
+2018-07-25 11:33:02 	加载配置成功
+
+2018-07-25 11:34:55 	
+身份验证错误

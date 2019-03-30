@@ -1,0 +1,521 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../helsinki-blue/user/css/bootstrap-tab.css" rel="stylesheet" />
+
+
+
+</head>
+
+     <!-- 界面js代码 -->
+<script type="text/javascript">
+    //用于在页面加载的瞬间判断是否为移动端，立即跳转到移动端界面
+    //判断是否为PC（true:PC,false:非PC端）
+    function IsPC1() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        }
+        return flag;
+    }
+
+    if (IsPC1()) {
+
+
+    } else { //移动端
+        window.location.href = "/Home/Mobile_Login";
+    }
+</script>
+
+<body style= "overflow:auto;"> <!--影藏外部的滑动条-->
+<div class="wrap" style="height:100%;">
+    <div class="page-header">
+        <div class="leftside-header">
+            <div class="logo" style="width:auto;line-height: 50px;">
+
+                <img id="public_icon" src="" style="display: inline-block; height:50px;width:auto;top:50%;margin-top:-8px;margin-left:3px;">
+                <span class="left" id="public_title" style="font-size:20px;color:#fff;margin-left:5px;"></span>
+                <span id="public_version" style="margin-left: 3px;font-size:18px;color:#fff;"></span>
+            </div>
+
+
+            <div id="menu-toggle" class="visible-xs toggle-left-sidebar" data-toggle-class="left-sidebar-open"
+                data-target="html">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+
+        </div>
+        <div class="rightside-header">
+            <div class="header-middle"></div>
+            <div class="header-section" id="search-headerbox">
+                <input type="text" name="search" id="search" placeholder="Search...">
+                <i class="fa fa-search search" id="search-icon" aria-hidden="true"></i>
+                <div class="header-separator"></div>
+            </div>
+            <div class="header-section hidden-xs" id="notice-headerbox">
+                <!-- 此处删除了to-do-list -->
+                <div class="notice" id="messages-notice">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+                    <div class="dropdown-box basic">
+                        <div class="drop-header ">
+                            <h3><i class="fa fa-comments-o" aria-hidden="true"></i> Messages</h3>
+                            <span class="number">0</span>
+                        </div>
+                        <div class="drop-content">
+                            <div class="widget-list list-left-element">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drop-footer">
+                            <a>See all messages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice" id="alerts-notice">
+                    <i class="fa fa-bell-o" aria-hidden="true"></i>
+                    <span>0</span>
+                    <div class="dropdown-box basic">
+                        <div class="drop-header">
+                            <h3><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</h3>
+                            <span class="number">0</span>
+                        </div>
+                        <div class="drop-content">
+                            <div class="widget-list list-left-element list-sm">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="drop-footer">
+                            <a>See all notifications</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-separator"></div>
+            </div>
+            <div class="header-section" id="user-headerbox">
+                <div class="user-header-wrap">
+                    <div class="user-photo">
+                        <img src="../../helsinki-blue/images/user-avatar.jpg" alt="用户图片" />
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="nickname_id">用户昵称</span>
+                        <span class="user-profile" style="color: #cecbce;" id="user_type_id">普通用户</span>
+                    </div>
+                    <i class="fa fa-plus icon-open" aria-hidden="true"></i>
+                    <i class="fa fa-minus icon-close" aria-hidden="true"></i>
+                </div>
+                <div class="user-options dropdown-box">
+                    <div class="drop-content basic">
+                        <ul>
+                            <li> <a href="#" onclick="button_user_info_click()"><i class="fa fa-user"
+                                        aria-hidden="true"></i> 用户信息</a></li>
+                            <li> <a href="#" onclick="button_exit_click()"><i class="fa fa-sign-out"
+                                        aria-hidden="true"></i> 退出登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-separator"></div>
+            <div class="header-section">
+                <!-- 退出处理 -->
+                <a href="#" onclick="button_exit_click()"><i class="fa fa-sign-out log-out"
+                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+
+        <!-- 左侧菜单 -->
+        <div class="left-sidebar" id="left_sidebar_id">
+            <div class="left-sidebar-header">
+                <div class="left-sidebar-title fa fa-bars"> 菜 单</div>
+                <!-- 菜单隐藏按钮 -->
+                <div class="left-sidebar-toggle c-hamburger c-hamburger--htla hidden-xs"
+                    data-toggle-class="left-sidebar-collapsed" data-target="html">
+                    <span></span>
+                </div>
+            </div>
+            <div id="left-nav" class="nano">
+                <div class="nano-content" id="user_main_menu_id">
+                    <nav>
+                        <ul class="nav" id="main-nav">
+                            <!-- 异步加载用户菜单 -->
+                            <!---------------------------------------------------------------------------------------->
+
+
+                            <!---------------------------------------------------------------------------------------->
+
+
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 左侧菜单占位，可以将界面向右边挤压 -->
+        <div class="content" id="main_content_id" style="top:-37px;height:100%;">
+            <div style="width:100%">
+                <!--左侧箭头 -->
+                <div style="float:left;z-index:3;position:absolute;margin-top:-1px;margin-left:-1px;border-bottom:3px #3E79BB solid;">
+                    <button type="button" class="fa fa-backward" style="width:50px;height:37px;"
+                        onclick="user_left_tabs()"></button>
+                </div>
+                <!--右侧箭头1 -->
+                <div id="right_arrow_button_id1" style="z-index:3;position:absolute;right:0px">
+                    <button type="button" class="fa fa-forward" style="width:50px;height:37px;margin-left:0px"
+                        onclick="user_right_tabs()"></button>
+                </div>
+
+
+                <div id="tab_ul_div_id" style="margin-left:49px;z-index:999;">
+                    <ul class="nav nav-tabs" id="user_tabs_id" style="width:10000px;">
+                        <!--  <li class="pull-left"><a href="#" style="color:#022a7c;"><i class="fa fa-backward"></i></a></li>-->
+                        <li class="active" id="tab_li_id_0" style="color:#000000;"><a href="#tab_href_0"
+                                data-toggle="tab" style="color:#000000;"><i class="fa fa-home"
+                                    aria-hidden="true"></i><i>&nbsp</i>主页</a></li>
+                        <!--  <li class="pull-right"><a href="#" style="color:#022a7c;"><i class="fa fa-forward"></i></a> </li>-->
+                        <!-- style="display:none" 影藏标签-->
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="tab-content" id="tab_content_id" style="height:1000px;width:100%">
+                <div class="tab-pane fade in active" id="tab_href_0" style="height:100%;width:100%">
+                    <!--下面这个section可以嵌入其它网页在内部，这样框架不用更新了 -->
+                    <!-- <iframe id="iframe_id_0" src="" name="Home" onscroll="no" frameborder=0 style="height:100%;width:100%;" ></iframe> -->
+                    <!-- 主页暂显示静态页面 -->
+                    <div class="page-body">
+                        <div class="title" style="margin-top: -50px; height: 90vh; text-align: center; background: url(../../Images/home_bg.jpg) center no-repeat;">
+                            <p style="padding-top: 190px; line-height: 80px; font-size: 58px; color: #fffef9;">欢迎使用</p>
+                            <p class="top-text" id="welcome_text" style="line-height: 80px; font-size: 58px; color: #fffef9;"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js">
+</script>
+<script src="../../helsinki-blue/user/js/Index.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+<script src="../../helsinki-blue/user/layer/layer.js"></script>
+<script src="../../helsinki-blue/user/js/Public_Text.js"></script>
+
+<!-- 弹出message占位 -->
+<div id="sign_out_message_id"></div>
+
+<!-- 界面js代码 -->
+<script type="text/javascript">
+
+    var g_AllEssDataCache = null;                       //所有要素数据缓存
+
+
+    if (IsPC()) {
+
+
+    } else { //移动端
+        window.location.href = "../Home/Mobile_Index";
+    }
+
+
+    //加载层
+        //加载层-风格4
+        var index = layer.msg('加载中', {
+            icon: 16
+          , shade: 0.5 //越大界面越黑
+        });
+
+    //初始化加载执行
+    window.onload = function () 
+    {//要执行的js代码段  
+
+        if (IsPC()) {
+
+
+        } else { //移动端
+            window.location.href = "../Home/Mobile_Index";
+        }
+
+        GetUserInfo();          //初始化获取用户信息
+        GetUserMenu();          //获取用户菜单
+        
+        //loading层
+        /*var index = layer.load(1, {
+            shade: [0.1, '#fff'] //0.1透明度的白色背景
+        });*/
+
+        //自动高度
+        var main_content = document.getElementById('main_content_id');
+        main_content.style.height = ($(window).height() - 90) + 'px';
+        //iframe窗口自适应
+        var oDiv = document.getElementById('tab_content_id');
+        oDiv.style.height = ($(window).height() - 91) + 'px';
+       // oDiv.style.width = ($(window).width() - 220) + 'px';
+
+
+        //延时加载网页
+        // setTimeout('load_main_page()', 200);
+
+    }
+
+    //加载主页
+    function load_main_page()
+    {
+        try {
+            var myDate = new Date;
+            var frame = document.getElementById('iframe_id_0');
+            frame.src = 'Home_Page'; 
+
+        } catch (e) {
+
+        }
+    }
+
+    //浏览器窗口大小变化事件
+    $(window).resize(function () {          //当浏览器大小变化时
+        //alert($(window).height());          //浏览器时下窗口可视区域高度
+        //alert($(document).height());        //浏览器时下窗口文档的高度
+        //alert($(document.body).height());   //浏览器时下窗口文档body的高度
+        //alert($(document.body).outerHeight(true)); //浏览器时下窗口文档body的总高度 包括border padding margin
+
+        //自动高度
+        /*var oDiv = document.getElementById('main_content_id');
+        oDiv.style.height = ($(window).height() - 100) + 'px';
+        //iframe窗口自适应
+        oDiv = document.getElementById('tab_content_id');
+        oDiv.style.height = ($(window).height() - 100) + 'px';
+        //oDiv.style.width = ($(window).width() - 220) + 'px';*/
+
+        //自动高度
+        var main_content = document.getElementById('main_content_id');
+        main_content.style.height = ($(window).height() - 90) + 'px';
+        //iframe窗口自适应
+        var oDiv = document.getElementById('tab_content_id');
+        oDiv.style.height = ($(window).height() - 91) + 'px';
+        // oDiv.style.width = ($(window).width() - 220) + 'px';
+       
+
+        RefreshTabWidth();  //刷新标签
+    });
+
+
+
+    //刷新tab标签页的宽度
+    function RefreshTabWidth()
+    {
+        var Content = document.getElementById('main_content_id');
+        var width = Content.clientWidth - 2 * g_left_right_butt_width; //屏幕有效宽度
+        //alert("总宽度：" + g_table_ul_width + ' 屏幕有效宽度：' + width);
+        var active_obj = get_active_li_info(); //获取激活的标签信息
+        var div = document.getElementById('tab_ul_div_id'); //默认偏移为 +49
+
+        var temp = active_obj.offset + active_obj.width;    //当前激活标签长度+标签前面标签长度
+        if(temp > width) //大于屏幕有效宽度，则标签左移动
+        {
+            
+            div.style['margin-left'] = (width - temp+49) + 'px';
+        }
+        else //小于屏幕宽度时，要看总长度
+        {
+            if(g_table_ul_width < width) //总长度小于屏幕宽度
+            {
+                div.style['margin-left'] = (49) + 'px'; //偏移复位
+            }
+            else //总长度大于屏幕时，需要把标签右移动，让激活的标签尽可能
+            {
+                var temp1 = temp - g_table_ul_width;
+                if (temp1 < 0)
+                {
+                    div.style['margin-left'] = (49) + 'px'; //偏移复位
+                }
+                else
+                {
+                    div.style['margin-left'] = (49 - temp1) + 'px'; //设置偏移
+                }
+                
+            }
+        }
+        
+        return;
+
+/*
+        var temp = (Content.clientWidth - 49) - get_end_li_offset();
+
+        if ((g_table_ul_offset < 49) || (temp<0)) //超过可视区域了
+        {
+            var li = document.getElementById($("li.active").attr('id'));
+            var active_li_offset_left = li.offsetLeft;                                  //当前激活的li 的左偏移
+            var active_li_width = li.clientWidth;                                       //当前激活的li的宽度 
+            var active_offset = active_li_offset_left + active_li_width - 49;
+            //alert("当前选择的标签偏移：" + active_li_offset_left + "宽度：" + active_li_width);
+            if ((active_offset) > (Content.clientWidth - 49))                           //如果当前激活的标签溢出了，则显示出来
+            {
+                g_table_ul_offset -= active_offset - (Content.clientWidth - 49);
+            }
+            else if(active_offset < 0) //激活的标签在左边
+            {
+                g_table_ul_offset -= active_offset;
+                g_table_ul_offset += 49;
+            }
+            else if (temp > 0) //一般在新建标签时出现
+            {
+                g_table_ul_offset += temp;
+            }
+                
+            if (g_table_ul_offset > 49) g_table_ul_offset = 49;
+        }
+        else g_table_ul_offset = 49;
+        var div = document.getElementById('tab_ul_div_id');
+        //alert('宽度：' + (Content.clientWidth - 49) + ' 偏移：' + g_table_ul_offset);
+        div.style['margin-left'] = g_table_ul_offset + 'px';*/
+    }
+
+    //跳转到登录界面
+    function JumpLogon()
+    {
+        window.location.href = "Login";
+    }
+
+    //读取所有要素数据缓存
+    function Read_AllEssDataCache() {
+        return g_AllEssDataCache;                              //所有要素数据缓存
+    }
+
+    //写入所有要素数据缓存
+    function Write_AllEssDataCache(AllEssData) {
+        g_AllEssDataCache = AllEssData;                              //所有要素数据缓存
+    }
+
+    //获取所有编码要素表
+    function GetAllEssData() {
+        var obj = JSON.parse('[]');
+        var sta = 0;
+        //请求服务器
+        var jsonData = {
+            GetFun: 'GetAllEssData',
+        };
+
+
+        $.ajax({
+            url: '/Home/Index',
+            type: 'POST',
+            dataType: 'json',
+            async: false,   //同步模式，等待结果再返回
+            data: jsonData,
+        })
+        .done(function (response) {
+            if (response.rel == 1) { //成功
+                if (response.obj == null) {
+                    layer.alert('要素数据总表为空！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                }
+                else {
+                    obj = JSON.parse(response.obj);
+                    //alert(JSON.stringify(obj, 4));     //调试显示信息
+                    sta = 1;
+                }
+
+            }
+            else if (response.rel == 0) {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+            else if (response.rel == -1) //需要登录
+            {
+                layer.alert(response.msg, { icon: 5, scrollbar: false }); //5：失败；6：成功
+                parent.JumpLogon();
+            }
+            else {
+                layer.alert('未知错误！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+            }
+        })
+        .fail(function () {
+            layer.alert('通信错误，请求数据失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+        })
+
+        return obj;
+    }
+
+
+
+    //javascript操作cookie实现递增时间刷新。
+    //用到了amazeui操作cookie的api
+    var int = self.setInterval("refresh()", 300000);
+    function refresh() {
+        try {
+            if (g_UserInfoObj != null && g_UserInfoObj[0] != null && g_UserInfoObj[0].NICK_NAME != null)
+            {
+                $.ajax({
+                    url: '/Home/Index',
+                    type: 'POST',
+                    dataType: 'json',
+                    error: function () {
+                        layer.msg('定时刷新通信失败！', { icon: 5, scrollbar: false }); //5：失败；6：成功
+                    },
+                    success: function (rs) {
+                        //layer.msg('定时刷新通信成功！', { icon: 6, scrollbar: false }); //5：失败；6：成功
+                    }
+                });
+            }
+           
+        } catch (e) {
+
+        }
+        
+    }
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+</html>
+

@@ -1,0 +1,18 @@
+
+/*鼠标移动到删除按钮上面红色*/
+.mouse-hover-red:hover{
+    color:red;
+    cursor: pointer;
+}
+
+/*鼠标移动到删除按钮上面蓝色*/
+.mouse-hover-blue:hover{
+    color:lightblue;
+    cursor: pointer;
+}
+
+/*鼠标移动到删除按钮上面绿色*/
+.mouse-hover-green:hover{
+    color:green;
+    cursor: pointer;
+}

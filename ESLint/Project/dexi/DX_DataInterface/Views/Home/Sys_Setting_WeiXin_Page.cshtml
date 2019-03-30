@@ -1,0 +1,111 @@
+﻿
+<!doctype html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>微信管理</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="../../helsinki-blue/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../helsinki-blue/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../helsinki-blue/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../helsinki-blue/favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../../helsinki-blue/stylesheets/css/style.css">
+    <link href="../../helsinki-blue/user/H-ui.admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../helsinki-blue/vendor/pnotify/pnotify.custom.css">
+    <link href="../../Content/css/bootstrap-tab.css" rel="stylesheet" />
+
+    
+     <style type="text/css">
+        /*INFO 按钮蓝色*/
+       .btn-info
+        {
+            background-color: #3E79BB;
+            border-color: #3E79BB;
+        } 
+       /*INFO 按钮禁用淡蓝色*/
+       .btn-info.disabled, .btn-info[disabled] {
+            background-color: #88bffc;
+            border-color: #88bffc;
+        }
+</style>
+</head>
+
+<body>
+
+  <table id="demo" lay-filter="test"></table>  
+  
+<script>
+
+
+    window.onload = function () {//要执行的js代码段 
+
+        layui.use('table', function () {
+            var table = layui.table;
+           // var str = "[{\"id\":10000,\"username\":\"user-0\",\"sex\":\"女\",\"city\":\"城市-0\",\"sign\":\"签名-0\",\"experience\":255,\"logins\":24,\"wealth\":82830700,\"classify\":\"作家\",\"score\":57}]";
+            var str = "[]";
+            var data = JSON.parse(str);
+
+            //第一个实例
+            table.render({
+                elem: '#demo'
+              , height: 315
+                , data: data
+           , text: {none: '暂无相关数据'}
+              , page: false //开启分页
+              , cols: [[ //表头
+                { field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left' }
+                , { field: 'username', title: '用户名', width: 80 }
+                , { field: 'sex', title: '性别', width: 80, sort: true }
+                , { field: 'city', title: '城市', width: 80 }
+                , { field: 'sign', title: '签名', width: 177 }
+                , { field: 'experience', title: '积分', width: 80, sort: true }
+                , { field: 'score', title: '评分', width: 80, sort: true }
+                , { field: 'classify', title: '职业', width: 80 }
+                , { field: 'wealth', title: '财富', width: 135, sort: true }
+              ]]
+            });
+
+        });
+
+    }
+
+</script>
+      
+            
+                
+
+
+
+<script src="../../helsinki-blue/javascripts/jquery.min.js"></script>
+<script src="../../helsinki-blue/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../helsinki-blue/vendor/nano-scroller/nano-scroller.js"></script>
+<script src="../../helsinki-blue/javascripts/template-script.min.js"></script>
+<script src="../../helsinki-blue/javascripts/template-init.min.js"></script>
+<script src="../../helsinki-blue/vendor/toastr/toastr.min.js"></script>
+<script src="../../helsinki-blue/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    
+<!-- 相关js -->
+<script src="../../Scripts/md5/md5.js"></script>
+<script src="../../helsinki-blue/vendor/pnotify/pnotify.custom.js"></script>
+<script src="../../helsinki-blue/javascripts/examples/ui-elements/notifications-pnotify.js"></script>
+<script src="../../helsinki-blue/user/js/Public_UserControl.js"></script>
+    <script src="../../helsinki-blue/user/layer/layer.js"></script>
+    <script src="../../helsinki-blue/user/layui/layui.js"></script>
+
+<!-- 弹出message占位 -->
+<div id="sign_out_message_id"></div>
+
+   
+
+</body>
+
+
+</html>
+

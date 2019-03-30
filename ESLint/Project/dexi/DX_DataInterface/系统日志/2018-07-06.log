@@ -1,0 +1,78 @@
+
+2018-07-06 08:20:33 	加载配置成功
+
+2018-07-06 08:20:40 	
+身份验证错误
+2018-07-06 08:20:49 	
+身份验证错误
+2018-07-06 08:20:56 	
+身份验证错误
+2018-07-06 08:21:00 	
+身份验证错误
+2018-07-06 08:21:44 	
+身份验证错误
+2018-07-06 08:30:41 	加载配置成功
+
+2018-07-06 09:46:21 	加载配置成功
+
+2018-07-06 10:22:56 	加载配置成功
+
+2018-07-06 10:30:46 	加载配置成功
+
+2018-07-06 11:00:11 	加载配置成功
+
+2018-07-06 11:42:33 	加载配置成功
+
+2018-07-06 11:43:46 	
+身份验证错误
+2018-07-06 11:45:33 	
+身份验证错误
+2018-07-06 11:46:22 	加载配置成功
+
+2018-07-06 12:58:50 	加载配置成功
+
+2018-07-06 13:05:48 	加载配置成功
+
+2018-07-06 13:06:09 	QueryData，未将对象引用设置到对象的实例。   在 MVC01.Controllers.DbDataController.GetGeneralDeviceInfoListForSerial(String[] SerialList) 位置 f:\Documents\Visual Studio 2013\Projects\DX_DataInterface\DX_DataInterface\Controllers\DataBase\DbDataController.cs:行号 2600
+2018-07-06 13:19:21 	加载配置成功
+
+2018-07-06 13:20:05 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'DO' in 'field list'
+2018-07-06 13:20:05 	GetRealData->QueryAndRreturnAdapter:SELECT ST AS "编号",TT AS "采集时间",Z AS "水位1(米)",ZB AS "水位2(米)",PJ AS "当前降水量(毫米)",PD AS "日降水量(毫米)",PT AS "降水量累计值(毫米)",AI AS "气温(摄氏度)",MST AS "湿度(百分比)",VA AS "流速1(米/秒)",VJ AS "流速2(米/秒)",Q1 AS "流量 1(立方米/秒)",Q2 AS "流量 2(立方米/秒)",SBL1 AS "小时流量1(立方米/小时)",SBL2 AS "小时流量2(立方米/小时)",VT AS "电源电压(伏特)",pH AS "pH 值()",DO AS "溶解氧(毫克/升)",COND AS "电导率(微西门/厘米)",TURB AS "浊度(度)",PN01 AS "1 分钟时段降水量(毫米)",PN05 AS "5 分钟时段降水量(毫米)",PN10 AS "10 分钟时段降水量(毫米)",PN30 AS "30 分钟时段降水量(毫米)",CQ1 AS "累计流量1(立方米)",CQ2 AS "累计流量2(立方米)",C AS "水温(摄氏度)", UT AS "上传时间" FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-06 13:20:05 	10.254.1.104;Port=3306
+2018-07-06 13:20:05 	water
+2018-07-06 13:20:05 	root
+2018-07-06 13:20:05 	313171813
+2018-07-06 13:21:03 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'DO' in 'field list'
+2018-07-06 13:21:03 	GetRealData->QueryAndRreturnAdapter:SELECT ST AS "编号",TT AS "采集时间",Z AS "水位1(米)",ZB AS "水位2(米)",PJ AS "当前降水量(毫米)",PD AS "日降水量(毫米)",PT AS "降水量累计值(毫米)",AI AS "气温(摄氏度)",MST AS "湿度(百分比)",VA AS "流速1(米/秒)",VJ AS "流速2(米/秒)",Q1 AS "流量 1(立方米/秒)",Q2 AS "流量 2(立方米/秒)",SBL1 AS "小时流量1(立方米/小时)",SBL2 AS "小时流量2(立方米/小时)",VT AS "电源电压(伏特)",pH AS "pH 值()",DO AS "溶解氧(毫克/升)",COND AS "电导率(微西门/厘米)",TURB AS "浊度(度)",PN01 AS "1 分钟时段降水量(毫米)",PN05 AS "5 分钟时段降水量(毫米)",PN10 AS "10 分钟时段降水量(毫米)",PN30 AS "30 分钟时段降水量(毫米)",CQ1 AS "累计流量1(立方米)",CQ2 AS "累计流量2(立方米)",C AS "水温(摄氏度)", UT AS "上传时间" FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-06 13:21:03 	10.254.1.104;Port=3306
+2018-07-06 13:21:03 	water
+2018-07-06 13:21:03 	root
+2018-07-06 13:21:03 	313171813
+2018-07-06 19:56:41 	加载配置成功
+
+2018-07-06 19:57:08 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'DO' in 'field list'
+2018-07-06 19:57:08 	GetRealData->QueryAndRreturnAdapter:SELECT ST AS "编号",TT AS "采集时间",Z AS "水位1(米)",ZB AS "水位2(米)",PJ AS "当前降水量(毫米)",PD AS "日降水量(毫米)",PT AS "降水量累计值(毫米)",AI AS "气温(摄氏度)",MST AS "湿度(百分比)",VA AS "流速1(米/秒)",VJ AS "流速2(米/秒)",Q1 AS "流量 1(立方米/秒)",Q2 AS "流量 2(立方米/秒)",SBL1 AS "小时流量1(立方米/小时)",SBL2 AS "小时流量2(立方米/小时)",VT AS "电源电压(伏特)",pH AS "pH 值()",DO AS "溶解氧(毫克/升)",COND AS "电导率(微西门/厘米)",TURB AS "浊度(度)",PN01 AS "1 分钟时段降水量(毫米)",PN05 AS "5 分钟时段降水量(毫米)",PN10 AS "10 分钟时段降水量(毫米)",PN30 AS "30 分钟时段降水量(毫米)",CQ1 AS "累计流量1(立方米)",CQ2 AS "累计流量2(立方米)",C AS "水温(摄氏度)", UT AS "上传时间" FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-06 19:57:08 	10.254.1.104;Port=3306
+2018-07-06 19:57:08 	water
+2018-07-06 19:57:08 	root
+2018-07-06 19:57:08 	313171813
+2018-07-06 20:02:27 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'DO' in 'field list'
+2018-07-06 20:02:27 	GetRealData->QueryAndRreturnAdapter:SELECT ST AS "编号",TT AS "采集时间",Z AS "水位1(米)",ZB AS "水位2(米)",PJ AS "当前降水量(毫米)",PD AS "日降水量(毫米)",PT AS "降水量累计值(毫米)",AI AS "气温(摄氏度)",MST AS "湿度(百分比)",VA AS "流速1(米/秒)",VJ AS "流速2(米/秒)",Q1 AS "流量 1(立方米/秒)",Q2 AS "流量 2(立方米/秒)",SBL1 AS "小时流量1(立方米/小时)",SBL2 AS "小时流量2(立方米/小时)",VT AS "电源电压(伏特)",pH AS "pH 值()",DO AS "溶解氧(毫克/升)",COND AS "电导率(微西门/厘米)",TURB AS "浊度(度)",PN01 AS "1 分钟时段降水量(毫米)",PN05 AS "5 分钟时段降水量(毫米)",PN10 AS "10 分钟时段降水量(毫米)",PN30 AS "30 分钟时段降水量(毫米)",CQ1 AS "累计流量1(立方米)",CQ2 AS "累计流量2(立方米)",C AS "水温(摄氏度)", UT AS "上传时间" FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-06 20:02:27 	10.254.1.104;Port=3306
+2018-07-06 20:02:27 	water
+2018-07-06 20:02:27 	root
+2018-07-06 20:02:27 	313171813
+2018-07-06 20:02:49 	加载配置成功
+
+2018-07-06 20:05:55 	加载配置成功
+
+2018-07-06 20:06:57 	GetRealData->QueryAndRreturnAdapter Error:Unknown column 'COND' in 'field list'
+2018-07-06 20:06:57 	GetRealData->QueryAndRreturnAdapter:SELECT ST AS "编号",TT AS "采集时间",Z AS "水位1(米)",ZB AS "水位2(米)",PJ AS "当前降水量(毫米)",PD AS "日降水量(毫米)",PT AS "降水量累计值(毫米)",AI AS "气温(摄氏度)",MST AS "湿度(百分比)",VA AS "流速1(米/秒)",VJ AS "流速2(米/秒)",Q1 AS "流量 1(立方米/秒)",Q2 AS "流量 2(立方米/秒)",SBL1 AS "小时流量1(立方米/小时)",SBL2 AS "小时流量2(立方米/小时)",VT AS "电源电压(伏特)",pH AS "pH 值()",COND AS "电导率(微西门/厘米)",TURB AS "浊度(度)",PN01 AS "1 分钟时段降水量(毫米)",PN05 AS "5 分钟时段降水量(毫米)",PN10 AS "10 分钟时段降水量(毫米)",PN30 AS "30 分钟时段降水量(毫米)",CQ1 AS "累计流量1(立方米)",CQ2 AS "累计流量2(立方米)",C AS "水温(摄氏度)", UT AS "上传时间" FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-06 20:06:57 	10.254.1.104;Port=3306
+2018-07-06 20:06:57 	water
+2018-07-06 20:06:57 	root
+2018-07-06 20:06:57 	313171813
+2018-07-06 20:47:16 	加载配置成功
+
+2018-07-06 20:58:06 	
+身份验证错误

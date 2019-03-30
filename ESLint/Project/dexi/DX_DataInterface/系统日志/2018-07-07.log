@@ -1,0 +1,18 @@
+
+2018-07-07 18:44:42 	加载配置成功
+
+2018-07-07 18:44:59 	GetRealData->QueryAndRreturnAdapter Error:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ' at line 1
+2018-07-07 18:44:59 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,ZB,PJ,PD,PT,AI,MST,VA,VJ,Q1,Q2,SBL1,SBL2,VT,CQ1,CQ2, UT " FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-07 18:44:59 	10.254.1.104;Port=3306
+2018-07-07 18:44:59 	water
+2018-07-07 18:44:59 	root
+2018-07-07 18:44:59 	313171813
+2018-07-07 19:45:54 	加载配置成功
+
+2018-07-07 19:46:03 	GetRealData->QueryAndRreturnAdapter Error:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ' at line 1
+2018-07-07 19:46:03 	GetRealData->QueryAndRreturnAdapter:SELECT ST,TT,Z,ZB,PJ,PD,PT,AI,MST,VA,VJ,Q1,Q2,SBL1,SBL2,VT,CQ1,CQ2, UT " FROM `tempdata` where  ST="1705130004"  OR  ST="0311000002"  OR  ST="1707130010"  OR  ST="1707130011"  OR  ST="0137000002"  OR  ST="0898000001"  OR  ST="0856000001" ;
+2018-07-07 19:46:03 	10.254.1.104;Port=3306
+2018-07-07 19:46:03 	water
+2018-07-07 19:46:03 	root
+2018-07-07 19:46:03 	313171813
+2018-07-07 19:47:25 	加载配置成功
