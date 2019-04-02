@@ -1,35 +1,10 @@
-/* this */
-/* call and apply */
+/* Arrow Function */
+/* Default Parameters */
 
-// let o = {   
-//     carId: 132,
-//     getId: function(prefix) {
-//         // return this.carId;
-//         return prefix + this.carId;
-//     }
-// };
-
-// let newCar = { carId: 999 };
-
-
-// // console.log( o.getId() );   // 132
-// // console.log( o.getId.call(newCar) );    // 999
-// console.log( o.getId.apply(newCar, ['ID: ']) );    // ID: 999
-
-
-/* bind */
-
-let b = {
-    carId: 111,
-    getId: function() {
-        return this.carId;
-    }
+let trackCar = function(carId, city='NY') {
+    console.log(`hello ${carId} in ${city}`);
 };
 
-let newCar = { carId: 888 };
-
-let newFn = b.getId.bind(newCar);
-
-console.log(b.getId() );
-console.log( newFn() );
+console.log( trackCar(234) );
+console.log( trackCar(543, 'BeiJing') );
 
