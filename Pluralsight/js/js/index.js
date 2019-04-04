@@ -1,24 +1,26 @@
 
 'use strict';
 
-function Cat(name, color) {
-    this.name = name;
-    this.color = color;
+function Animal(voice) {
+    this.voice = voice || 'grunt';
 }
 
-Cat.prototype.age = 3;
+Animal.prototype.speak = function() {
+    display('grunt');
+};
+
+function Cat(name, color) {
+    Animal.call(this);
+
+    this.name = name;
+    this.color = color;
+} 
+
+Cat.prototype = Object.create(Animal.prototype);
 
 let fluffy = new Cat('fluffy', 'white');
 
-display(fluffy.__proto__);
-display(fluffy.__proto__.__proto__);
-display(fluffy.__proto__.__proto__.__proto__);
-
-
-
-
-
-
+display(fluffy); 
 
 
 
