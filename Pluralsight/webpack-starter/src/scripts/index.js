@@ -34,14 +34,14 @@ import $ from 'jquery';
 //     error => console.log('error: ', error)
 // );
 
-let user = {
-    name: 'xiaofan',
-    avatar: 'love'
-}
+// let user = {
+//     name: 'xiaofan',
+//     avatar: 'love'
+// }
 
-let promise = $.post('', user);
+// let promise = $.post('', user);
 
-promise.then(
-    data => console.log('data: ', data),
-    error => console.log('error: ', error)
-)
+// promise.then(
+//     data => console.log('data: ', data),
+//     error => console.log('error: ', error)
+// )
