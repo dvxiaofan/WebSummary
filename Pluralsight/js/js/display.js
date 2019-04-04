@@ -21,11 +21,11 @@ function displayObject(object) {
 
 function displayValue(value, addMargin, addPadding) {
   var div = document.createElement('div');
-  div.style.fontSize='32px';
+  div.style.fontSize='26px';
   if (addMargin)
-    div.style.marginBottom='30px';
+    div.style.marginBottom='24px';
   if (addPadding)
-    div.style.paddingLeft='30px';
+    div.style.paddingLeft='24px';
   div.innerText = value;
   document.body.appendChild(div);
 }

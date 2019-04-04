@@ -1,17 +1,79 @@
 
 'use strict';
 
-/* var arr = ['one', 'two', 'three'];
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
 
-Object.defineProperty(Array.prototype, 'last', {get: function() {
-    return this[this.length - 1];
-}});
+Cat.prototype.age = 3;
 
-var last = arr.last;
+let fluffy = new Cat('fluffy', 'white');
+let muffin = new Cat('muffin', 'brown');
 
-var arr2 = ['red', 'blue', 'green'];
+fluffy.age = 8;
 
-// display(arr2.last);
+display(fluffy.age);
+display(fluffy.__proto__.age);
+display(muffin.age);
 
-display(Array); */
+display(Object.keys(fluffy));
+display(fluffy.hasOwnProperty('name'));
+
+// Cat.prototype.age = 90;
+
+// display(fluffy.age);
+// display(fluffy.__proto__.age);
+// display(Object.keys(fluffy));
+// display(fluffy.hasOwnProperty('name'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
