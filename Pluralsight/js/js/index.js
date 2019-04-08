@@ -21,7 +21,18 @@ Object.defineProperty(task, 'toString', {
 //     enumerable: true
 // });
 
-console.log(Object.keys(task));
+let nextTask = Object.create(task);
+
+Object.defineProperty(nextTask, 'toString', {
+    value: function() {
+        return `${this.title} -- is next`;
+    },
+    writable: false,
+    enumerable: false,  // 是否可枚举方法
+    configurable: false // 是否可配置属性
+});
+
+console.log(nextTask.toString());
 
 
 
