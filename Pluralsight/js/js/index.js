@@ -1,36 +1,27 @@
 
 'use strict';
 
-function Animal(voice) {
-    this.voice = voice || 'grunt';
-}
-
-Animal.prototype.speak = function() {
-    display('grunt');
+let task = {
+    title: 'My task',
+    description: 'My description'
 };
 
-function Cat(name, color) {
-    Animal.call(this);
+Object.defineProperty(task, 'toString', {
+    value: function() {
+        return `${this.title} -- ${this.description}`;
+    },
+    writable: false,
+    enumerable: false,  // 是否可枚举方法
+    configurable: false // 是否可配置属性
+});
 
-    this.name = name;
-    this.color = color;
-} 
+// task.toString = 'hi';
 
-Cat.prototype = Object.create(Animal.prototype);
+// Object.defineProperty(task, 'toString', {
+//     enumerable: true
+// });
 
-let fluffy = new Cat('fluffy', 'white');
-
-display(fluffy); 
-
-
-
-
-
-
-
-
-
-
+console.log(Object.keys(task));
 
 
 
