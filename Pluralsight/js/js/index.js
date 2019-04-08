@@ -1,38 +1,41 @@
 
 'use strict';
 
-let task = {
-    title: 'My task',
-    description: 'My description'
+function Obj(name, age) {
+    this.name = name;
+    this.age = age;
+    this.toString = function() {
+        return `${this.name} is ${this.age}.`;
+    };
+}
+
+let newObj = new Obj('devzhang', 23);
+
+let Task = function(name) {
+    this.name = name;
+    this.completed =false;
 };
 
-Object.defineProperty(task, 'toString', {
-    value: function() {
-        return `${this.title} -- ${this.description}`;
-    },
-    writable: false,
-    enumerable: false,  // 是否可枚举方法
-    configurable: false // 是否可配置属性
-});
+Task.prototype.complete = function() {
+    console.log('completing task: ', this.name);
+    this.completed = true;
+};
 
-// task.toString = 'hi';
+Task.prototype.save = function() {
+    console.log(`saving Task: ${this.name}`);
+};
 
-// Object.defineProperty(task, 'toString', {
-//     enumerable: true
-// });
+let task1 = new Task('create a demo for constructor');
+let task2 = new Task('create a demo for modules');
+let task3 = new Task('create a demo for singletons');
+let task4 = new Task('create a demo for prototypes');
 
-let nextTask = Object.create(task);
+task1.complete();
+task2.save();
+task3.save();
+task4.save();
 
-Object.defineProperty(nextTask, 'toString', {
-    value: function() {
-        return `${this.title} -- is next`;
-    },
-    writable: false,
-    enumerable: false,  // 是否可枚举方法
-    configurable: false // 是否可配置属性
-});
 
-console.log(nextTask.toString());
 
 
 
