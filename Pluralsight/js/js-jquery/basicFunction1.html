@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+</head>
+<body>
+
+    <div id="div1">
+        <p>Results: </p>
+    </div>
+
+    <hr>
+    <div id="div2"></div>
+    
+
+    <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            let div1 = $("#div1"),
+                div2 = $("#div2");
+
+            function1 = function() {
+                div1.append('function1 executed <br />');
+            }
+
+            let funciont2 = function() {
+                div1.append('function2 executed <br />');
+            }
+            let obj = {
+                function3: function() {
+                    div1.append('function3 executed <br />');
+                }
+            }
+            gobj = {
+                function4: function() {
+                    div1.append('function4 executed <br />');
+                }
+            }
+            function1();
+            funciont2();
+            obj.function3();
+            gobj.function4();
+
+            div1.append('<br />');
+            // div2.load('basicFunction1.html');
+        });
+        
+    </script>
+</body>
+</html>
