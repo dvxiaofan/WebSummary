@@ -1,7 +1,11 @@
 const { resolve } = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const history = require('connect-history-api-fallback')
 const convert = require('koa-connect')
+const internalIp = require('internal-ip')
+const url = require('url')
+const config = require('./config/' + (process.env.npm_config_config || 'default'))
 
 // 使用 WEBPACK_SERVE 环境变量检测当前是否是在 webpack-server 启动的开发环境中
 const dev = Boolean(process.env.WEBPACK_SERVE)
@@ -23,14 +27,32 @@ module.exports = {
 
   // 配置页面入口 js 文件
   entry: './src/index.js',
+  optimization: {
+    /* 
+      runtimeChunk 设置为 true， webpack 就会吧 chunk 文件名全部存到一个单独的 chunk 中
+      这样更新一个文件只会影响到他所在的 chunk 和 runtimeChunk， 避免引用这个 chunk 的文件也发生变化
+    */
+    runtimeChunk: true,
+
+    /* 
+      默认 entry 的 chunk 不会被拆分
+      我们使用了 html-webpack-plugin 来动态插入 <script> 标签，entry 别拆成多个 chunk 也能自动
+      被插入到 html 中，
+      所以可以配置成all，把 entry chunk 也拆分了
+    */
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
 
   // 配置打包输出相关
   output: {
     // 打包输出目录
     path: resolve(__dirname, 'dist'),
-
     // 入口 js 的打包输出文件名
-    filename: 'index.js'
+    filename: dev ? '[name].js' : '[chunkhash].js',
+    publicPath: config.publicPath,
+    chunkFilename: '[chunkhash].js',
   },
 
   module: {
@@ -66,7 +88,27 @@ module.exports = {
         import htmlString from './template.html';
         template.html 的文件内容会被转成一个 js 字符串，合并到 js 文件里。
         */
-        use: 'html-loader'
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: ['img:src', 'link:href']
+            }
+          }
+        ]
+      },
+
+      {
+        test: /favicon\.png$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              // name: 指定文件名输出 hash: 源文件的 [hash]值 [ext] 为后缀
+              name: '[hash].[ext]'
+            }
+          }
+        ]
       },
 
       {
@@ -88,6 +130,7 @@ module.exports = {
         css-loader 引用的图片和字体同样会匹配到这里的 test 条件
         */
         test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+        exclude: /favicon\.png$/, // 排除 favicon.png  上面有单独处理
 
         /*
         使用 url-loader, 它接受一个 limit 参数，单位为字节(byte)
@@ -123,6 +166,15 @@ module.exports = {
   而 plugin, 关注的不是文件的格式，而是在编译的各个阶段，会触发不同的事件，让你可以干预每个编译阶段。
   */
   plugins: [
+    /* 
+      使用文件路径的 hash 作为 moduleId
+      chunk 内部的每个 module 都有一个id， webpack 默认使用递增的数字作为moduleId.
+      如果引入了一新文件或者删除一个文件， 可能会导致其他文件的 moduleId 也发生改变
+      那么受影响的 module 所在的 chunk 的 [chunkhash] 就回发生改变，导致缓存失效
+      为了解决这个问题， 使用文件路径的hash 作为moduleId来避免这个问题
+    */
+    new webpack.HashedModuleIdsPlugin(),
+
     /*
     html-webpack-plugin 用来打包入口 html 文件
     entry 配置的入口是 js 文件，webpack 以 js 文件为入口，遇到 import, 用配置的 loader 加载引入文件
@@ -144,9 +196,23 @@ module.exports = {
       https://github.com/jantimon/html-webpack-plugin/issues/870
       */
       chunksSortMode: 'none'
-    })
-  ]
+    }),
+
+  ],
+
+  resolve: {
+    alias: {
+      '~': resolve(__dirname, 'src')
+    }
+  },
+  
+  performance: {
+    hints: dev ? false : 'warning'
+  },
+
+  
 }
+
 
 /*
 配置开发时用的服务器，让你可以用 http://127.0.0.1:8080/ 这样的 url 打开页面来调试
@@ -159,8 +225,18 @@ issue：https://github.com/webpack-contrib/webpack-serve/issues/19
 */
 if (dev) {
   module.exports.serve = {
-    // 配置监听端口，默认值 8080
-    port: 8088,
+    // 配置监听端口
+    host: '0.0.0.0',
+    hot: {
+      host: {
+        client: internalIp.v4.sync(),
+        server: '0.0.0.0'
+      }
+    },
+    port: config.serve.port,
+    dev: {
+      publicPath: config.publicPath
+    },
 
     // add: 用来给服务器的 koa 实例注入 middleware 增加功能
     add: app => {
@@ -173,7 +249,11 @@ if (dev) {
       http://localhost:8080/index.html
       这个文件
       */
-      app.use(convert(history()))
+      app.use(convert(history({
+        index: url.parse(config.publicPath).pathname,   // index.html 文件 在 /assets/路径下
+        disableDotRule: true,
+        htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']  // 需要配合 disableDotRule 一起使用
+      })))
     }
   }
 }

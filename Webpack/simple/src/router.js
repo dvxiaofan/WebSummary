@@ -1,10 +1,10 @@
-// 引入页面文件
-import foo from './views/foo'
-import bar from './views/bar'
+// 将 async/await 转换成 es5 代码后需要这个运行时库来支持
+import 'regenerator-runtime/runtime'
+
 
 const routes = {
-  '/foo': foo,
-  '/bar': bar
+  '/foo': () => import('./views/foo'),
+  '/bar.do': () => import('./views/bar.do')
 }
 
 // Router类, 用来控制页面根据当前URL切换
@@ -29,11 +29,14 @@ class Router {
   }
 
   // 加载path路径的页面
-  load(path) {
+  async load(path) {
     // 首页
     if (path === '/') path = '/foo'
+    // 动态加载页面
+    const View = (await routes[path]()).default
+
     // 创建页面实例
-    const view = new routes[path]()
+    const view = new View()
     // 调用页面方法, 把页面加载到document.body中
     view.mount(document.body)
   }

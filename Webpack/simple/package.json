@@ -4,7 +4,9 @@
   "description": "A simple webpack example",
   "main": "",
   "scripts": {
-    "dev": "webpack-serve webpack.config.js",
+    "local": "npm run webpack-serve --config=local",
+    "dev": "npm run webpack-serve --config=dev",
+    "webpack-serve": "webpack-serve webpack.config.js",
     "build": "webpack-cli"
   },
   "author": "",
@@ -14,6 +16,7 @@
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
     "connect-history-api-fallback": "1.5.0",
     "css-loader": "0.28.11",
     "eslint": "4.19.1",
@@ -22,6 +25,7 @@
     "file-loader": "1.1.11",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "internal-ip": "^3.0.1",
     "koa-connect": "2.0.1",
     "style-loader": "0.20.3",
     "url-loader": "1.0.1",
@@ -31,7 +35,14 @@
   },
   "babel": {
     "presets": [
-      "env"
+      [
+        "env",
+        {
+          "loose": true,
+          "modules": false
+        }
+      ],
+      "stage-2"
     ]
   },
   "eslintConfig": {
@@ -40,5 +51,8 @@
       "browser": true,
       "node": true
     }
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.11.1"
   }
 }
