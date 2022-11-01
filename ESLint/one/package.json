@@ -18,7 +18,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
-    "mocha": "^2.5.3"
+    "mocha": "^10.1.0"
   },
   "description": "- `npm install` - `npm start` - open `http://localhost:3000` in your browser",
   "main": "index.js",
